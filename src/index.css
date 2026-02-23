@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #2d5a27;
+  --color-accent: #5a8a3c;
+  --color-gold: #e8a020;
+  --color-dark: #1a2418;
+  --color-light: #f5f2ed;
+  --font-heading: 'Corben', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #2d2d2d;
+  background: #fff;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.15) translate(-2%, -2%); }
+}
+
+.kenburns-active {
+  animation: kenburns 10s ease-out forwards;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: rgba(255,255,255,0.5) !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #e8a020 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a2418;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d5a27;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5a8a3c;
+}
+
+/* Accordion animations */
+.accordion-content {
+  overflow: hidden;
+}
+
+/* Section spacing */
+section {
+  position: relative;
+}
+
+/* Input focus styles */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #2d5a27 !important;
+  box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.15);
+}
+
+/* Gold text */
+.text-gold {
+  color: #e8a020;
+}
+
+/* Gradient overlay */
+.hero-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.1) 100%);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+/* Instagram grid */
+.instagram-item {
+  position: relative;
+  overflow: hidden;
+}
+.instagram-item img {
+  transition: transform 0.4s ease;
+}
+.instagram-item:hover img {
+  transform: scale(1.08);
+}
+.instagram-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 36, 24, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.instagram-item:hover .overlay {
+  opacity: 1;
+}
+
+/* WhatsApp button pulse */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+}
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2s infinite;
+}
