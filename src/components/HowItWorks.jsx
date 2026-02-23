@@ -60,11 +60,11 @@ const HowItWorks = () => {
           src={phase.image}
           alt={phase.name}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${getBgOpacity(phase.id)}`}
-          style={{ zIndex: 1 }}
+          style={{ zIndex: 1, filter: 'contrast(1.08) saturate(1.15) brightness(0.95)' }}
         />
       ))}
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="absolute inset-0 bg-black/30 z-10" />
 
       {/* Desktop: 5 colunas interativas */}
       <div className="hidden md:flex relative z-20 h-[600px] lg:h-[700px] w-full">

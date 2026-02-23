@@ -162,12 +162,6 @@ export default function Footer() {
           <p className="text-white/30 text-sm">
             © 2025 GREENLAND® | Todos os direitos reservados
           </p>
-          <p className="text-white/30 text-sm">
-            Powered by{' '}
-            <a href="#" className="text-[#e8a020]/60 hover:text-[#e8a020] transition-colors">
-              LVES
-            </a>
-          </p>
         </div>
       </div>
     </footer>

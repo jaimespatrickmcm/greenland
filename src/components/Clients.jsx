@@ -58,12 +58,19 @@ export default function Clients() {
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-gray-600 text-lg leading-relaxed mb-6"
+              className="text-gray-600 text-lg leading-relaxed mb-4"
             >
               O GREENLAND nasce dentro do ARTGREEN — pousada premiada e cercada pela
-              natureza de Teresópolis. Se você decidir investir após a hospedagem, o
-              valor da sua diária será descontado do total do investimento.
+              natureza de Teresópolis.
             </motion.p>
+            <motion.div
+              variants={fadeInUp}
+              className="bg-[#e8a020]/10 border-l-4 border-[#e8a020] rounded-r-xl p-4 mb-6"
+            >
+              <p className="text-[#1a2418] text-lg font-semibold leading-relaxed">
+                Se você decidir investir após a hospedagem, o valor da sua diária será descontado do total do investimento.
+              </p>
+            </motion.div>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-8">
               <div className="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
                 <div className="text-[#e8a020] text-2xl font-heading font-bold">100%</div>

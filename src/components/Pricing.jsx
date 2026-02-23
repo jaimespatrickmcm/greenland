@@ -13,6 +13,8 @@ import foto6 from '../assets/foto (6).jpeg'
 import foto7 from '../assets/foto (7).jpeg'
 import foto8 from '../assets/foto (8).jpeg'
 import foto9 from '../assets/foto (9).jpeg'
+import loft1Img from '../assets/fase1.jpg'
+import loft2Img from '../assets/fase2.jpg'
 
 const renderImages = [
   { src: foto1, alt: 'Render 1' },
@@ -90,7 +92,7 @@ export default function Pricing() {
           >
             <div className="relative">
               <img
-                src={foto5}
+                src={loft1Img}
                 alt="Loft 21m²"
                 className="w-full h-64 object-cover"
               />
@@ -145,7 +147,7 @@ export default function Pricing() {
             </div>
             <div className="relative">
               <img
-                src={foto6}
+                src={loft2Img}
                 alt="Loft 32m²"
                 className="w-full h-64 object-cover"
               />
