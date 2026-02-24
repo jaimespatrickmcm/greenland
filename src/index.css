@@ -143,6 +143,11 @@ input:focus, textarea:focus, select:focus {
   opacity: 1;
 }
 
+/* WhatsApp button — manter redondo */
+.whatsapp-btn, .whatsapp-btn::before, .whatsapp-btn::after {
+  border-radius: 50% !important;
+}
+
 /* WhatsApp button pulse */
 @keyframes whatsapp-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }

@@ -48,8 +48,8 @@ export default function App() {
         aria-label="Fale conosco via WhatsApp"
       >
         <div className="relative">
-          <span className="absolute inset-0 rounded-full bg-[#25D366] whatsapp-pulse" />
-          <div className="relative w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+          <span className="absolute inset-0 rounded-full bg-[#25D366] whatsapp-pulse whatsapp-btn" />
+          <div className="relative w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform whatsapp-btn">
             <FaWhatsapp className="text-white text-2xl" />
           </div>
         </div>
