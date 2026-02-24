@@ -14,10 +14,17 @@
   --font-body: 'Inter', sans-serif;
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+/* Zerar border-radius do Swiper (CSS variables) */
+:root {
+  --swiper-pagination-bullet-border-radius: 0 !important;
+  --swiper-scrollbar-border-radius: 0 !important;
 }
 
 html {
@@ -70,7 +77,6 @@ h1, h2, h3, h4 {
 }
 ::-webkit-scrollbar-thumb {
   background: #2d5a27;
-  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #5a8a3c;

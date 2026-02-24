@@ -23,7 +23,7 @@ export default function App() {
     <>
       <Header />
       <main>
-        <Hero onOpenVideo={() => setVideoOpen(true)} />
+        <Hero />
         <About />
         <Stats />
         <HowItWorks />
