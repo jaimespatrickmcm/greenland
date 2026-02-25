@@ -8,33 +8,33 @@ import 'swiper/css/pagination'
 
 const testimonials = [
   {
-    quote: 'Desde que investi no GREENLAND, tenho recebido rendimento todo mês sem me preocupar com nada. A gestão do ARTGREEN cuida de tudo.',
+    quote: 'Comprei meu terreno no GREENLAND e não me arrependo. A localização é perfeita, o condomínio é organizado e a natureza ao redor é incomparável.',
     name: 'Carlos Mendes',
     role: 'Empresário, SP',
     avatar: 'https://ui-avatars.com/api/?name=Carlos+Mendes&background=2d5a27&color=fff&size=80',
   },
   {
-    quote: 'Finalmente um investimento que alia patrimônio real, natureza e retorno mensal. Meu loft já está pagando mais do que a poupança.',
+    quote: 'Sempre quis ter um lugar na Serra para criar minha família. O GREENLAND tem tudo: segurança, lazer e está pertinho de Teresópolis.',
     name: 'Fernanda Rocha',
-    role: 'Dentista, RJ',
+    role: 'Médica, RJ',
     avatar: 'https://ui-avatars.com/api/?name=Fernanda+Rocha&background=e8a020&color=fff&size=80',
   },
   {
-    quote: 'Visitei o ARTGREEN antes de decidir e me apaixonei. O desconto da diária no investimento foi o que me convenceu.',
+    quote: 'O processo foi simples e transparente. Financiei pela Caixa, usei meu FGTS, e já estou planejando a construção da minha casa.',
     name: 'Roberto Lima',
     role: 'Engenheiro, MG',
     avatar: 'https://ui-avatars.com/api/?name=Roberto+Lima&background=5a8a3c&color=fff&size=80',
   },
   {
-    quote: 'Comprei na planta e já estou vendo valorização. O processo foi totalmente transparente e seguro.',
+    quote: 'O terreno tem escritura, infraestrutura pronta e o condomínio já está funcionando. Melhor decisão que já tomei para minha família.',
     name: 'Ana Paula Costa',
     role: 'Advogada, RJ',
     avatar: 'https://ui-avatars.com/api/?name=Ana+Paula&background=2d5a27&color=fff&size=80',
   },
   {
-    quote: 'Parece incrível, mas é real: recebo rendimento mensal e ainda uso meu loft nas férias com a família.',
+    quote: 'O lazer é incrível para as crianças. Fins de semana aqui são sagrados agora. A natureza, a tranquilidade... não tem preço.',
     name: 'Marcos Souza',
-    role: 'Médico, SP',
+    role: 'Dentista, SP',
     avatar: 'https://ui-avatars.com/api/?name=Marcos+Souza&background=e8a020&color=fff&size=80',
   },
 ]
@@ -55,18 +55,17 @@ export default function Testimonials() {
               variants={fadeInUp}
               className="text-[#e8a020] text-sm font-semibold tracking-widest uppercase mb-3"
             >
-              O QUE DIZEM OS INVESTIDORES
+              O QUE DIZEM OS MORADORES
             </motion.p>
             <motion.h2
               variants={fadeInLeft}
               className="font-heading text-3xl md:text-4xl text-white mb-6 leading-tight"
             >
-              Histórias reais de quem já apostou no{' '}
+              Histórias reais de quem já comprou no{' '}
               <span className="text-[#5a8a3c]">GREENLAND</span>
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-white/60 text-lg leading-relaxed">
-              Centenas de investidores já garantiram suas unidades. Veja o que eles
-              têm a dizer sobre a experiência de investir no GREENLAND.
+              Dezenas de famílias já garantiram seu terreno. Veja o que eles têm a dizer sobre a experiência de comprar no GREENLAND.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex items-center gap-4 mt-8">
@@ -86,7 +85,7 @@ export default function Testimonials() {
                     <FaStar key={i} className="text-[#e8a020] text-sm" />
                   ))}
                 </div>
-                <div className="text-white/60 text-sm">+200 investidores satisfeitos</div>
+                <div className="text-white/60 text-sm">+35 famílias satisfeitas</div>
               </div>
             </motion.div>
           </motion.div>

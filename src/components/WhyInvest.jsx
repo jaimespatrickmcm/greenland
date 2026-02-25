@@ -4,11 +4,14 @@ import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer } from '../variants
 import foto11 from '../assets/foto (11).jpeg'
 
 const advantages = [
-  'Preço promocional exclusivo de pré-lançamento',
-  'Escolha das melhores localizações no terreno',
-  'Condições facilitadas de pagamento',
-  'Maior potencial de valorização do imóvel',
-  'Número limitado de unidades disponíveis',
+  'Condomínio 100% pronto — construa quando quiser',
+  'Água e luz já instaladas na entrada do terreno',
+  'Terreno com RGI — escritura no seu nome',
+  '35 terrenos — 1ª fase com unidades limitadas',
+  'Financiamento Caixa em até 240x',
+  'A 12km do centro, estrada pavimentada até a entrada',
+  'Maior lazer de Teresópolis — 20.000m²',
+  'Recreação infantil com monitores nos finais de semana',
 ]
 
 export default function WhyInvest() {
@@ -30,16 +33,16 @@ export default function WhyInvest() {
           >
             <img
               src={foto11}
-              alt="Implantação GREENLAND"
+              alt="GREENLAND Condomínio"
               className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
             />
             {/* Overlay badge */}
             <div className="absolute top-6 left-6 bg-[#e8a020] text-[#1a2418] font-heading font-bold px-4 py-2 rounded-xl text-lg">
-              PRÉ-LANÇAMENTO
+              1ª FASE
             </div>
             <div className="absolute bottom-6 right-6 bg-[#1a2418]/90 backdrop-blur-sm text-white rounded-xl p-4 max-w-[200px]">
-              <div className="text-[#e8a020] font-heading text-3xl font-bold">18%</div>
-              <div className="text-white/80 text-sm">ao ano estimado</div>
+              <div className="text-[#e8a020] font-heading text-3xl font-bold">240x</div>
+              <div className="text-white/80 text-sm">financiamento pela Caixa</div>
             </div>
           </motion.div>
 
@@ -54,22 +57,21 @@ export default function WhyInvest() {
               variants={fadeInUp}
               className="text-[#e8a020] text-sm font-semibold tracking-widest uppercase mb-3"
             >
-              POR QUE INVESTIR AGORA
+              POR QUE COMPRAR AGORA
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="font-heading text-3xl md:text-4xl text-white mb-5 leading-tight"
             >
-              As melhores oportunidades não duram para sempre — e o{' '}
-              <span className="text-[#5a8a3c]">GREENLAND é uma delas</span>
+              As melhores oportunidades não duram — e o{' '}
+              <span className="text-[#5a8a3c]">Greenland é uma delas</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-white/70 text-lg leading-relaxed mb-8"
             >
-              Investir no início de um empreendimento é entrar antes da valorização.
-              Quem chega primeiro garante melhores preços, melhores posições e mais
-              retorno.
+              São apenas 35 terrenos na 1ª fase. Quem compra primeiro escolhe as
+              melhores localizações e garante o preço de lançamento.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="border-t border-white/20 pt-8 mb-8">
@@ -95,7 +97,7 @@ export default function WhyInvest() {
               onClick={scrollToContact}
               className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
             >
-              Garantir Minha Unidade
+              Garantir Meu Terreno
             </motion.button>
           </motion.div>
         </div>

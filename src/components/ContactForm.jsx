@@ -41,7 +41,7 @@ export default function ContactForm() {
     setSubmitted(true)
     setTimeout(() => {
       window.open('https://wa.me/5500000000000?text=' + encodeURIComponent(
-        `Olá! Tenho interesse em investir no GREENLAND.\nNome: ${formData.name}\nTelefone: ${formData.phone}\nModelo: ${formData.model || 'A definir'}`
+        `Olá! Tenho interesse em comprar um terreno no GREENLAND.\nNome: ${formData.name}\nTelefone: ${formData.phone}\nInteresse: ${formData.model || 'A definir'}`
       ), '_blank')
     }, 1500)
   }
@@ -68,22 +68,20 @@ export default function ContactForm() {
               variants={fadeInUp}
               className="text-[#e8a020] text-sm font-semibold tracking-widest uppercase mb-3"
             >
-              QUERO INVESTIR
+              QUERO MEU TERRENO
             </motion.p>
             <motion.h2
               variants={fadeInLeft}
               className="font-heading text-3xl md:text-4xl text-white mb-5 leading-tight"
             >
-              Fale com um consultor e garanta sua unidade{' '}
+              Fale com um consultor e garanta seu terreno{' '}
               <span className="text-[#e8a020]">agora!</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-white/75 text-lg leading-relaxed mb-8"
             >
-              Unidades limitadas com preços e condições exclusivas de
-              pré-lançamento. Preencha o formulário e nossa equipe entrará em
-              contato via WhatsApp.
+              Apenas 35 terrenos na 1ª fase. Preencha o formulário e nossa equipe entrará em contato via WhatsApp para apresentar as melhores condições.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col gap-4">
@@ -182,10 +180,10 @@ export default function ContactForm() {
                     onChange={handleChange}
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
-                    <option value="">Modelo de Interesse</option>
-                    <option value="Loft 21m² — R$349.000">Loft 21m² — R$ 349.000</option>
-                    <option value="Loft 32m² — R$399.000">Loft 32m² — R$ 399.000</option>
-                    <option value="Ainda não sei">Ainda não sei</option>
+                    <option value="">Interesse</option>
+                    <option value="Terreno — À Vista">Terreno — À Vista (a partir de R$ 180.000)</option>
+                    <option value="Terreno — Parcelado">Terreno — Parcelado (a partir de R$ 200.000)</option>
+                    <option value="Financiamento Caixa (até 240x)">Ainda não sei</option>
                   </select>
 
                   {/* Payment */}
@@ -196,8 +194,8 @@ export default function ContactForm() {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Forma de Pagamento</option>
-                    <option value="Entrada R$150k">Entrada R$ 150.000</option>
-                    <option value="Entrada R$200k">Entrada R$ 200.000</option>
+                    <option value="Entrada R$150k">A definir (a partir de R$ 180.000)</option>
+                    <option value="Entrada R$200k">Parcelado (a partir de R$ 200.000)</option>
                     <option value="À vista">À vista</option>
                     <option value="A definir">A definir</option>
                   </select>

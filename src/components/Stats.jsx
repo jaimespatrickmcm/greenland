@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '../variants'
 
 const stats = [
-  { value: 18, suffix: '%', label: 'ao Ano de Rendimento', desc: 'Estimativa de retorno anual' },
-  { value: 5, suffix: '', label: 'Fases do Projeto', desc: 'Planejamento completo e seguro' },
-  { value: 2, suffix: '', label: 'Modelos de Loft', desc: '21m² e 32m² à escolha' },
-  { value: 100, suffix: '%', label: 'Legalizado', desc: 'Escritura e segurança jurídica total' },
+  { value: 35, suffix: '', label: 'Terrenos — 1ª Fase', desc: 'Unidades limitadas disponíveis agora' },
+  { value: 20000, suffix: 'm²', label: 'de Lazer', desc: 'Maior estrutura de lazer de Teresópolis' },
+  { value: 12, suffix: 'km', label: 'do Centro', desc: 'Estrada pavimentada até a entrada' },
+  { value: 240, suffix: 'x', label: 'pela Caixa', desc: 'Financiamento em até 240 parcelas' },
 ]
 
 function Counter({ value, suffix, duration = 2000 }) {
@@ -42,7 +42,7 @@ function Counter({ value, suffix, duration = 2000 }) {
 
   return (
     <span ref={ref} className="tabular-nums">
-      {count}
+      {count.toLocaleString('pt-BR')}
       {suffix}
     </span>
   )

@@ -15,7 +15,7 @@ const cottageImages = [
   },
   {
     src: foto8,
-    alt: 'Chalé moderno GREENLAND',
+    alt: 'Condomínio GREENLAND',
   },
   {
     src: foto9,
@@ -48,33 +48,32 @@ export default function Clients() {
               variants={fadeInUp}
               className="text-[#5a8a3c] text-sm font-semibold tracking-widest uppercase mb-3"
             >
-              EXPERIÊNCIA GARANTIDA
+              GASTRONOMIA E ESTILO DE VIDA
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="font-heading text-3xl md:text-4xl text-[#1a2418] mb-5 leading-tight"
             >
-              Conheça o ARTGREEN antes de decidir
+              Viva ao lado do melhor de Teresópolis
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-gray-600 text-lg leading-relaxed mb-4"
             >
-              O GREENLAND nasce dentro do ARTGREEN — pousada premiada e cercada pela
-              natureza de Teresópolis.
+              O GREENLAND fica ao lado do ARTGREEN — pousada premiada e referência na Serra do Rio de Janeiro. Natureza, tranquilidade e segurança para sua família, a 12km do centro.
             </motion.p>
             <motion.div
               variants={fadeInUp}
               className="bg-[#e8a020]/10 border-l-4 border-[#e8a020] rounded-r-xl p-4 mb-6"
             >
               <p className="text-[#1a2418] text-lg font-semibold leading-relaxed">
-                Se você decidir investir após a hospedagem, o valor da sua diária será descontado do total do investimento.
+                O restaurante Art Cucina, um dos melhores da gastronomia da Serra, fica dentro do condomínio — seu quintal nunca foi tão especial.
               </p>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-8">
               <div className="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
-                <div className="text-[#e8a020] text-2xl font-heading font-bold">100%</div>
-                <div className="text-[#1a2418] text-sm font-medium">Legalizado<br />e Regularizado</div>
+                <div className="text-[#e8a020] text-2xl font-heading font-bold">CONDOMÍNIO</div>
+                <div className="text-[#1a2418] text-sm font-medium">Fechado e<br />Seguro</div>
               </div>
             </motion.div>
             <motion.button
@@ -82,7 +81,7 @@ export default function Clients() {
               onClick={scrollToContact}
               className="bg-[#2d5a27] hover:bg-[#1a3a18] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
             >
-              Investir Agora →
+              Garantir Meu Terreno →
             </motion.button>
           </div>
 

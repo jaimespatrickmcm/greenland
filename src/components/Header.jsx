@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebook, FaInstagram, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa'
 
 const navLinks = [
-  { label: 'O Green Land', href: '#greenland' },
-  { label: 'Como Funciona', href: '#como-funciona' },
-  { label: 'Por que Investir', href: '#pq-investir' },
-  { label: 'Rendimentos', href: '#rendimentos' },
-  { label: 'Investimento', href: '#investimento' },
+  { label: 'O Greenland', href: '#greenland' },
+  { label: 'Diferenciais', href: '#como-funciona' },
+  { label: 'Por que Comprar', href: '#pq-investir' },
+  { label: 'Condições', href: '#rendimentos' },
+  { label: 'Terrenos', href: '#investimento' },
   { label: 'FAQ', href: '#faq' },
 ]
 
@@ -95,7 +95,7 @@ export default function Header() {
               onClick={(e) => { e.preventDefault(); handleNavClick('#contact') }}
               className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap shadow-lg"
             >
-              Quero Investir!
+              Quero Meu Terreno!
             </a>
 
             {/* Hamburger */}
@@ -164,7 +164,7 @@ export default function Header() {
                 onClick={(e) => { e.preventDefault(); handleNavClick('#contact') }}
                 className="mt-4 bg-[#e8a020] text-[#1a2418] font-bold text-center py-3 rounded-full"
               >
-                Quero Investir!
+                Quero Meu Terreno!
               </a>
             </motion.div>
           </>

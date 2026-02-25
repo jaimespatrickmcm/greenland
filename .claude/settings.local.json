@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \":*)",
+      "Bash(de Teresópolis, com estrada pavimentada até a entrada e o restaurante)",
+      "Bash(Art Cucina no seu quintal.\":*)"
+    ]
+  }
+}

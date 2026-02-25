@@ -4,24 +4,24 @@ import { fadeInUp, staggerContainer } from '../variants'
 
 const faqs = [
   {
-    q: 'Posso me hospedar antes do loft ficar pronto?',
-    a: 'Sim! Todos os modelos de pagamento oferecem hospedagem na Pousada ArtGreen, com descontos progressivos conforme o valor da entrada.',
+    q: 'O condomínio já está pronto?',
+    a: 'Sim! O GREENLAND é um condomínio 100% pronto. Ruas pavimentadas, portaria, áreas de lazer completas e toda a infraestrutura funcionando. Você compra e já pode acessar o condomínio imediatamente.',
   },
   {
-    q: 'Recebo rendimento durante a construção?',
-    a: 'Sim. Entrada R$150k: 0,4%/mês + 3 fds/ano com 50% off. Entrada R$200k: 0,7%/mês + 4 fds/ano com 60% off. À vista: 1%/mês + 6 fds/ano.',
+    q: 'Posso financiar pela Caixa Econômica Federal?',
+    a: 'Sim. Os terrenos do GREENLAND podem ser financiados pela Caixa Econômica Federal em até 240 parcelas. O uso do FGTS também é aceito. Nossa equipe auxilia em todo o processo.',
   },
   {
-    q: 'Como funciona a taxa de administração?',
-    a: 'Varia entre 28% e 40% sobre o valor da hospedagem, conforme o plano de uso pessoal escolhido. Planos com menos uso pessoal têm taxa menor.',
+    q: 'O terreno tem escritura (RGI)?',
+    a: 'Sim. Todos os terrenos possuem RGI (Registro Geral de Imóveis) — escritura definitiva registrada em cartório no seu nome, com total segurança jurídica.',
   },
   {
-    q: 'Posso usar meu loft quando quiser?',
-    a: 'O uso pessoal é feito conforme o plano contratado, com opções de 0 a 12 finais de semana por ano. Você escolhe o modelo que melhor se encaixa na sua rotina.',
+    q: 'Há prazo para construir?',
+    a: 'Não há prazo mínimo obrigatório para iniciar a construção. Você compra o terreno e constrói quando quiser, no seu ritmo. Água e luz já estão instaladas e prontas para uso.',
   },
   {
-    q: 'O que está incluído na rentabilidade mensal?',
-    a: 'A rentabilidade incide apenas sobre o valor da hospedagem (diária do loft). Alimentação e outros serviços não entram no cálculo da distribuição.',
+    q: 'Como chegar ao condomínio?',
+    a: 'O GREENLAND fica a apenas 12km do centro de Teresópolis, com estrada totalmente pavimentada até a entrada do condomínio. Acesso fácil e rápido à cidade.',
   },
 ]
 
@@ -50,7 +50,7 @@ export default function FAQ() {
             className="font-heading text-3xl md:text-4xl text-[#1a2418]"
           >
             Transparência total para você{' '}
-            <span className="text-[#2d5a27]">investir com tranquilidade</span>
+            <span className="text-[#2d5a27]">comprar com tranquilidade</span>
           </motion.h2>
         </motion.div>
 

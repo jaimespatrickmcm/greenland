@@ -4,11 +4,11 @@ import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa'
 import { fadeInUp } from '../variants'
 
 const navLinks = [
-  { label: 'O Green Land', href: '#greenland' },
-  { label: 'Como Funciona', href: '#como-funciona' },
-  { label: 'Por que Investir', href: '#pq-investir' },
-  { label: 'Rendimentos', href: '#rendimentos' },
-  { label: 'Investimento', href: '#investimento' },
+  { label: 'O Greenland', href: '#greenland' },
+  { label: 'Diferenciais', href: '#como-funciona' },
+  { label: 'Por que Comprar', href: '#pq-investir' },
+  { label: 'Condições', href: '#rendimentos' },
+  { label: 'Terrenos', href: '#investimento' },
   { label: 'FAQ', href: '#faq' },
 ]
 
@@ -17,7 +17,7 @@ const importantLinks = [
   'Sobre o ARTGREEN',
   'Blog',
   'Termos e Condições',
-  'Simulação de Renda',
+  'Mapa do Condomínio',
 ]
 
 export default function Footer() {

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '../variants'
+import { fadeInUp, staggerContainer } from '../variants'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import foto1 from '../assets/foto (1).jpeg'
@@ -13,40 +13,24 @@ import foto6 from '../assets/foto (6).jpeg'
 import foto7 from '../assets/foto (7).jpeg'
 import foto8 from '../assets/foto (8).jpeg'
 import foto9 from '../assets/foto (9).jpeg'
-import loft1Img from '../assets/fase1.jpg'
-import loft2Img from '../assets/fase2.jpg'
+import mapaImg from '../assets/mapa.jpeg'
 
 const renderImages = [
-  { src: foto1, alt: 'Render 1' },
-  { src: foto2, alt: 'Render 2' },
-  { src: foto3, alt: 'Render 3' },
-  { src: foto4, alt: 'Render 4' },
-  { src: foto5, alt: 'Render 5' },
-  { src: foto6, alt: 'Render 6' },
-  { src: foto7, alt: 'Render 7' },
-  { src: foto8, alt: 'Render 8' },
-  { src: foto9, alt: 'Render 9' },
+  { src: foto1, alt: 'Foto GREENLAND 1' },
+  { src: foto2, alt: 'Foto GREENLAND 2' },
+  { src: foto3, alt: 'Foto GREENLAND 3' },
+  { src: foto4, alt: 'Foto GREENLAND 4' },
+  { src: foto5, alt: 'Foto GREENLAND 5' },
+  { src: foto6, alt: 'Foto GREENLAND 6' },
+  { src: foto7, alt: 'Foto GREENLAND 7' },
+  { src: foto8, alt: 'Foto GREENLAND 8' },
+  { src: foto9, alt: 'Foto GREENLAND 9' },
 ]
 
-const paymentPlans = [
-  {
-    entry: 'Entrada R$ 150k',
-    rate: '0,4%/mês',
-    perk: '3 fds/ano na pousada',
-    discount: '50% off',
-  },
-  {
-    entry: 'Entrada R$ 200k',
-    rate: '0,7%/mês',
-    perk: '4 fds/ano na pousada',
-    discount: '60% off',
-  },
-  {
-    entry: 'À vista',
-    rate: '1%/mês',
-    perk: '6 fds/ano ou 2 cupons',
-    discount: '100% off',
-  },
+const terrainHighlights = [
+  { badge: "RGI", label: "Terreno com RGI", desc: "Escritura definitiva registrada em cartório no seu nome" },
+  { badge: "INFRA", label: "Água e Luz Instalados", desc: "Infraestrutura já instalada e pronta para uso imediato" },
+  { badge: "CEF", label: "Financiamento Caixa", desc: "Financie em até 240x pela Caixa Econômica Federal. FGTS aceito." },
 ]
 
 export default function Pricing() {
@@ -63,134 +47,60 @@ export default function Pricing() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.p
             variants={fadeInUp}
             className="text-[#e8a020] text-sm font-semibold tracking-widest uppercase mb-3"
           >
-            LOFTS EXCLUSIVOS
+            TERRENOS DISPONÍVEIS
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="font-heading text-3xl md:text-4xl text-white"
+            className="font-heading text-3xl md:text-4xl text-white mb-4"
           >
-            Dois modelos projetados para{' '}
-            <span className="text-[#5a8a3c]">conforto e retorno</span>
+            1ª Fase —{' '}
+            <span className="text-[#5a8a3c]">35 terrenos exclusivos</span>
           </motion.h2>
+          <motion.p variants={fadeInUp} className="text-white/60 max-w-xl mx-auto">
+            Condomínio pronto, com toda infraestrutura instalada. Compre agora e construa quando quiser.
+          </motion.p>
         </motion.div>
 
-        {/* Pricing cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {/* Card 1 - 21m² */}
-          <motion.div
-            variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-hover"
-          >
-            <div className="relative">
-              <img
-                src={loft1Img}
-                alt="Loft 21m²"
-                className="w-full h-64 object-cover"
-              />
-              <div className="absolute top-4 left-4 bg-white/90 text-[#1a2418] text-xs font-bold px-3 py-1.5 rounded-full">
-                MODELO COMPACTO
+        {/* Mapa do Empreendimento */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="mb-16"
+        >
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <img
+              src={mapaImg}
+              alt="Mapa do Empreendimento GREENLAND — Vista aérea dos terrenos"
+              className="w-full h-auto object-cover"
+            />
+            {/* Overlay com gradiente no bottom */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a2418] to-transparent h-32" />
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+              <div>
+                <h3 className="font-heading text-xl md:text-2xl text-white font-bold mb-1">
+                  Mapa do Empreendimento
+                </h3>
+                <p className="text-white/70 text-sm">Vista aérea dos terrenos — 1ª Fase</p>
               </div>
+              <button
+                onClick={scrollToContact}
+                className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap"
+              >
+                Consultar Disponibilidade
+              </button>
             </div>
-            <div className="p-8">
-              <h3 className="font-heading text-2xl text-white font-bold mb-2">Loft 21m²</h3>
-              <p className="text-white/50 text-sm mb-6">21m² de área construída + 25m² deck = 46m² totais</p>
+          </div>
+        </motion.div>
 
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {[
-                  ['Terreno', '150m² – 200m²'],
-                  ['Quartos', '1 quarto'],
-                  ['Banheiro', 'Com banheira romana'],
-                  ['Dom-Qui', 'R$ 500/dia'],
-                  ['Sex-Sáb', 'R$ 750/dia'],
-                ].map(([k, v]) => (
-                  <div key={k} className="bg-white/5 rounded-xl p-3">
-                    <div className="text-white/40 text-xs mb-1">{k}</div>
-                    <div className="text-white font-semibold text-sm">{v}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="border-t border-white/10 pt-6 flex items-end justify-between">
-                <div>
-                  <div className="text-white/40 text-xs mb-1">Preço</div>
-                  <div className="font-heading text-3xl text-[#e8a020] font-bold">R$ 349.000</div>
-                </div>
-                <button
-                  onClick={scrollToContact}
-                  className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold px-6 py-3 rounded-full transition-all hover:scale-105"
-                >
-                  Investir Agora
-                </button>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 2 - 32m² */}
-          <motion.div
-            variants={fadeInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            className="bg-white/5 border-2 border-[#e8a020] rounded-2xl overflow-hidden card-hover relative"
-          >
-            <div className="absolute top-4 right-4 z-10 bg-[#e8a020] text-[#1a2418] text-xs font-bold px-3 py-1.5 rounded-full">
-              ⭐ MAIS RENTÁVEL
-            </div>
-            <div className="relative">
-              <img
-                src={loft2Img}
-                alt="Loft 32m²"
-                className="w-full h-64 object-cover"
-              />
-              <div className="absolute top-4 left-4 bg-[#e8a020] text-[#1a2418] text-xs font-bold px-3 py-1.5 rounded-full">
-                MODELO AMPLIADO
-              </div>
-            </div>
-            <div className="p-8">
-              <h3 className="font-heading text-2xl text-white font-bold mb-2">Loft 32m²</h3>
-              <p className="text-white/50 text-sm mb-6">32m² de área construída + 25m² deck = 57m² totais</p>
-
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {[
-                  ['Terreno', '150m² – 200m²'],
-                  ['Quartos', '2 quartos'],
-                  ['Banheiro', 'Com banheira romana'],
-                  ['Dom-Qui', 'R$ 650/dia'],
-                  ['Sex-Sáb', 'R$ 1.000/dia'],
-                ].map(([k, v]) => (
-                  <div key={k} className="bg-white/5 rounded-xl p-3">
-                    <div className="text-white/40 text-xs mb-1">{k}</div>
-                    <div className="text-white font-semibold text-sm">{v}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="border-t border-white/10 pt-6 flex items-end justify-between">
-                <div>
-                  <div className="text-white/40 text-xs mb-1">Preço</div>
-                  <div className="font-heading text-3xl text-[#e8a020] font-bold">R$ 399.000</div>
-                </div>
-                <button
-                  onClick={scrollToContact}
-                  className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold px-6 py-3 rounded-full transition-all hover:scale-105"
-                >
-                  Investir Agora
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Renders gallery */}
+        {/* Fotos do Condomínio */}
         <motion.div
           variants={fadeInUp}
           initial="hidden"
@@ -198,7 +108,7 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="font-heading text-xl text-white text-center mb-6">Renders do Projeto</h3>
+          <h3 className="font-heading text-xl text-white text-center mb-6">Fotos do Condomínio</h3>
           <Swiper
             modules={[Autoplay, Navigation]}
             slidesPerView={1}
@@ -225,7 +135,7 @@ export default function Pricing() {
           </Swiper>
         </motion.div>
 
-        {/* Payment plans */}
+        {/* Highlights */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -233,22 +143,18 @@ export default function Pricing() {
           viewport={{ once: true }}
         >
           <motion.h3 variants={fadeInUp} className="font-heading text-xl text-white text-center mb-8">
-            Formas de Pagamento e Benefícios
+            Tudo incluso no seu terreno
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {paymentPlans.map((plan, i) => (
+            {terrainHighlights.map((h, i) => (
               <motion.div
                 key={i}
                 variants={fadeInUp}
                 className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#e8a020]/50 transition-colors"
               >
-                <div className="font-heading text-lg text-[#e8a020] font-bold mb-2">{plan.entry}</div>
-                <div className="text-3xl font-heading text-white font-bold mb-1">{plan.rate}</div>
-                <div className="text-white/50 text-sm mb-4">durante a obra</div>
-                <div className="border-t border-white/10 pt-4">
-                  <div className="text-white/70 text-sm">{plan.perk}</div>
-                  <div className="text-[#5a8a3c] text-sm font-semibold mt-1">Desconto de {plan.discount}</div>
-                </div>
+                <div className="inline-block bg-[#e8a020]/20 text-[#e8a020] font-bold text-xs px-3 py-1 rounded-full mb-3">{h.badge}</div>
+                <div className="font-heading text-lg text-[#e8a020] font-bold mb-2">{h.label}</div>
+                <div className="text-white/60 text-sm">{h.desc}</div>
               </motion.div>
             ))}
           </div>

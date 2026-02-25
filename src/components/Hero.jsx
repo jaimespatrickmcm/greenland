@@ -1,5 +1,5 @@
 import { FaInstagram, FaFacebook, FaYoutube, FaXTwitter } from 'react-icons/fa6'
-import videoSrc from '../assets/video.mp4'
+import videoSrc from '../assets/hero.mp4'
 
 export default function Hero() {
   const scrollTo = (id) => {
@@ -33,24 +33,24 @@ export default function Hero() {
               GREENLAND — Teresópolis, Serra RJ
             </p>
             <h1 className="font-heading text-3xl md:text-4xl xl:text-5xl text-white leading-tight mb-4">
-              Seu loft na natureza,<br /> com rendimento garantido
+              Seu terreno na Serra,<br /> seu futuro começa aqui
             </h1>
             <p className="text-white/80 text-sm mb-6 max-w-lg">
-              Invista no GREENLAND — lofts exclusivos em Teresópolis, com escritura
-              individual, gestão hoteleira e até 18% ao ano de retorno.
+              Condomínio pronto com o maior lazer de Teresópolis. 35 terrenos com RGI,
+              água e luz instalados — parcele em até 240x com a Caixa.
             </p>
             <div className="flex gap-3 justify-center md:justify-start">
               <button
-                onClick={() => scrollTo('#greenland')}
+                onClick={() => scrollTo('#contact')}
                 className="bg-[#2d5a27] hover:bg-[#1a3a18] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
               >
-                Conhecer o Projeto
+                Garantir Meu Terreno
               </button>
               <button
-                onClick={() => scrollTo('#contact')}
+                onClick={() => scrollTo('#greenland')}
                 className="border border-white text-white hover:bg-white hover:text-[#1a2418] font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200"
               >
-                Investir Agora
+                Conhecer o Projeto
               </button>
             </div>
           </div>
