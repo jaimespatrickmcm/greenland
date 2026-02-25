@@ -1,26 +1,33 @@
-import { motion } from 'framer-motion'
-import { FaInstagram, FaPlay } from 'react-icons/fa'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FaInstagram, FaPlay, FaTimes } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
-import foto7 from '../assets/foto (7).jpeg'
-import foto8 from '../assets/foto (8).jpeg'
 import foto9 from '../assets/foto (9).jpeg'
-import foto10 from '../assets/foto (10).jpeg'
 import foto11 from '../assets/foto (11).jpeg'
 import foto12 from '../assets/foto (12).jpeg'
 import foto13 from '../assets/foto (13).jpeg'
+import img0098 from '../assets/IMG_0098.webp'
+import img0548 from '../assets/IMG_0548.webp'
+import img8232 from '../assets/IMG_8232-HDR.webp'
 
 const images = [
-  { src: foto7, alt: 'GREENLAND 1' },
-  { src: foto8, alt: 'GREENLAND 2' },
-  { src: foto9, alt: 'GREENLAND 3' },
-  { src: foto10, alt: 'GREENLAND 4' },
-  { src: foto11, alt: 'GREENLAND 5' },
-  { src: foto12, alt: 'GREENLAND 6' },
+  { src: img8232, alt: 'Art Cucina 1' },
+  { src: foto11, alt: 'GREENLAND 2' },
+  { src: img0548, alt: 'Art Cucina 2' },
+  { src: foto12, alt: 'GREENLAND 4' },
+  { src: foto9, alt: 'GREENLAND 5' },
+  { src: img0098, alt: 'Art Cucina 3' },
   { src: foto13, alt: 'GREENLAND 7' },
 ]
 
 export default function InstagramSection({ onOpenVideo }) {
+  const [selectedImage, setSelectedImage] = useState(null)
+
+  const openImage = (image) => setSelectedImage(image)
+  const closeImage = () => setSelectedImage(null)
+
   return (
+    <>
     <section className="py-24 bg-[#f5f2ed]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -65,7 +72,10 @@ export default function InstagramSection({ onOpenVideo }) {
         >
           {/* Col 1 - tall + small */}
           <div className="flex flex-col gap-3">
-            <div className="instagram-item rounded-2xl overflow-hidden cursor-pointer">
+            <div
+              className="instagram-item rounded-2xl overflow-hidden cursor-pointer"
+              onClick={() => openImage(images[0])}
+            >
               <img
                 src={images[0].src}
                 alt={images[0].alt}
@@ -75,7 +85,10 @@ export default function InstagramSection({ onOpenVideo }) {
                 <FaInstagram className="text-white text-3xl" />
               </div>
             </div>
-            <div className="instagram-item rounded-2xl overflow-hidden cursor-pointer">
+            <div
+              className="instagram-item rounded-2xl overflow-hidden cursor-pointer"
+              onClick={() => openImage(images[1])}
+            >
               <img
                 src={images[1].src}
                 alt={images[1].alt}
@@ -89,7 +102,10 @@ export default function InstagramSection({ onOpenVideo }) {
 
           {/* Col 2 */}
           <div className="flex flex-col gap-3">
-            <div className="instagram-item rounded-2xl overflow-hidden cursor-pointer">
+            <div
+              className="instagram-item rounded-2xl overflow-hidden cursor-pointer"
+              onClick={() => openImage(images[2])}
+            >
               <img
                 src={images[2].src}
                 alt={images[2].alt}
@@ -119,7 +135,10 @@ export default function InstagramSection({ onOpenVideo }) {
 
           {/* Col 3 */}
           <div className="flex flex-col gap-3">
-            <div className="instagram-item rounded-2xl overflow-hidden cursor-pointer">
+            <div
+              className="instagram-item rounded-2xl overflow-hidden cursor-pointer"
+              onClick={() => openImage(images[4])}
+            >
               <img
                 src={images[4].src}
                 alt={images[4].alt}
@@ -129,7 +148,10 @@ export default function InstagramSection({ onOpenVideo }) {
                 <FaInstagram className="text-white text-3xl" />
               </div>
             </div>
-            <div className="instagram-item rounded-2xl overflow-hidden cursor-pointer">
+            <div
+              className="instagram-item rounded-2xl overflow-hidden cursor-pointer"
+              onClick={() => openImage(images[5])}
+            >
               <img
                 src={images[5].src}
                 alt={images[5].alt}
@@ -142,7 +164,10 @@ export default function InstagramSection({ onOpenVideo }) {
           </div>
 
           {/* Col 4 - large */}
-          <div className="instagram-item rounded-2xl overflow-hidden cursor-pointer">
+          <div
+            className="instagram-item rounded-2xl overflow-hidden cursor-pointer"
+            onClick={() => openImage(images[6])}
+          >
             <img
               src={images[6].src}
               alt={images[6].alt}
@@ -167,5 +192,42 @@ export default function InstagramSection({ onOpenVideo }) {
         </div>
       </div>
     </section>
+
+    <AnimatePresence>
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
+          onClick={closeImage}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeImage}
+              className="absolute -top-12 right-0 text-white hover:text-[#e8a020] transition-colors text-2xl"
+              aria-label="Fechar imagem"
+            >
+              <FaTimes />
+            </button>
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="w-full max-h-[85vh] object-contain bg-black"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   )
 }

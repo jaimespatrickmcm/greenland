@@ -3,23 +3,23 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import { fadeInUp, staggerContainer } from '../variants'
 import 'swiper/css'
-import foto7 from '../assets/foto (7).jpeg'
-import foto8 from '../assets/foto (8).jpeg'
-import foto9 from '../assets/foto (9).jpeg'
 import foto10 from '../assets/foto (10).jpeg'
+import img0098 from '../assets/IMG_0098.webp'
+import img0548 from '../assets/IMG_0548.webp'
+import img8232 from '../assets/IMG_8232-HDR.webp'
 
 const cottageImages = [
   {
-    src: foto7,
-    alt: 'Cottage GREENLAND na floresta',
+    src: img8232,
+    alt: 'Art Cucina no GREENLAND',
   },
   {
-    src: foto8,
-    alt: 'Condomínio GREENLAND',
+    src: img0548,
+    alt: 'Art Cucina e lazer',
   },
   {
-    src: foto9,
-    alt: 'Casa campo GREENLAND',
+    src: img0098,
+    alt: 'Área externa Art Cucina',
   },
   {
     src: foto10,

@@ -9,7 +9,6 @@ import WhyInvest from './components/WhyInvest'
 import Returns from './components/Returns'
 import Pricing from './components/Pricing'
 import Clients from './components/Clients'
-import Testimonials from './components/Testimonials'
 import InstagramSection from './components/InstagramSection'
 import ContactForm from './components/ContactForm'
 import FAQ from './components/FAQ'
@@ -31,7 +30,6 @@ export default function App() {
         <Returns />
         <Pricing />
         <Clients />
-        <Testimonials />
         <InstagramSection onOpenVideo={() => setVideoOpen(true)} />
         <ContactForm />
         <FAQ />

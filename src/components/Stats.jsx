@@ -66,7 +66,7 @@ export default function Stats() {
               key={stat.label}
               className={`text-center py-6 ${i < stats.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
-              <div className="text-4xl font-heading font-bold text-[#e8a020] mb-2">
+              <div className="text-3xl font-heading font-bold text-[#e8a020] mb-2">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-[#1a2418] font-semibold text-base mb-1">{stat.label}</div>
@@ -89,7 +89,7 @@ export default function Stats() {
               variants={fadeInUp}
               className="bg-white border border-[#2d5a27]/20 rounded-2xl p-8 text-center hover:border-[#2d5a27]/50 hover:shadow-md transition-all duration-300"
             >
-              <div className="text-5xl md:text-6xl font-heading font-bold text-[#e8a020] mb-3">
+              <div className="text-4xl md:text-5xl font-heading font-bold text-[#e8a020] mb-3">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-[#1a2418] font-semibold text-base mb-1">{stat.label}</div>

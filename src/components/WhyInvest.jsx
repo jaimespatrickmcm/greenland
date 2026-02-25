@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { FaCheckCircle } from 'react-icons/fa'
 import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer } from '../variants'
-import foto11 from '../assets/foto (11).jpeg'
+import whyInvestImg from '../assets/IMG_8250-HDR.webp'
 
 const advantages = [
   'Condomínio 100% pronto — construa quando quiser',
@@ -32,7 +32,7 @@ export default function WhyInvest() {
             className="relative"
           >
             <img
-              src={foto11}
+              src={whyInvestImg}
               alt="GREENLAND Condomínio"
               className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
             />

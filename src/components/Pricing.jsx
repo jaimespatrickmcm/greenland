@@ -4,25 +4,25 @@ import { Autoplay, Navigation } from 'swiper/modules'
 import { fadeInUp, staggerContainer } from '../variants'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import foto1 from '../assets/foto (1).jpeg'
 import foto2 from '../assets/foto (2).jpeg'
 import foto3 from '../assets/foto (3).jpeg'
-import foto4 from '../assets/foto (4).jpeg'
 import foto5 from '../assets/foto (5).jpeg'
 import foto6 from '../assets/foto (6).jpeg'
-import foto7 from '../assets/foto (7).jpeg'
 import foto8 from '../assets/foto (8).jpeg'
 import foto9 from '../assets/foto (9).jpeg'
+import img0098 from '../assets/IMG_0098.webp'
+import img0548 from '../assets/IMG_0548.webp'
+import img8232 from '../assets/IMG_8232-HDR.webp'
 import mapaImg from '../assets/mapa.jpeg'
 
 const renderImages = [
-  { src: foto1, alt: 'Foto GREENLAND 1' },
+  { src: img8232, alt: 'Art Cucina 1' },
+  { src: img0548, alt: 'Art Cucina 2' },
+  { src: img0098, alt: 'Art Cucina 3' },
   { src: foto2, alt: 'Foto GREENLAND 2' },
   { src: foto3, alt: 'Foto GREENLAND 3' },
-  { src: foto4, alt: 'Foto GREENLAND 4' },
   { src: foto5, alt: 'Foto GREENLAND 5' },
   { src: foto6, alt: 'Foto GREENLAND 6' },
-  { src: foto7, alt: 'Foto GREENLAND 7' },
   { src: foto8, alt: 'Foto GREENLAND 8' },
   { src: foto9, alt: 'Foto GREENLAND 9' },
 ]

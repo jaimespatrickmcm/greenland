@@ -1,28 +1,28 @@
 import { useState } from 'react';
-import fase1Img from '../assets/fase1.jpg';
-import fase2Img from '../assets/fase2.jpg';
-import fase3Img from '../assets/fase3.jpg';
+import artCucinaMainImg from '../assets/IMG_8232-HDR.webp';
+import lazerImg from '../assets/IMG_6600.webp';
+import infraestruturaImg from '../assets/IMG_2511.webp';
 
 const highlights = [
   {
     id: 'restaurante',
     label: 'Restaurante',
     nome: 'Art Cucina',
-    image: fase1Img,
+    image: artCucinaMainImg,
     hoverText: 'A melhor gastronomia da Serra no seu quintal. O Art Cucina é referência gastronômica em Teresópolis, premiado e reconhecido como um dos melhores da região. Morando no GREENLAND, você tem esse privilégio todos os dias.',
   },
   {
     id: 'lazer',
     label: 'Lazer',
     nome: 'Lazer Completo',
-    image: fase2Img,
+    image: lazerImg,
     hoverText: '20.000m² de área de lazer — o maior complexo de lazer de Teresópolis. Piscinas, quadras esportivas, salão de festas, espaços ao ar livre e recreação infantil com monitores especializados aos finais de semana. O lugar perfeito para criar seus filhos.',
   },
   {
     id: 'infraestrutura',
     label: 'Infraestrutura',
     nome: 'Pronto para Construir',
-    image: fase3Img,
+    image: infraestruturaImg,
     hoverText: 'Água e luz já instaladas na entrada de cada terreno. O condomínio está 100% pronto, pavimentado e urbanizado. Compre hoje e construa quando quiser — sem pressa, no seu ritmo. Toda a burocracia já resolvida para você.',
   },
 ];
@@ -47,12 +47,6 @@ const HowItWorks = () => {
       ))}
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30 z-10" />
-
-      {/* Título flutuante no topo */}
-      <div className="absolute top-0 left-0 right-0 z-20 pt-8 px-6 text-center">
-        <p className="text-white/70 text-xs font-semibold tracking-widest uppercase mb-1">O QUE VOCÊ ENCONTRA</p>
-        <h2 className="font-heading text-2xl md:text-3xl text-white">No Greenland</h2>
-      </div>
 
       {/* Desktop: 3 colunas interativas */}
       <div className="hidden md:flex relative z-20 h-[600px] lg:h-[700px] w-full">

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaTimes } from 'react-icons/fa'
-import videoSrc from '../assets/video.mp4'
+import videoSrc from '../assets/hero.mp4'
 
 export default function VideoModal({ isOpen, onClose }) {
   const videoRef = useRef(null)
