@@ -47,8 +47,8 @@ export default function About() {
           viewport={{ once: true, margin: '-50px' }}
           className="font-heading text-3xl md:text-4xl text-[#1a2418] mb-10 leading-tight max-w-2xl"
         >
-          Mais que um terreno — é o começo da sua{' '}
-          <span className="text-[#2d5a27]">vida na Serra</span>
+          Mais que um terreno — é um{' '}
+          <span className="text-[#2d5a27]">patrimônio na Serra</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -65,9 +65,9 @@ export default function About() {
               className="text-gray-600 text-lg leading-relaxed"
             >
               O GREENLAND é um condomínio fechado em pleno funcionamento em Teresópolis,
-              com 20.000m² do maior lazer da cidade. Aqui você compra seu terreno com RGI,
-              numa área privilegiada na Serra do Rio de Janeiro, com toda infraestrutura
-              pronta para você construir sua casa assim que quiser.
+              com 20.000m² de lazer e infraestrutura completa. Terrenos com RGI em
+              área privilegiada na Serra do Rio de Janeiro — uma oportunidade de
+              investimento com valorização contínua e liquidez real.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="relative">
@@ -105,9 +105,9 @@ export default function About() {
               className="border-l-4 border-[#2d5a27] pl-6 py-2 bg-white rounded-r-xl shadow-sm"
             >
               <p className="text-gray-700 italic leading-relaxed">
-                "Tranquilidade, natureza e segurança para sua família — a 12km do centro
-                de Teresópolis, com estrada pavimentada até a entrada e o restaurante
-                Art Cucina no seu quintal."
+                "Localização privilegiada, infraestrutura pronta e valorização contínua
+                — a 12km do centro de Teresópolis, com estrada pavimentada até
+                a entrada. O investimento ideal na Serra do Rio de Janeiro."
               </p>
             </motion.div>
 

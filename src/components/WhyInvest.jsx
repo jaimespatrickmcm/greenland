@@ -11,7 +11,7 @@ const advantages = [
   'Financiamento Caixa em até 240x',
   'A 12km do centro, estrada pavimentada até a entrada',
   'Maior lazer de Teresópolis — 20.000m²',
-  'Recreação infantil com monitores nos finais de semana',
+  'Valorização contínua — região em crescimento na Serra',
 ]
 
 export default function WhyInvest() {

@@ -3,6 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
+import ForWhom from './components/ForWhom'
 import Stats from './components/Stats'
 import HowItWorks from './components/HowItWorks'
 import WhyInvest from './components/WhyInvest'
@@ -24,6 +25,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <ForWhom />
         <Stats />
         <HowItWorks />
         <WhyInvest />

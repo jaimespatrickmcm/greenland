@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FaWhatsapp } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
 
 const faqs = [
@@ -118,7 +119,7 @@ export default function FAQ() {
             rel="noopener noreferrer"
             className="bg-[#25D366] hover:bg-[#1fb855] text-white font-bold px-8 py-3 rounded-full inline-flex items-center gap-2 transition-all hover:scale-105"
           >
-            💬 Falar no WhatsApp
+            <FaWhatsapp className="text-lg" /> Falar no WhatsApp
           </a>
         </motion.div>
       </div>

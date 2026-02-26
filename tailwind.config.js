@@ -33,7 +33,7 @@ export default {
         light: '#f5f2ed',
       },
       fontFamily: {
-        heading: ['Playfair Display', 'serif'],
+        heading: ['Montserrat', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
     },

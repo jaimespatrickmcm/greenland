@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { FaMapMarkerAlt, FaPhone, FaClock, FaCheckCircle } from 'react-icons/fa'
 import { fadeInLeft, fadeInRight, staggerContainer, fadeInUp } from '../variants'
 import foto13 from '../assets/foto (13).jpeg'
 
@@ -86,12 +87,12 @@ export default function ContactForm() {
 
             <motion.div variants={fadeInUp} className="flex flex-col gap-4">
               {[
-                { icon: '📍', text: 'Teresópolis, RJ — Serra do Rio de Janeiro' },
-                { icon: '📞', text: 'Atendimento via WhatsApp' },
-                { icon: '🕐', text: 'Segunda a Sábado, 08h–18h' },
+                { Icon: FaMapMarkerAlt, text: 'Teresópolis, RJ — Serra do Rio de Janeiro', key: 'loc' },
+                { Icon: FaPhone, text: 'Atendimento via WhatsApp', key: 'phone' },
+                { Icon: FaClock, text: 'Segunda a Sábado, 08h–18h', key: 'clock' },
               ].map((item) => (
-                <div key={item.icon} className="flex items-center gap-3 text-white/80">
-                  <span className="text-xl">{item.icon}</span>
+                <div key={item.key} className="flex items-center gap-3 text-white/80">
+                  <item.Icon className="text-[#e8a020] text-xl flex-shrink-0" />
                   <span>{item.text}</span>
                 </div>
               ))}
@@ -114,7 +115,7 @@ export default function ContactForm() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8"
                 >
-                  <div className="text-5xl mb-4">✅</div>
+                  <FaCheckCircle className="text-5xl text-[#2d5a27] mx-auto mb-4" />
                   <h3 className="font-heading text-2xl text-[#1a2418] mb-2">Mensagem enviada!</h3>
                   <p className="text-gray-500 mb-4">
                     Você será redirecionado para nosso WhatsApp em instantes.

@@ -54,13 +54,13 @@ export default function Clients() {
               variants={fadeInUp}
               className="font-heading text-3xl md:text-4xl text-[#1a2418] mb-5 leading-tight"
             >
-              Viva ao lado do melhor de Teresópolis
+              No coração da Serra, ao lado do melhor de Teresópolis
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-gray-600 text-lg leading-relaxed mb-4"
             >
-              O GREENLAND fica ao lado do ARTGREEN — pousada premiada e referência na Serra do Rio de Janeiro. Natureza, tranquilidade e segurança para sua família, a 12km do centro.
+              O GREENLAND fica ao lado do ARTGREEN — pousada premiada e referência na Serra do Rio de Janeiro. O refúgio ideal para finais de semana ou investimento de longo prazo, a 12km do centro.
             </motion.p>
             <motion.div
               variants={fadeInUp}

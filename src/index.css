@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
   --color-gold: #e8a020;
   --color-dark: #1a2418;
   --color-light: #f5f2ed;
-  --font-heading: 'Corben', serif;
+  --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
 

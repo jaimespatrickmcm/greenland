@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebook, FaInstagram, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa'
+// Social icons only in mobile drawer (removed from desktop header per design)
 
 const navLinks = [
   { label: 'O Greenland', href: '#greenland' },
@@ -34,8 +35,8 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#1a2418]/95 shadow-xl'
-            : 'bg-black/40 backdrop-blur-md'
+            ? 'bg-[#1a2418]/95 shadow-xl backdrop-blur-md'
+            : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
@@ -74,22 +75,6 @@ export default function Header() {
 
           {/* Right side */}
           <div className="flex items-center gap-3">
-            {/* Social icons - desktop */}
-            <div className="hidden md:flex items-center gap-2">
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#e8a020] transition-colors text-lg">
-                <FaFacebook />
-              </a>
-              <a href="https://www.instagram.com/artgreen.pousada" target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#e8a020] transition-colors text-lg">
-                <FaInstagram />
-              </a>
-              <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#e8a020] transition-colors text-lg">
-                <FaWhatsapp />
-              </a>
-            </div>
-
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); handleNavClick('#contact') }}

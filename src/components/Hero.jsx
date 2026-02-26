@@ -33,11 +33,11 @@ export default function Hero() {
               GREENLAND — Teresópolis, Serra RJ
             </p>
             <h1 className="font-heading text-3xl md:text-4xl xl:text-5xl text-white leading-tight mb-4">
-              Seu terreno na Serra,<br /> seu futuro começa aqui
+              Terrenos na Serra do RJ<br /> — investimento com valorização real
             </h1>
             <p className="text-white/80 text-sm mb-6 max-w-lg">
-              Condomínio pronto com o maior lazer de Teresópolis. 35 terrenos com RGI,
-              água e luz instalados — parcele em até 240x com a Caixa.
+              1ª fase com apenas 35 terrenos em condomínio pronto. RGI, água e luz
+              instalados — oportunidade de investimento com financiamento em até 240x pela Caixa.
             </p>
             <div className="flex gap-3 justify-center md:justify-start">
               <button

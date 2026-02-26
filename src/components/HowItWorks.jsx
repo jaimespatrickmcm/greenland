@@ -16,7 +16,7 @@ const highlights = [
     label: 'Lazer',
     nome: 'Lazer Completo',
     image: lazerImg,
-    hoverText: '20.000m² de área de lazer — o maior complexo de lazer de Teresópolis. Piscinas, quadras esportivas, salão de festas, espaços ao ar livre e recreação infantil com monitores especializados aos finais de semana. O lugar perfeito para criar seus filhos.',
+    hoverText: '20.000m² de área de lazer — o maior complexo de lazer de Teresópolis. Piscinas, quadras esportivas, salão de festas e espaços ao ar livre. Infraestrutura completa para aproveitar seus finais de semana na serra.',
   },
   {
     id: 'infraestrutura',
