@@ -3,7 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
 
-const faqs = [
+interface FaqItem {
+  q: string
+  a: string
+}
+
+const faqs: FaqItem[] = [
   {
     q: 'O condomínio já está pronto?',
     a: 'Sim! O GREENLAND é um condomínio 100% pronto. Ruas pavimentadas, portaria, áreas de lazer completas e toda a infraestrutura funcionando. Você compra e já pode acessar o condomínio imediatamente.',
@@ -26,8 +31,8 @@ const faqs = [
   },
 ]
 
-export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(null)
+export default function FAQ(): React.JSX.Element {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
     <section id="faq" className="py-24 bg-white">

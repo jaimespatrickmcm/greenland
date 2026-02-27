@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { FaCheckCircle } from 'react-icons/fa'
-import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer } from '../variants'
+import { fadeInLeft, fadeInUp, staggerContainer } from '../variants'
 import whyInvestImg from '../assets/IMG_8250-HDR.webp'
 
-const advantages = [
+const advantages: string[] = [
   'Condomínio 100% pronto — construa quando quiser',
   'Água e luz já instaladas na entrada do terreno',
   'Terreno com RGI — escritura no seu nome',
@@ -14,8 +14,8 @@ const advantages = [
   'Valorização contínua — região em crescimento na Serra',
 ]
 
-export default function WhyInvest() {
-  const scrollToContact = () => {
+export default function WhyInvest(): React.JSX.Element {
+  const scrollToContact = (): void => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 

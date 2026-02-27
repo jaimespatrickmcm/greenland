@@ -8,7 +8,12 @@ import img0098 from '../assets/IMG_0098.webp'
 import img0548 from '../assets/IMG_0548.webp'
 import img8232 from '../assets/IMG_8232-HDR.webp'
 
-const cottageImages = [
+interface CottageImage {
+  src: string
+  alt: string
+}
+
+const cottageImages: CottageImage[] = [
   {
     src: img8232,
     alt: 'Art Cucina no GREENLAND',
@@ -27,8 +32,8 @@ const cottageImages = [
   },
 ]
 
-export default function Clients() {
-  const scrollToContact = () => {
+export default function Clients(): React.JSX.Element {
+  const scrollToContact = (): void => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 

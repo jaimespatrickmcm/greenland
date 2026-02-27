@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion'
+import type { IconType } from 'react-icons'
 import { FaHome, FaTree, FaFileAlt } from 'react-icons/fa'
-import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer } from '../variants'
+import { fadeInRight, fadeInUp, staggerContainer } from '../variants'
 import foto5 from '../assets/foto (5).jpeg'
 import foto6 from '../assets/foto (6).jpeg'
 
-const features = [
+interface Feature {
+  Icon: IconType
+  title: string
+  desc: string
+}
+
+const features: Feature[] = [
   {
     Icon: FaHome,
     title: 'Condomínio Pronto',
@@ -22,8 +29,8 @@ const features = [
   },
 ]
 
-export default function About() {
-  const scrollToContact = () => {
+export default function About(): React.JSX.Element {
+  const scrollToContact = (): void => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 

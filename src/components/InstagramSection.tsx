@@ -10,7 +10,16 @@ import img0098 from '../assets/IMG_0098.webp'
 import img0548 from '../assets/IMG_0548.webp'
 import img8232 from '../assets/IMG_8232-HDR.webp'
 
-const images = [
+interface ImageItem {
+  src: string
+  alt: string
+}
+
+interface InstagramSectionProps {
+  onOpenVideo: () => void
+}
+
+const images: ImageItem[] = [
   { src: img8232, alt: 'Art Cucina 1' },
   { src: foto11, alt: 'GREENLAND 2' },
   { src: img0548, alt: 'Art Cucina 2' },
@@ -20,11 +29,11 @@ const images = [
   { src: foto13, alt: 'GREENLAND 7' },
 ]
 
-export default function InstagramSection({ onOpenVideo }) {
-  const [selectedImage, setSelectedImage] = useState(null)
+export default function InstagramSection({ onOpenVideo }: InstagramSectionProps): React.JSX.Element {
+  const [selectedImage, setSelectedImage] = useState<ImageItem | null>(null)
 
-  const openImage = (image) => setSelectedImage(image)
-  const closeImage = () => setSelectedImage(null)
+  const openImage = (image: ImageItem): void => setSelectedImage(image)
+  const closeImage = (): void => setSelectedImage(null)
 
   return (
     <>
@@ -208,7 +217,7 @@ export default function InstagramSection({ onOpenVideo }) {
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
             className="relative max-w-5xl w-full"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <button
               onClick={closeImage}

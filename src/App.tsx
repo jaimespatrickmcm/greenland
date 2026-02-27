@@ -16,8 +16,8 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import VideoModal from './components/VideoModal'
 
-export default function App() {
-  const [videoOpen, setVideoOpen] = useState(false)
+export default function App(): React.JSX.Element {
+  const [videoOpen, setVideoOpen] = useState<boolean>(false)
 
   return (
     <>

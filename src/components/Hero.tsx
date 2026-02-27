@@ -1,8 +1,14 @@
+import type { IconType } from 'react-icons'
 import { FaInstagram, FaFacebook, FaYoutube, FaXTwitter } from 'react-icons/fa6'
 import videoSrc from '../assets/hero.mp4'
 
-export default function Hero() {
-  const scrollTo = (id) => {
+interface SocialLink {
+  Icon: IconType
+  href: string
+}
+
+export default function Hero(): React.JSX.Element {
+  const scrollTo = (id: string): void => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -57,12 +63,12 @@ export default function Hero() {
 
           {/* Redes sociais — ocultas no mobile */}
           <div className="hidden md:flex flex-col items-end gap-2 md:mb-8">
-            {[
+            {([
               { Icon: FaFacebook, href: 'https://facebook.com' },
               { Icon: FaXTwitter, href: 'https://twitter.com' },
               { Icon: FaYoutube, href: 'https://youtube.com' },
               { Icon: FaInstagram, href: 'https://instagram.com' },
-            ].map(({ Icon, href }) => (
+            ] as SocialLink[]).map(({ Icon, href }) => (
               <a
                 key={href}
                 href={href}

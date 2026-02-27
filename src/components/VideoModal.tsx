@@ -3,8 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaTimes } from 'react-icons/fa'
 import videoSrc from '../assets/hero.mp4'
 
-export default function VideoModal({ isOpen, onClose }) {
-  const videoRef = useRef(null)
+interface VideoModalProps {
+  isOpen: boolean
+  onClose: () => void
+}
+
+export default function VideoModal({ isOpen, onClose }: VideoModalProps): React.JSX.Element {
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     if (!isOpen && videoRef.current) {
@@ -29,7 +34,7 @@ export default function VideoModal({ isOpen, onClose }) {
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
             className="relative max-w-4xl w-full"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <button
               onClick={onClose}

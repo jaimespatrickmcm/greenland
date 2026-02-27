@@ -1,11 +1,30 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import type { IconType } from 'react-icons'
 import { FaMapMarkerAlt, FaPhone, FaClock, FaCheckCircle } from 'react-icons/fa'
 import { fadeInLeft, fadeInRight, staggerContainer, fadeInUp } from '../variants'
 import foto13 from '../assets/foto (13).jpeg'
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState({
+interface FormData {
+  name: string
+  email: string
+  phone: string
+  model: string
+  payment: string
+  message: string
+  agree: boolean
+}
+
+type FormErrors = Partial<Record<keyof FormData, string>>
+
+interface ContactInfo {
+  Icon: IconType
+  text: string
+  key: string
+}
+
+export default function ContactForm(): React.JSX.Element {
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
@@ -14,11 +33,11 @@ export default function ContactForm() {
     message: '',
     agree: false,
   })
-  const [submitted, setSubmitted] = useState(false)
-  const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState<boolean>(false)
+  const [errors, setErrors] = useState<FormErrors>({})
 
-  const validate = () => {
-    const e = {}
+  const validate = (): FormErrors => {
+    const e: FormErrors = {}
     if (!formData.name.trim()) e.name = 'Nome obrigatório'
     if (!formData.email.trim()) e.email = 'E-mail obrigatório'
     if (!formData.phone.trim()) e.phone = 'Telefone obrigatório'
@@ -26,13 +45,14 @@ export default function ContactForm() {
     return e
   }
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void => {
+    const { name, value, type } = e.target
+    const checked = (e.target as HTMLInputElement).checked
     setFormData((p) => ({ ...p, [name]: type === 'checkbox' ? checked : value }))
     setErrors((p) => ({ ...p, [name]: undefined }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) {
@@ -86,11 +106,11 @@ export default function ContactForm() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col gap-4">
-              {[
+              {([
                 { Icon: FaMapMarkerAlt, text: 'Teresópolis, RJ — Serra do Rio de Janeiro', key: 'loc' },
                 { Icon: FaPhone, text: 'Atendimento via WhatsApp', key: 'phone' },
                 { Icon: FaClock, text: 'Segunda a Sábado, 08h–18h', key: 'clock' },
-              ].map((item) => (
+              ] as ContactInfo[]).map((item) => (
                 <div key={item.key} className="flex items-center gap-3 text-white/80">
                   <item.Icon className="text-[#e8a020] text-xl flex-shrink-0" />
                   <span>{item.text}</span>

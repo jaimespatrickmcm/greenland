@@ -1,9 +1,17 @@
-import { useState } from 'react';
-import artCucinaMainImg from '../assets/IMG_8232-HDR.webp';
-import lazerImg from '../assets/IMG_6600.webp';
-import infraestruturaImg from '../assets/IMG_2511.webp';
+import { useState } from 'react'
+import artCucinaMainImg from '../assets/IMG_8232-HDR.webp'
+import lazerImg from '../assets/IMG_6600.webp'
+import infraestruturaImg from '../assets/IMG_2511.webp'
 
-const highlights = [
+interface Highlight {
+  id: string
+  label: string
+  nome: string
+  image: string
+  hoverText: string
+}
+
+const highlights: Highlight[] = [
   {
     id: 'restaurante',
     label: 'Restaurante',
@@ -25,13 +33,13 @@ const highlights = [
     image: infraestruturaImg,
     hoverText: 'Água e luz já instaladas na entrada de cada terreno. O condomínio está 100% pronto, pavimentado e urbanizado. Compre hoje e construa quando quiser — sem pressa, no seu ritmo. Toda a burocracia já resolvida para você.',
   },
-];
+]
 
-const HowItWorks = () => {
-  const [activeId, setActiveId] = useState(highlights[0].id);
-  const [hoveredId, setHoveredId] = useState(null);
+export default function HowItWorks(): React.JSX.Element {
+  const [activeId, setActiveId] = useState<string>(highlights[0].id)
+  const [hoveredId, setHoveredId] = useState<string | null>(null)
 
-  const getBgOpacity = (id) => (activeId === id ? 'opacity-100' : 'opacity-0');
+  const getBgOpacity = (id: string): string => (activeId === id ? 'opacity-100' : 'opacity-0')
 
   return (
     <section id="como-funciona" className="relative w-full h-[600px] lg:h-[700px] overflow-hidden overflow-x-hidden">
@@ -54,7 +62,7 @@ const HowItWorks = () => {
           <div
             key={h.id}
             className="group cursor-pointer relative transition-all duration-300 border-r border-white/20 flex flex-col items-center h-full flex-1 min-w-0 overflow-hidden"
-            onMouseEnter={() => { setActiveId(h.id); setHoveredId(h.id); }}
+            onMouseEnter={() => { setActiveId(h.id); setHoveredId(h.id) }}
             onMouseLeave={() => setHoveredId(null)}
           >
             {/* Barra animada */}
@@ -62,7 +70,7 @@ const HowItWorks = () => {
             {/* Top white overlay on hover */}
             <div className={`absolute inset-x-0 top-0 bg-white transition-all duration-500 ease-in-out z-10 ${hoveredId === h.id ? 'h-24' : 'h-0'}`}></div>
             {/* Título */}
-            <div className={`absolute inset-0 flex flex-col items-center justify-start pt-6 lg:pt-8 z-20 w-full`}>
+            <div className="absolute inset-0 flex flex-col items-center justify-start pt-6 lg:pt-8 z-20 w-full">
               <div className={`text-base lg:text-lg font-light text-center px-4 transition-colors duration-300 ${hoveredId === h.id ? 'text-black' : 'text-white'}`}>{h.label}</div>
               <div className={`text-base lg:text-lg font-light text-center px-4 transition-colors duration-300 ${hoveredId === h.id ? 'text-black' : 'text-white'}`}>{h.nome}</div>
               {/* Hover Text */}
@@ -108,7 +116,5 @@ const HowItWorks = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-export default HowItWorks;
+  )
+}

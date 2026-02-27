@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa'
-import { fadeInUp } from '../variants'
 
-const navLinks = [
+interface NavLink {
+  label: string
+  href: string
+}
+
+const navLinks: NavLink[] = [
   { label: 'O Greenland', href: '#greenland' },
   { label: 'Diferenciais', href: '#como-funciona' },
   { label: 'Por que Comprar', href: '#pq-investir' },
@@ -12,7 +15,7 @@ const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-const importantLinks = [
+const importantLinks: string[] = [
   'Política de Privacidade',
   'Sobre o ARTGREEN',
   'Blog',
@@ -20,18 +23,18 @@ const importantLinks = [
   'Mapa do Condomínio',
 ]
 
-export default function Footer() {
-  const [email, setEmail] = useState('')
-  const [subscribed, setSubscribed] = useState(false)
+export default function Footer(): React.JSX.Element {
+  const [email, setEmail] = useState<string>('')
+  const [subscribed, setSubscribed] = useState<boolean>(false)
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     if (email.trim()) {
       setSubscribed(true)
     }
   }
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (href: string): void => {
     const el = document.querySelector(href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
@@ -46,9 +49,11 @@ export default function Footer() {
               src="https://il7.org/wp-content/uploads/2025/07/logo-greenland-branca.svg"
               alt="GREENLAND"
               className="h-12 w-auto mb-4"
-              onError={(e) => {
-                e.target.style.display = 'none'
-                e.target.nextSibling.style.display = 'block'
+              onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                const target = e.currentTarget
+                target.style.display = 'none'
+                const sibling = target.nextElementSibling as HTMLElement | null
+                if (sibling) sibling.style.display = 'block'
               }}
             />
             <span className="text-white font-heading text-2xl font-bold hidden">GREENLAND</span>
@@ -96,7 +101,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick(link.href) }}
                     className="text-white/50 hover:text-[#e8a020] text-sm transition-colors"
                   >
                     {link.label}
@@ -139,7 +144,7 @@ export default function Footer() {
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                   placeholder="Seu melhor e-mail"
                   className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-white/40 focus:border-[#e8a020]"
                   required

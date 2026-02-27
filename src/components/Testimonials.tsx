@@ -6,7 +6,14 @@ import { fadeInLeft, fadeInUp, staggerContainer } from '../variants'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const testimonials = [
+interface Testimonial {
+  quote: string
+  name: string
+  role: string
+  avatar: string
+}
+
+const testimonials: Testimonial[] = [
   {
     quote: 'Comprei meu terreno no GREENLAND e não me arrependo. A localização é perfeita, o condomínio é organizado e a natureza ao redor é incomparável.',
     name: 'Carlos Mendes',
@@ -39,7 +46,7 @@ const testimonials = [
   },
 ]
 
-export default function Testimonials() {
+export default function Testimonials(): React.JSX.Element {
   return (
     <section className="py-24 bg-[#1a2418]">
       <div className="max-w-7xl mx-auto px-6">

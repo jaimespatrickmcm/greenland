@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion'
+import type { IconType } from 'react-icons'
 import { FaChartLine, FaHome, FaBriefcase, FaMountain } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
 
-const profiles = [
+interface Profile {
+  Icon: IconType
+  title: string
+  desc: string
+}
+
+const profiles: Profile[] = [
   {
     Icon: FaChartLine,
     title: 'Investidores',
@@ -25,8 +32,8 @@ const profiles = [
   },
 ]
 
-export default function ForWhom() {
-  const scrollToContact = () => {
+export default function ForWhom(): React.JSX.Element {
+  const scrollToContact = (): void => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 

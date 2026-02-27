@@ -15,7 +15,18 @@ import img0548 from '../assets/IMG_0548.webp'
 import img8232 from '../assets/IMG_8232-HDR.webp'
 import mapaImg from '../assets/mapa.jpeg'
 
-const renderImages = [
+interface RenderImage {
+  src: string
+  alt: string
+}
+
+interface TerrainHighlight {
+  badge: string
+  label: string
+  desc: string
+}
+
+const renderImages: RenderImage[] = [
   { src: img8232, alt: 'Art Cucina 1' },
   { src: img0548, alt: 'Art Cucina 2' },
   { src: img0098, alt: 'Art Cucina 3' },
@@ -27,14 +38,14 @@ const renderImages = [
   { src: foto9, alt: 'Foto GREENLAND 9' },
 ]
 
-const terrainHighlights = [
+const terrainHighlights: TerrainHighlight[] = [
   { badge: "RGI", label: "Terreno com RGI", desc: "Escritura definitiva registrada em cartório no seu nome" },
   { badge: "INFRA", label: "Água e Luz Instalados", desc: "Infraestrutura já instalada e pronta para uso imediato" },
   { badge: "CEF", label: "Financiamento Caixa", desc: "Financie em até 240x pela Caixa Econômica Federal. FGTS aceito." },
 ]
 
-export default function Pricing() {
-  const scrollToContact = () => {
+export default function Pricing(): React.JSX.Element {
+  const scrollToContact = (): void => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -128,7 +139,7 @@ export default function Pricing() {
                   src={img.src}
                   alt={img.alt}
                   className="w-full h-48 md:h-56 object-cover rounded-xl"
-                  onError={(e) => { e.target.style.display = 'none' }}
+                  onError={(e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.style.display = 'none' }}
                 />
               </SwiperSlide>
             ))}

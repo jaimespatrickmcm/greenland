@@ -2,17 +2,30 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '../variants'
 
-const stats = [
+interface Stat {
+  value: number
+  suffix: string
+  label: string
+  desc: string
+}
+
+interface CounterProps {
+  value: number
+  suffix: string
+  duration?: number
+}
+
+const stats: Stat[] = [
   { value: 35, suffix: '', label: 'Terrenos — 1ª Fase', desc: 'Unidades limitadas disponíveis agora' },
   { value: 20000, suffix: 'm²', label: 'de Lazer', desc: 'Maior estrutura de lazer de Teresópolis' },
   { value: 12, suffix: 'km', label: 'do Centro', desc: 'Estrada pavimentada até a entrada' },
   { value: 240, suffix: 'x', label: 'pela Caixa', desc: 'Financiamento em até 240 parcelas' },
 ]
 
-function Counter({ value, suffix, duration = 2000 }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const started = useRef(false)
+function Counter({ value, suffix, duration = 2000 }: CounterProps): React.JSX.Element {
+  const [count, setCount] = useState<number>(0)
+  const ref = useRef<HTMLSpanElement>(null)
+  const started = useRef<boolean>(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,7 +61,7 @@ function Counter({ value, suffix, duration = 2000 }) {
   )
 }
 
-export default function Stats() {
+export default function Stats(): React.JSX.Element {
   return (
     <section className="py-20 bg-[#f5f2ed]">
       <div className="max-w-7xl mx-auto px-6">

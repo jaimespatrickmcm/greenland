@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebook, FaInstagram, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa'
-// Social icons only in mobile drawer (removed from desktop header per design)
 
-const navLinks = [
+interface NavLink {
+  label: string
+  href: string
+}
+
+const navLinks: NavLink[] = [
   { label: 'O Greenland', href: '#greenland' },
   { label: 'Diferenciais', href: '#como-funciona' },
   { label: 'Por que Comprar', href: '#pq-investir' },
@@ -12,17 +16,17 @@ const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+export default function Header(): React.JSX.Element {
+  const [scrolled, setScrolled] = useState<boolean>(false)
+  const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
+    const onScroll = (): void => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (href: string): void => {
     setMenuOpen(false)
     setTimeout(() => {
       const el = document.querySelector(href)
@@ -46,9 +50,11 @@ export default function Header() {
               src="https://il7.org/wp-content/uploads/2025/07/logo-greenland-branca.svg"
               alt="GREENLAND"
               className="h-12 w-auto"
-              onError={(e) => {
-                e.target.style.display = 'none'
-                e.target.nextSibling.style.display = 'block'
+              onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                const target = e.currentTarget
+                target.style.display = 'none'
+                const sibling = target.nextElementSibling as HTMLElement | null
+                if (sibling) sibling.style.display = 'block'
               }}
             />
             <span
@@ -65,7 +71,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick(link.href) }}
                 className="text-white/90 hover:text-[#e8a020] text-sm font-medium transition-colors duration-200 whitespace-nowrap"
               >
                 {link.label}
@@ -77,7 +83,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              onClick={(e) => { e.preventDefault(); handleNavClick('#contact') }}
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick('#contact') }}
               className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap shadow-lg"
             >
               Quero Meu Terreno!
@@ -118,7 +124,7 @@ export default function Header() {
                   src="https://il7.org/wp-content/uploads/2025/07/logo-greenland-branca.svg"
                   alt="GREENLAND"
                   className="h-10 w-auto"
-                  onError={(e) => { e.target.style.display = 'none' }}
+                  onError={(e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.style.display = 'none' }}
                 />
                 <button onClick={() => setMenuOpen(false)} className="text-white text-2xl">
                   <FaTimes />
@@ -129,7 +135,7 @@ export default function Header() {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick(link.href) }}
                     className="text-white/90 hover:text-[#e8a020] text-lg font-medium transition-colors border-b border-white/10 pb-4"
                   >
                     {link.label}
@@ -146,7 +152,7 @@ export default function Header() {
               </div>
               <a
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); handleNavClick('#contact') }}
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick('#contact') }}
                 className="mt-4 bg-[#e8a020] text-[#1a2418] font-bold text-center py-3 rounded-full"
               >
                 Quero Meu Terreno!
