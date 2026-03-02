@@ -38,7 +38,7 @@ export default function VideoModal({ isOpen, onClose }: VideoModalProps): React.
           >
             <button
               onClick={onClose}
-              className="absolute -top-12 right-0 text-white hover:text-[#e8a020] transition-colors text-2xl"
+              className="absolute -top-12 right-0 text-white hover:text-[#8d4e27] transition-colors text-2xl"
               aria-label="Fechar"
             >
               <FaTimes />

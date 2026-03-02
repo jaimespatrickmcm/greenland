@@ -48,7 +48,7 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials(): React.JSX.Element {
   return (
-    <section className="py-24 bg-[#1a2418]">
+    <section className="py-24 bg-[#273020]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left title */}
@@ -60,7 +60,7 @@ export default function Testimonials(): React.JSX.Element {
           >
             <motion.p
               variants={fadeInUp}
-              className="text-[#e8a020] text-sm font-semibold tracking-widest uppercase mb-3"
+              className="text-white/70 text-sm font-semibold tracking-widest uppercase mb-3"
             >
               O QUE DIZEM OS MORADORES
             </motion.p>
@@ -69,7 +69,7 @@ export default function Testimonials(): React.JSX.Element {
               className="font-heading text-3xl md:text-4xl text-white mb-6 leading-tight"
             >
               Histórias reais de quem já comprou no{' '}
-              <span className="text-[#5a8a3c]">GREENLAND</span>
+              <span className="text-[#4a6838]">GREENLAND</span>
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-white/60 text-lg leading-relaxed">
               Dezenas de famílias já garantiram seu terreno. Veja o que eles têm a dizer sobre a experiência de comprar no GREENLAND.
@@ -82,14 +82,14 @@ export default function Testimonials(): React.JSX.Element {
                     key={initials}
                     src={`https://ui-avatars.com/api/?name=${initials}&background=2d5a27&color=fff&size=40`}
                     alt="Investidor"
-                    className="w-10 h-10 rounded-full border-2 border-[#1a2418]"
+                    className="w-10 h-10 rounded-full border-2 border-[#273020]"
                   />
                 ))}
               </div>
               <div>
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-[#e8a020] text-sm" />
+                    <FaStar key={i} className="text-[#8d4e27] text-sm" />
                   ))}
                 </div>
                 <div className="text-white/60 text-sm">+35 famílias satisfeitas</div>
@@ -119,7 +119,7 @@ export default function Testimonials(): React.JSX.Element {
               {testimonials.map((t, i) => (
                 <SwiperSlide key={i}>
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-                    <FaQuoteLeft className="text-[#e8a020] text-3xl mb-4 opacity-60" />
+                    <FaQuoteLeft className="text-[#8d4e27] text-3xl mb-4 opacity-60" />
                     <p className="text-white/85 text-lg leading-relaxed mb-6 italic">
                       "{t.quote}"
                     </p>
@@ -127,7 +127,7 @@ export default function Testimonials(): React.JSX.Element {
                       <img
                         src={t.avatar}
                         alt={t.name}
-                        className="w-12 h-12 rounded-full object-cover border-2 border-[#e8a020]"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-[#8d4e27]"
                       />
                       <div>
                         <div className="text-white font-semibold">{t.name}</div>
@@ -135,7 +135,7 @@ export default function Testimonials(): React.JSX.Element {
                       </div>
                       <div className="ml-auto flex gap-0.5">
                         {[...Array(5)].map((_, j) => (
-                          <FaStar key={j} className="text-[#e8a020] text-sm" />
+                          <FaStar key={j} className="text-[#8d4e27] text-sm" />
                         ))}
                       </div>
                     </div>

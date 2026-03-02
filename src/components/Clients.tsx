@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import { fadeInUp, staggerContainer } from '../variants'
 import 'swiper/css'
+import { FaInstagram } from 'react-icons/fa'
 import foto10 from '../assets/foto (10).jpeg'
 import img0098 from '../assets/IMG_0098.webp'
 import img0548 from '../assets/IMG_0548.webp'
@@ -38,7 +39,7 @@ export default function Clients(): React.JSX.Element {
   }
 
   return (
-    <section className="py-20 bg-[#f5f2ed]">
+    <section className="py-20 bg-[#f3efe8]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -51,13 +52,13 @@ export default function Clients(): React.JSX.Element {
           <div>
             <motion.p
               variants={fadeInUp}
-              className="text-[#5a8a3c] text-sm font-semibold tracking-widest uppercase mb-3"
+              className="text-[#4a6838] text-sm font-semibold tracking-widest uppercase mb-3"
             >
               GASTRONOMIA E ESTILO DE VIDA
             </motion.p>
             <motion.h2
               variants={fadeInUp}
-              className="font-heading text-3xl md:text-4xl text-[#1a2418] mb-5 leading-tight"
+              className="font-heading text-3xl md:text-4xl text-[#273020] mb-5 leading-tight"
             >
               No coração da Serra, ao lado do melhor de Teresópolis
             </motion.h2>
@@ -65,26 +66,50 @@ export default function Clients(): React.JSX.Element {
               variants={fadeInUp}
               className="text-gray-600 text-lg leading-relaxed mb-4"
             >
-              O GREENLAND fica ao lado do ARTGREEN — pousada premiada e referência na Serra do Rio de Janeiro. O refúgio ideal para finais de semana ou investimento de longo prazo, a 12km do centro.
+              O GREENLAND abriga a Art Green — pousada premiada e referência na Serra do Rio de Janeiro. O refúgio ideal para finais de semana ou investimento de longo prazo, a 12km do centro.
             </motion.p>
             <motion.div
               variants={fadeInUp}
-              className="bg-[#e8a020]/10 border-l-4 border-[#e8a020] rounded-r-xl p-4 mb-6"
+              className="bg-[#8d4e27]/10 border-l-4 border-[#8d4e27] rounded-r-xl p-4 mb-4"
             >
-              <p className="text-[#1a2418] text-lg font-semibold leading-relaxed">
+              <p className="text-[#273020] text-lg font-semibold leading-relaxed">
                 O restaurante Art Cucina, um dos melhores da gastronomia da Serra, fica dentro do condomínio — seu quintal nunca foi tão especial.
               </p>
             </motion.div>
+            <motion.p
+              variants={fadeInUp}
+              className="text-gray-600 text-base leading-relaxed mb-4 italic"
+            >
+              Seja um investidor — mas antes, experimente a energia do Greenland na Pousada Art Green.
+            </motion.p>
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 mb-4">
+              <a
+                href="https://www.instagram.com/restauranteartcucina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#364728] font-semibold text-sm hover:text-[#8d4e27] transition-colors"
+              >
+                <FaInstagram /> @restauranteartcucina
+              </a>
+              <a
+                href="https://www.instagram.com/artgreen.pousada"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#364728] font-semibold text-sm hover:text-[#8d4e27] transition-colors"
+              >
+                <FaInstagram /> @artgreen.pousada
+              </a>
+            </motion.div>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-8">
               <div className="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
-                <div className="text-[#e8a020] text-2xl font-heading font-bold">CONDOMÍNIO</div>
-                <div className="text-[#1a2418] text-sm font-medium">Fechado e<br />Seguro</div>
+                <div className="text-[#8d4e27] text-2xl font-heading font-bold">CONDOMÍNIO</div>
+                <div className="text-[#273020] text-sm font-medium">Fechado e<br />Seguro</div>
               </div>
             </motion.div>
             <motion.button
               variants={fadeInUp}
               onClick={scrollToContact}
-              className="bg-[#2d5a27] hover:bg-[#1a3a18] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
+              className="bg-[#364728] hover:bg-[#2a3820] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
             >
               Garantir Meu Terreno →
             </motion.button>

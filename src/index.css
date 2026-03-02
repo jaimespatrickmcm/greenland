@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #2d5a27;
-  --color-accent: #5a8a3c;
-  --color-gold: #e8a020;
-  --color-dark: #1a2418;
-  --color-light: #f5f2ed;
+  --color-primary: #364728;
+  --color-accent: #4a6838;
+  --color-gold: #8d4e27;
+  --color-dark: #273020;
+  --color-light: #f3efe8;
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
@@ -65,7 +65,7 @@ h1, h2, h3, h4 {
   opacity: 1 !important;
 }
 .swiper-pagination-bullet-active {
-  background: #e8a020 !important;
+  background: #8d4e27 !important;
 }
 
 /* Custom scrollbar */
@@ -73,13 +73,13 @@ h1, h2, h3, h4 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a2418;
+  background: #273020;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2d5a27;
+  background: #364728;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5a8a3c;
+  background: #4a6838;
 }
 
 /* Accordion animations */
@@ -95,13 +95,13 @@ section {
 /* Input focus styles */
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: #2d5a27 !important;
-  box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.15);
+  border-color: #364728 !important;
+  box-shadow: 0 0 0 3px rgba(54, 71, 40, 0.15);
 }
 
 /* Gold text */
 .text-gold {
-  color: #e8a020;
+  color: #8d4e27;
 }
 
 /* Gradient overlay */

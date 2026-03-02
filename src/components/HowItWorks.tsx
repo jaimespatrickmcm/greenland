@@ -22,16 +22,16 @@ const highlights: Highlight[] = [
   {
     id: 'lazer',
     label: 'Lazer',
-    nome: 'Lazer Completo',
+    nome: 'Lazer de Resort',
     image: lazerImg,
-    hoverText: '20.000m² de área de lazer — o maior complexo de lazer de Teresópolis. Piscinas, quadras esportivas, salão de festas e espaços ao ar livre. Infraestrutura completa para aproveitar seus finais de semana na serra.',
+    hoverText: '20.000m² de área de lazer — o maior complexo de lazer de Teresópolis. Piscinas, quadras esportivas, lagos, fire place, salão de jogos, ciclovia e espaços ao ar livre. Infraestrutura de resort para aproveitar seus finais de semana na serra.',
   },
   {
     id: 'infraestrutura',
     label: 'Infraestrutura',
     nome: 'Pronto para Construir',
     image: infraestruturaImg,
-    hoverText: 'Água e luz já instaladas na entrada de cada terreno. O condomínio está 100% pronto, pavimentado e urbanizado. Compre hoje e construa quando quiser — sem pressa, no seu ritmo. Toda a burocracia já resolvida para você.',
+    hoverText: 'Água e luz já instaladas na entrada de cada terreno. O condomínio está pronto com infraestrutura instalada. Compre hoje e construa quando quiser — sem pressa, no seu ritmo. Toda a burocracia já resolvida para você.',
   },
 ]
 
@@ -105,7 +105,7 @@ export default function HowItWorks(): React.JSX.Element {
               onClick={() => setActiveId(h.id)}
               className={`py-3 px-2 rounded-xl text-center transition-all duration-300 ${
                 activeId === h.id
-                  ? 'bg-white text-[#1a2418] shadow-lg'
+                  ? 'bg-white text-[#273020] shadow-lg'
                   : 'bg-white/20 text-white backdrop-blur-sm'
               }`}
             >

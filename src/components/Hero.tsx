@@ -42,19 +42,19 @@ export default function Hero(): React.JSX.Element {
               Terrenos na Serra do RJ<br /> — investimento com valorização real
             </h1>
             <p className="text-white/80 text-sm mb-6 max-w-lg">
-              1ª fase com apenas 35 terrenos em condomínio pronto. RGI, água e luz
-              instalados — oportunidade de investimento com financiamento em até 240x pela Caixa.
+              1ª fase com apenas 27 terrenos disponíveis em condomínio pronto. RGI, água e luz
+              instalados — oportunidade de investimento com financiamento direto em até 120x.
             </p>
             <div className="flex gap-3 justify-center md:justify-start">
               <button
                 onClick={() => scrollTo('#contact')}
-                className="bg-[#2d5a27] hover:bg-[#1a3a18] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
+                className="bg-[#364728] hover:bg-[#2a3820] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
               >
                 Garantir Meu Terreno
               </button>
               <button
                 onClick={() => scrollTo('#greenland')}
-                className="border border-white text-white hover:bg-white hover:text-[#1a2418] font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200"
+                className="border border-white text-white hover:bg-white hover:text-[#273020] font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200"
               >
                 Conhecer o Projeto
               </button>
@@ -74,7 +74,7 @@ export default function Hero(): React.JSX.Element {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-[#2d5a27] text-white w-10 h-10 flex items-center justify-center transition-colors"
+                className="bg-white/20 hover:bg-[#364728] text-white w-10 h-10 flex items-center justify-center transition-colors"
                 style={{ boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)' }}
               >
                 <Icon size={18} />

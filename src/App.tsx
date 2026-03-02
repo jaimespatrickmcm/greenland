@@ -41,7 +41,7 @@ export default function App(): React.JSX.Element {
 
       {/* WhatsApp floating button */}
       <a
-        href="https://wa.me/5500000000000"
+        href="https://wa.me/5521999920999"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 group"
@@ -54,9 +54,9 @@ export default function App(): React.JSX.Element {
           </div>
         </div>
         {/* Tooltip */}
-        <div className="absolute bottom-full right-0 mb-3 bg-[#1a2418] text-white text-xs font-medium px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+        <div className="absolute bottom-full right-0 mb-3 bg-[#273020] text-white text-xs font-medium px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
           Fale conosco!
-          <div className="absolute top-full right-5 border-4 border-transparent border-t-[#1a2418]" />
+          <div className="absolute top-full right-5 border-4 border-transparent border-t-[#273020]" />
         </div>
       </a>
     </>

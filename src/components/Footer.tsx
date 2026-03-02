@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa'
+import logoImg from '../assets/Logotipos Greenland 2026-07.png'
 
 interface NavLink {
   label: string
@@ -40,23 +41,17 @@ export default function Footer(): React.JSX.Element {
   }
 
   return (
-    <footer className="bg-[#1a2418] border-t border-white/10">
+    <footer className="bg-[#273020] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1 */}
           <div className="text-center sm:text-left flex flex-col items-center sm:items-start">
             <img
-              src="https://il7.org/wp-content/uploads/2025/07/logo-greenland-branca.svg"
+              src={logoImg}
               alt="GREENLAND"
               className="h-12 w-auto mb-4"
-              onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                const target = e.currentTarget
-                target.style.display = 'none'
-                const sibling = target.nextElementSibling as HTMLElement | null
-                if (sibling) sibling.style.display = 'block'
-              }}
             />
-            <span className="text-white font-heading text-2xl font-bold hidden">GREENLAND</span>
+
 
             <p className="text-white/50 text-sm leading-relaxed mb-4">
               Teresópolis, RJ<br />Serra do Rio de Janeiro
@@ -64,13 +59,19 @@ export default function Footer(): React.JSX.Element {
             <p className="text-white/50 text-sm mb-6">
               Seg - Sáb: 08h00 - 18h00
             </p>
+            <a
+              href="mailto:Greenlandtere@gmail.com"
+              className="text-white/50 text-sm hover:text-[#8d4e27] transition-colors mb-6 block"
+            >
+              Greenlandtere@gmail.com
+            </a>
 
             <div className="flex items-center gap-3 justify-center sm:justify-start">
               <a
-                href="https://www.instagram.com/artgreen.pousada"
+                href="https://www.instagram.com/greenlandteresopolis"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-[#e8a020] hover:text-[#1a2418] transition-all"
+                className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-[#8d4e27] hover:text-[#273020] transition-all"
               >
                 <FaInstagram />
               </a>
@@ -78,12 +79,12 @@ export default function Footer(): React.JSX.Element {
                 href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-[#e8a020] hover:text-[#1a2418] transition-all"
+                className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-[#8d4e27] hover:text-[#273020] transition-all"
               >
                 <FaFacebook />
               </a>
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5521999920999"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-[#25D366] hover:text-white transition-all"
@@ -102,7 +103,7 @@ export default function Footer(): React.JSX.Element {
                   <a
                     href={link.href}
                     onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick(link.href) }}
-                    className="text-white/50 hover:text-[#e8a020] text-sm transition-colors"
+                    className="text-white/50 hover:text-[#8d4e27] text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -119,7 +120,7 @@ export default function Footer(): React.JSX.Element {
                 <li key={link}>
                   <a
                     href="#"
-                    className="text-white/50 hover:text-[#e8a020] text-sm transition-colors"
+                    className="text-white/50 hover:text-[#8d4e27] text-sm transition-colors"
                   >
                     {link}
                   </a>
@@ -135,8 +136,8 @@ export default function Footer(): React.JSX.Element {
               Fique por dentro das atualizações do GREENLAND
             </p>
             {subscribed ? (
-              <div className="bg-[#2d5a27]/30 border border-[#5a8a3c] rounded-xl p-4 text-center">
-                <div className="text-[#5a8a3c] text-2xl mb-1">✓</div>
+              <div className="bg-[#364728]/30 border border-[#4a6838] rounded-xl p-4 text-center">
+                <div className="text-[#4a6838] text-2xl mb-1">✓</div>
                 <p className="text-white/80 text-sm">Inscrito com sucesso!</p>
               </div>
             ) : (
@@ -146,12 +147,12 @@ export default function Footer(): React.JSX.Element {
                   value={email}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                   placeholder="Seu melhor e-mail"
-                  className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-white/40 focus:border-[#e8a020]"
+                  className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-white/40 focus:border-[#8d4e27]"
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold py-3 rounded-xl text-sm transition-all hover:scale-[1.02]"
+                  className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold py-3 rounded-xl text-sm transition-all hover:scale-[1.02]"
                 >
                   Inscrever
                 </button>

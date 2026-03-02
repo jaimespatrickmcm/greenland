@@ -13,7 +13,7 @@ const profiles: Profile[] = [
   {
     Icon: FaChartLine,
     title: 'Investidores',
-    desc: 'Quem busca valorização patrimonial em terrenos na Serra do RJ com alta liquidez, escritura definitiva e financiamento facilitado pela Caixa.',
+    desc: 'Quem busca valorização patrimonial em terrenos na Serra do RJ com alta liquidez, escritura definitiva e financiamento direto em até 120x.',
   },
   {
     Icon: FaHome,
@@ -38,7 +38,7 @@ export default function ForWhom(): React.JSX.Element {
   }
 
   return (
-    <section className="py-24 bg-[#1a2418]">
+    <section className="py-24 bg-[#273020]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -49,7 +49,7 @@ export default function ForWhom(): React.JSX.Element {
         >
           <motion.p
             variants={fadeInUp}
-            className="text-[#e8a020] text-sm font-semibold tracking-widest uppercase mb-3"
+            className="text-white/70 text-sm font-semibold tracking-widest uppercase mb-3"
           >
             PÚBLICO-ALVO
           </motion.p>
@@ -58,7 +58,7 @@ export default function ForWhom(): React.JSX.Element {
             className="font-heading text-3xl md:text-4xl text-white mb-4"
           >
             Pra quem é o{' '}
-            <span className="text-[#5a8a3c]">Greenland</span>?
+            <span className="text-[#4a6838]">Greenland</span>?
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -80,10 +80,10 @@ export default function ForWhom(): React.JSX.Element {
             <motion.div
               key={title}
               variants={fadeInUp}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center hover:border-[#e8a020]/50 transition-colors duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center hover:border-[#8d4e27]/50 transition-colors duration-300 group"
             >
-              <div className="w-14 h-14 mx-auto mb-5 bg-[#e8a020]/15 rounded-2xl flex items-center justify-center group-hover:bg-[#e8a020]/25 transition-colors">
-                <Icon className="text-[#e8a020] text-2xl" />
+              <div className="w-14 h-14 mx-auto mb-5 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-white/15 transition-colors">
+                <Icon className="text-white text-2xl" />
               </div>
               <h3 className="font-heading text-lg font-bold text-white mb-3">
                 {title}
@@ -104,7 +104,7 @@ export default function ForWhom(): React.JSX.Element {
         >
           <button
             onClick={scrollToContact}
-            className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
+            className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
           >
             Garantir Meu Terreno →
           </button>

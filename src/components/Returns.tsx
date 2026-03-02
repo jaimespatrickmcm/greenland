@@ -1,13 +1,10 @@
 import { motion } from 'framer-motion'
-import type { IconType } from 'react-icons'
-import { FaMapMarkerAlt, FaHandshake, FaUniversity, FaMoneyBillWave } from 'react-icons/fa'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
 import foto12 from '../assets/foto (12).jpeg'
 
 interface Condition {
   label: string
-  icon: IconType
-  color: string
   highlight: boolean
   price: string
   detail: string
@@ -19,8 +16,6 @@ const IMAGE_URL: string = foto12
 const conditions: Condition[] = [
   {
     label: 'À Vista',
-    icon: FaMoneyBillWave,
-    color: '#5a8a3c',
     highlight: false,
     price: 'A partir de R$ 180.000',
     detail: 'Melhor condição disponível',
@@ -28,21 +23,24 @@ const conditions: Condition[] = [
   },
   {
     label: 'Parcelado',
-    icon: FaHandshake,
-    color: '#e8a020',
     highlight: true,
     price: 'A partir de R$ 200.000',
-    detail: 'Parcelamento direto',
-    desc: 'Parcele diretamente com a incorporadora, sem burocracia bancária.',
+    detail: 'Até 120x direto',
+    desc: 'Parcele diretamente conosco em até 120x, sem burocracia bancária.',
   },
   {
     label: 'Financiamento Caixa',
-    icon: FaUniversity,
-    color: '#2d5a27',
     highlight: false,
-    price: 'Em até 240x',
-    detail: 'Use seu FGTS',
-    desc: 'Financie pela Caixa Econômica Federal em até 240 parcelas. FGTS aceito.',
+    price: 'Possibilidade de até 240x',
+    detail: 'Sujeito à análise de crédito',
+    desc: 'Financie até 70% do valor pela Caixa. Sujeito à aprovação.',
+  },
+  {
+    label: 'Permuta',
+    highlight: false,
+    price: 'Avaliamos seu veículo',
+    detail: 'Carros, motos e caminhões',
+    desc: 'Carro, moto ou caminhão como parte do pagamento. Consulte.',
   },
 ]
 
@@ -52,7 +50,7 @@ export default function Returns(): React.JSX.Element {
   }
 
   return (
-    <section id="rendimentos" className="py-24 bg-[#f5f2ed]">
+    <section id="rendimentos" className="py-24 bg-[#f3efe8]">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -65,13 +63,13 @@ export default function Returns(): React.JSX.Element {
         >
           <motion.p
             variants={fadeInUp}
-            className="text-[#5a8a3c] text-sm font-semibold tracking-widest uppercase mb-3"
+            className="text-[#4a6838] text-sm font-semibold tracking-widest uppercase mb-3"
           >
             CONDIÇÕES DE PAGAMENTO
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="font-heading text-3xl md:text-4xl text-[#1a2418] mb-4 max-w-xl leading-tight"
+            className="font-heading text-3xl md:text-4xl text-[#273020] mb-4 max-w-xl leading-tight"
           >
             Condições especiais da 1ª fase
           </motion.h2>
@@ -81,9 +79,8 @@ export default function Returns(): React.JSX.Element {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {conditions.map((c, i) => {
-            const IconComponent = c.icon
             return (
               <motion.div
                 key={c.label}
@@ -96,7 +93,7 @@ export default function Returns(): React.JSX.Element {
               >
                 {/* Badge MAIS POPULAR */}
                 {c.highlight && (
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-[#e8a020] text-[#1a2418] text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-[#8d4e27] text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                     MAIS PROCURADO
                   </div>
                 )}
@@ -113,27 +110,22 @@ export default function Returns(): React.JSX.Element {
                 {/* Conteúdo */}
                 <div className="px-6 pt-5 pb-6 flex flex-col flex-1">
                   {/* Localização */}
-                  <div className="flex items-center gap-1.5 text-[#5a8a3c] text-xs font-medium mb-2">
+                  <div className="flex items-center gap-1.5 text-[#4a6838] text-xs font-medium mb-2">
                     <FaMapMarkerAlt className="flex-shrink-0" />
                     <span>Teresópolis, Serra RJ</span>
                   </div>
 
-                  {/* Ícone e Título */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: c.color + '20' }}>
-                      <IconComponent style={{ color: c.color }} className="text-lg" />
-                    </div>
-                    <h4 className="font-heading text-xl font-bold text-[#1a2418]">
-                      {c.label}
-                    </h4>
-                  </div>
+                  {/* Título */}
+                  <h4 className="font-heading text-xl font-bold text-[#273020] mb-4 whitespace-nowrap">
+                    {c.label}
+                  </h4>
 
                   {/* Divisor */}
                   <div className="border-t border-gray-100 pt-4 flex-1 flex flex-col">
 
                     {/* Preço */}
                     <div className="mb-4">
-                      <p className="font-heading text-2xl font-bold text-[#1a2418]">{c.price}</p>
+                      <p className="font-heading text-2xl font-bold text-[#273020]">{c.price}</p>
                       <p className="text-gray-400 text-xs mt-0.5">{c.detail}</p>
                     </div>
 
@@ -143,7 +135,7 @@ export default function Returns(): React.JSX.Element {
                     {/* Botão */}
                     <button
                       onClick={scrollToContact}
-                      className="mt-auto w-full bg-[#2d5a27] hover:bg-[#1a3a18] text-white font-semibold py-3 rounded-full transition-all duration-200 text-sm hover:shadow-lg"
+                      className="mt-auto w-full bg-[#364728] hover:bg-[#2a3820] text-white font-semibold py-3 rounded-full transition-all duration-200 text-sm hover:shadow-lg"
                     >
                       Quero Saber Mais
                     </button>
@@ -157,7 +149,7 @@ export default function Returns(): React.JSX.Element {
         <div className="text-center">
           <button
             onClick={scrollToContact}
-            className="bg-[#2d5a27] hover:bg-[#1a3a18] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+            className="bg-[#364728] hover:bg-[#2a3820] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Consultar Disponibilidade →
           </button>

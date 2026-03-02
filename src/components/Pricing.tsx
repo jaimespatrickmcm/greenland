@@ -13,7 +13,7 @@ import foto9 from '../assets/foto (9).jpeg'
 import img0098 from '../assets/IMG_0098.webp'
 import img0548 from '../assets/IMG_0548.webp'
 import img8232 from '../assets/IMG_8232-HDR.webp'
-import mapaImg from '../assets/mapa.jpeg'
+import mapaImg from '../assets/1772464046196-aab23c29-e444-4bfc-9fcc-f3ce864552f0_1.png'
 
 interface RenderImage {
   src: string
@@ -41,7 +41,7 @@ const renderImages: RenderImage[] = [
 const terrainHighlights: TerrainHighlight[] = [
   { badge: "RGI", label: "Terreno com RGI", desc: "Escritura definitiva registrada em cartório no seu nome" },
   { badge: "INFRA", label: "Água e Luz Instalados", desc: "Infraestrutura já instalada e pronta para uso imediato" },
-  { badge: "CEF", label: "Financiamento Caixa", desc: "Financie em até 240x pela Caixa Econômica Federal. FGTS aceito." },
+  { badge: "CEF", label: "Financiamento Caixa", desc: "Possibilidade de financiamento pela Caixa Econômica Federal. Condição sujeita à aprovação." },
 ]
 
 export default function Pricing(): React.JSX.Element {
@@ -50,7 +50,7 @@ export default function Pricing(): React.JSX.Element {
   }
 
   return (
-    <section id="investimento" className="py-24 bg-[#1a2418]">
+    <section id="investimento" className="py-24 bg-[#273020]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -62,7 +62,7 @@ export default function Pricing(): React.JSX.Element {
         >
           <motion.p
             variants={fadeInUp}
-            className="text-[#e8a020] text-sm font-semibold tracking-widest uppercase mb-3"
+            className="text-white/70 text-sm font-semibold tracking-widest uppercase mb-3"
           >
             TERRENOS DISPONÍVEIS
           </motion.p>
@@ -70,11 +70,11 @@ export default function Pricing(): React.JSX.Element {
             variants={fadeInUp}
             className="font-heading text-3xl md:text-4xl text-white mb-4"
           >
-            1ª Fase —{' '}
-            <span className="text-[#5a8a3c]">35 terrenos exclusivos</span>
+            1ª Fase — 86% vendido —{' '}
+            <span className="text-[#4a6838]">apenas 27 terrenos restantes</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-white/60 max-w-xl mx-auto">
-            Condomínio pronto, com toda infraestrutura instalada. Compre agora e construa quando quiser.
+            181 terrenos na 1ª fase, 154 já vendidos. Condomínio pronto, com toda infraestrutura instalada. Garanta o seu antes que acabe.
           </motion.p>
         </motion.div>
 
@@ -93,7 +93,7 @@ export default function Pricing(): React.JSX.Element {
               className="w-full h-auto object-cover"
             />
             {/* Overlay com gradiente no bottom */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a2418] to-transparent h-32" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#273020] to-transparent h-32" />
             <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
               <div>
                 <h3 className="font-heading text-xl md:text-2xl text-white font-bold mb-1">
@@ -103,7 +103,7 @@ export default function Pricing(): React.JSX.Element {
               </div>
               <button
                 onClick={scrollToContact}
-                className="bg-[#e8a020] hover:bg-[#c8881a] text-[#1a2418] font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap"
+                className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap"
               >
                 Consultar Disponibilidade
               </button>
@@ -161,10 +161,10 @@ export default function Pricing(): React.JSX.Element {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#e8a020]/50 transition-colors"
+                className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#8d4e27]/50 transition-colors"
               >
-                <div className="inline-block bg-[#e8a020]/20 text-[#e8a020] font-bold text-xs px-3 py-1 rounded-full mb-3">{h.badge}</div>
-                <div className="font-heading text-lg text-[#e8a020] font-bold mb-2">{h.label}</div>
+                <div className="inline-block bg-white/15 text-white font-bold text-xs px-3 py-1 rounded-full mb-3">{h.badge}</div>
+                <div className="font-heading text-lg text-white font-bold mb-2">{h.label}</div>
                 <div className="text-white/60 text-sm">{h.desc}</div>
               </motion.div>
             ))}

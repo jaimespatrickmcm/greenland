@@ -37,7 +37,7 @@ export default function InstagramSection({ onOpenVideo }: InstagramSectionProps)
 
   return (
     <>
-    <section className="py-24 bg-[#f5f2ed]">
+    <section className="py-24 bg-[#f3efe8]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -49,25 +49,25 @@ export default function InstagramSection({ onOpenVideo }: InstagramSectionProps)
         >
           <motion.p
             variants={fadeInUp}
-            className="text-[#5a8a3c] text-sm font-semibold tracking-widest uppercase mb-3"
+            className="text-[#4a6838] text-sm font-semibold tracking-widest uppercase mb-3"
           >
             SIGA-NOS
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="font-heading text-3xl md:text-4xl text-[#1a2418] mb-3"
+            className="font-heading text-3xl md:text-4xl text-[#273020] mb-3"
           >
             Inspire-se com as fotos do GREENLAND
           </motion.h2>
           <motion.a
             variants={fadeInUp}
-            href="https://www.instagram.com/artgreen.pousada"
+            href="https://www.instagram.com/greenlandteresopolis"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#2d5a27] font-semibold text-lg hover:text-[#e8a020] transition-colors"
+            className="inline-flex items-center gap-2 text-[#364728] font-semibold text-lg hover:text-[#8d4e27] transition-colors"
           >
             <FaInstagram />
-            @artgreen.pousada
+            @greenlandteresopolis
           </motion.a>
         </motion.div>
 
@@ -135,7 +135,7 @@ export default function InstagramSection({ onOpenVideo }: InstagramSectionProps)
                 className="w-full h-60 object-cover"
               />
               <div className="overlay rounded-2xl !opacity-100 bg-black/50">
-                <div className="w-14 h-14 rounded-full bg-[#e8a020] flex items-center justify-center">
+                <div className="w-14 h-14 rounded-full bg-[#8d4e27] flex items-center justify-center">
                   <FaPlay className="text-white text-xl ml-1" />
                 </div>
               </div>
@@ -190,10 +190,10 @@ export default function InstagramSection({ onOpenVideo }: InstagramSectionProps)
 
         <div className="text-center mt-10">
           <a
-            href="https://www.instagram.com/artgreen.pousada"
+            href="https://www.instagram.com/greenlandteresopolis"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#2d5a27] hover:bg-[#1a3a18] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
+            className="inline-flex items-center gap-2 bg-[#364728] hover:bg-[#2a3820] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
           >
             <FaInstagram />
             Seguir no Instagram
@@ -221,7 +221,7 @@ export default function InstagramSection({ onOpenVideo }: InstagramSectionProps)
           >
             <button
               onClick={closeImage}
-              className="absolute -top-12 right-0 text-white hover:text-[#e8a020] transition-colors text-2xl"
+              className="absolute -top-12 right-0 text-white hover:text-[#8d4e27] transition-colors text-2xl"
               aria-label="Fechar imagem"
             >
               <FaTimes />

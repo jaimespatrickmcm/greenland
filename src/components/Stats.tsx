@@ -16,10 +16,10 @@ interface CounterProps {
 }
 
 const stats: Stat[] = [
-  { value: 35, suffix: '', label: 'Terrenos — 1ª Fase', desc: 'Unidades limitadas disponíveis agora' },
+  { value: 27, suffix: '', label: 'Terrenos Disponíveis', desc: '86% da 1ª fase já vendida' },
   { value: 20000, suffix: 'm²', label: 'de Lazer', desc: 'Maior estrutura de lazer de Teresópolis' },
   { value: 12, suffix: 'km', label: 'do Centro', desc: 'Estrada pavimentada até a entrada' },
-  { value: 240, suffix: 'x', label: 'pela Caixa', desc: 'Financiamento em até 240 parcelas' },
+  { value: 120, suffix: 'x', label: 'Direto', desc: 'Financie direto conosco em até 120 parcelas' },
 ]
 
 function Counter({ value, suffix, duration = 2000 }: CounterProps): React.JSX.Element {
@@ -63,7 +63,7 @@ function Counter({ value, suffix, duration = 2000 }: CounterProps): React.JSX.El
 
 export default function Stats(): React.JSX.Element {
   return (
-    <section className="py-20 bg-[#f5f2ed]">
+    <section className="py-20 bg-[#f3efe8]">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Mobile: card único com stats empilhadas */}
@@ -72,17 +72,17 @@ export default function Stats(): React.JSX.Element {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="md:hidden bg-white border border-[#2d5a27]/20 rounded-2xl p-8"
+          className="md:hidden bg-white border border-[#364728]/20 rounded-2xl p-8"
         >
           {stats.map((stat, i) => (
             <div
               key={stat.label}
               className={`text-center py-6 ${i < stats.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
-              <div className="text-3xl font-heading font-bold text-[#e8a020] mb-2">
+              <div className="text-3xl font-heading font-bold text-[#8d4e27] mb-2">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="text-[#1a2418] font-semibold text-base mb-1">{stat.label}</div>
+              <div className="text-[#273020] font-semibold text-base mb-1">{stat.label}</div>
               <div className="text-gray-500 text-sm">{stat.desc}</div>
             </div>
           ))}
@@ -100,12 +100,12 @@ export default function Stats(): React.JSX.Element {
             <motion.div
               key={stat.label}
               variants={fadeInUp}
-              className="bg-white border border-[#2d5a27]/20 rounded-2xl p-8 text-center hover:border-[#2d5a27]/50 hover:shadow-md transition-all duration-300"
+              className="bg-white border border-[#364728]/20 rounded-2xl p-8 text-center hover:border-[#364728]/50 hover:shadow-md transition-all duration-300"
             >
-              <div className="text-4xl md:text-5xl font-heading font-bold text-[#e8a020] mb-3">
+              <div className="text-4xl md:text-5xl font-heading font-bold text-[#8d4e27] mb-3">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="text-[#1a2418] font-semibold text-base mb-1">{stat.label}</div>
+              <div className="text-[#273020] font-semibold text-base mb-1">{stat.label}</div>
               <div className="text-gray-500 text-sm">{stat.desc}</div>
             </motion.div>
           ))}
