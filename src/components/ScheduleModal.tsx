@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaTimes } from 'react-icons/fa'
 import Cal from '@calcom/embed-react'
@@ -9,24 +9,36 @@ interface ScheduleModalProps {
 }
 
 export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps): React.JSX.Element {
+  // Incrementing key forces Cal to create a fresh instance on every open
+  const [calKey, setCalKey] = useState(0)
+
   useEffect(() => {
     if (!isOpen) return
 
-    const previousOverflow = document.body.style.overflow
+    setCalKey((k) => k + 1)
+
+    const prev = {
+      overflow: document.body.style.overflow,
+      width: document.body.style.width,
+      position: document.body.style.position,
+    }
+
     document.body.style.overflow = 'hidden'
+    document.body.style.width = '100%'
+    document.body.style.position = 'fixed'
 
     return () => {
-      document.body.style.overflow = previousOverflow
+      document.body.style.overflow = prev.overflow
+      document.body.style.width = prev.width
+      document.body.style.position = prev.position
     }
   }, [isOpen])
 
   useEffect(() => {
     if (!isOpen) return
-
-    const handleEscape = (event: KeyboardEvent): void => {
-      if (event.key === 'Escape') onClose()
+    const handleEscape = (e: KeyboardEvent): void => {
+      if (e.key === 'Escape') onClose()
     }
-
     window.addEventListener('keydown', handleEscape)
     return () => window.removeEventListener('keydown', handleEscape)
   }, [isOpen, onClose])
@@ -38,7 +50,13 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps): 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/80 z-[110] flex items-center justify-center p-4"
+          className="fixed inset-0 z-[110] flex items-center justify-center"
+          style={{
+            width: '100dvw',
+            height: '100dvh',
+            background: 'rgba(0,0,0,0.85)',
+            overscrollBehavior: 'contain',
+          }}
           onClick={onClose}
         >
           <motion.div
@@ -46,21 +64,40 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps): 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 28 }}
-            className="relative w-full max-w-5xl"
+            className="relative"
+            style={{
+              width: 'min(calc(100dvw - 0.5rem), 80rem)',
+              height: 'calc(100dvh - 2rem)',
+              maxHeight: '900px',
+            }}
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
+            {/* Close button inside modal bounds for mobile */}
             <button
               onClick={onClose}
-              className="absolute -top-12 right-0 text-white hover:text-[#8d4e27] transition-colors text-2xl"
+              className="absolute top-2 right-2 z-20 bg-black/60 hover:bg-black/80 text-white hover:text-[#8d4e27] transition-colors w-9 h-9 flex items-center justify-center rounded-full shadow-lg backdrop-blur-sm"
               aria-label="Fechar agendamento"
             >
-              <FaTimes />
+              <FaTimes className="text-base" />
             </button>
 
-            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl h-[85vh] min-h-[420px] md:min-h-[520px]">
+            <div
+              className="bg-white rounded-2xl shadow-2xl"
+              style={{
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden',
+                contain: 'layout paint',
+              }}
+            >
               <Cal
+                key={calKey}
                 calLink="greenland-teresopolis-rt3xiy"
-                style={{ width: '100%', height: '100%', overflow: 'auto' }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  overflow: 'auto',
+                }}
                 config={{ layout: 'month_view' }}
               />
             </div>
