@@ -12,6 +12,10 @@ export default function Hero(): React.JSX.Element {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const openWhatsApp = (): void => {
+    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Vídeo */}
@@ -47,7 +51,7 @@ export default function Hero(): React.JSX.Element {
             </p>
             <div className="flex gap-3 justify-center md:justify-start">
               <button
-                onClick={() => scrollTo('#contact')}
+                onClick={openWhatsApp}
                 className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
               >
                 Garantir Meu Terreno

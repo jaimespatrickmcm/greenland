@@ -41,6 +41,10 @@ export default function HowItWorks(): React.JSX.Element {
 
   const getBgOpacity = (id: string): string => (activeId === id ? 'opacity-100' : 'opacity-0')
 
+  const openWhatsApp = (): void => {
+    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section id="como-funciona" className="relative w-full h-[600px] lg:h-[700px] overflow-hidden overflow-x-hidden">
       {/* Backgrounds crossfade */}
@@ -84,8 +88,10 @@ export default function HowItWorks(): React.JSX.Element {
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent h-32 z-0" />
             {/* Botão Agendar Visita — aparece no hover */}
             <a
-              href="#contact"
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+              href="https://wa.me/5521999920999"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); openWhatsApp() }}
               className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-30 bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg whitespace-nowrap ${hoveredId === h.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
             >
               Agendar Visita
@@ -124,8 +130,10 @@ export default function HowItWorks(): React.JSX.Element {
         </div>
         {/* Mobile: Botão Agendar Visita */}
         <a
-          href="#contact"
-          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+          href="https://wa.me/5521999920999"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); openWhatsApp() }}
           className="mt-4 block w-full text-center bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all shadow-lg"
         >
           Agendar Visita

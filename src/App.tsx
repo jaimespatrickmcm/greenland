@@ -12,7 +12,6 @@ import Pricing from './components/Pricing'
 import ArtCucina from './components/ArtCucina'
 import Clients from './components/Clients'
 import InstagramSection from './components/InstagramSection'
-import ContactForm from './components/ContactForm'
 import FAQ from './components/FAQ'
 import MapSection from './components/MapSection'
 import Footer from './components/Footer'
@@ -34,11 +33,10 @@ export default function App(): React.JSX.Element {
         <Returns />
         <Pricing />
         <ArtCucina />
+        <MapSection />
         <Clients />
         <InstagramSection onOpenVideo={() => setVideoOpen(true)} />
-        <ContactForm />
         <FAQ />
-        <MapSection />
       </main>
       <Footer />
       <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />

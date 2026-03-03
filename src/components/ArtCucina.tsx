@@ -1,13 +1,6 @@
 import { motion } from 'framer-motion'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
 import { FaUtensils, FaStar, FaLeaf, FaGem, FaInstagram } from 'react-icons/fa'
 import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer } from '../variants'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import img8232 from '../assets/IMG_8232-HDR.webp'
-import img0098 from '../assets/IMG_0098.webp'
-import img0548 from '../assets/IMG_0548.webp'
 
 interface Feature {
   icon: React.ReactNode
@@ -15,16 +8,8 @@ interface Feature {
   desc: string
 }
 
-interface SlideImage {
-  src: string
-  alt: string
-}
-
-const images: SlideImage[] = [
-  { src: img8232, alt: 'Restaurante Art Cucina — Interior' },
-  { src: img0548, alt: 'Restaurante Art Cucina — Ambiente' },
-  { src: img0098, alt: 'Restaurante Art Cucina — Área externa' },
-]
+const desktopVideoUrl = 'https://greenland.b-cdn.net/horizontal%20-%20camera%20-%20Teres%C3%B3polis_1.mp4'
+const mobileVideoUrl = 'https://greenland.b-cdn.net/WhatsApp%20Video%202026-02-26%20at%2010.55.57.mp4'
 
 const features: Feature[] = [
   {
@@ -60,31 +45,28 @@ export default function ArtCucina(): React.JSX.Element {
           viewport={{ once: true, margin: '-50px' }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
-          {/* Left — Carousel */}
+          {/* Left — Video */}
           <motion.div variants={fadeInLeft} className="relative">
-            <Swiper
-              modules={[Autoplay, Pagination]}
-              slidesPerView={1}
-              spaceBetween={0}
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
-              pagination={{ clickable: true }}
-              loop={true}
-              speed={800}
-              className="rounded-2xl overflow-hidden shadow-2xl"
-            >
-              {images.map((img, i) => (
-                <SwiperSlide key={i}>
-                  <div className="h-[400px] lg:h-[500px]">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
+              <video
+                className="hidden lg:block w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src={desktopVideoUrl} type="video/mp4" />
+              </video>
+              <video
+                className="block lg:hidden w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src={mobileVideoUrl} type="video/mp4" />
+              </video>
+            </div>
             {/* Decorative element */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-4 border-[#4a6838] rounded-2xl -z-10" />
           </motion.div>

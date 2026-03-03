@@ -73,8 +73,8 @@ const conditions: Condition[] = [
 export default function Returns(): React.JSX.Element {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
-  const scrollToContact = (): void => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+  const openWhatsApp = (): void => {
+    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -143,11 +143,18 @@ export default function Returns(): React.JSX.Element {
                     ? 'top-6 left-6'
                     : 'inset-0 flex items-center justify-center'
                 }`}>
-                  <h3 className={`font-heading font-bold text-white transition-all duration-300 ${
-                    isActive ? 'text-2xl' : 'text-lg lg:text-base'
-                  }`}>
-                    {c.label}
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className={`font-heading font-bold text-white transition-all duration-300 ${
+                      isActive ? 'text-2xl' : 'text-lg lg:text-base'
+                    }`}>
+                      {c.label}
+                    </h3>
+                    <span className={`text-white font-bold leading-none transition-all duration-300 ${
+                      isActive ? 'text-2xl' : 'text-xl lg:text-lg'
+                    }`}>
+                      {isActive ? '−' : '+'}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Expanded content */}
@@ -174,7 +181,7 @@ export default function Returns(): React.JSX.Element {
                         ))}
                       </ul>
                       <button
-                        onClick={(e) => { e.stopPropagation(); scrollToContact() }}
+                        onClick={(e) => { e.stopPropagation(); openWhatsApp() }}
                         className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all text-sm shadow-lg hover:scale-105"
                       >
                         Quero Agendar uma Visita
@@ -196,7 +203,7 @@ export default function Returns(): React.JSX.Element {
           className="text-center"
         >
           <button
-            onClick={scrollToContact}
+            onClick={openWhatsApp}
             className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Consultar Disponibilidade →

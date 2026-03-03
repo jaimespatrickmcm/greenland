@@ -64,8 +64,8 @@ const features: Feature[] = [
 ]
 
 export default function Clients(): React.JSX.Element {
-  const scrollToContact = (): void => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+  const openWhatsApp = (): void => {
+    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -167,7 +167,7 @@ export default function Clients(): React.JSX.Element {
 
             <motion.button
               variants={fadeInUp}
-              onClick={scrollToContact}
+              onClick={openWhatsApp}
               className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
             >
               Garantir Meu Terreno →
