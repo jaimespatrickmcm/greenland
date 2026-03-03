@@ -17,20 +17,27 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps): 
 
     setCalKey((k) => k + 1)
 
-    const prev = {
-      overflow: document.body.style.overflow,
-      width: document.body.style.width,
-      position: document.body.style.position,
-    }
+    const scrollY = window.scrollY
 
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
     document.body.style.overflow = 'hidden'
     document.body.style.width = '100%'
-    document.body.style.position = 'fixed'
 
     return () => {
-      document.body.style.overflow = prev.overflow
-      document.body.style.width = prev.width
-      document.body.style.position = prev.position
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.overflow = ''
+      document.body.style.width = ''
+
+      // Desabilita smooth scroll para restaurar posição instantaneamente
+      const html = document.documentElement
+      html.style.scrollBehavior = 'auto'
+      window.scrollTo(0, scrollY)
+      // Reativa smooth scroll no próximo frame
+      requestAnimationFrame(() => {
+        html.style.scrollBehavior = ''
+      })
     }
   }, [isOpen])
 

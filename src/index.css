@@ -29,12 +29,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-body);
   color: #2d2d2d;
   background: #fff;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
