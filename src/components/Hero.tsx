@@ -48,7 +48,7 @@ export default function Hero(): React.JSX.Element {
             <div className="flex gap-3 justify-center md:justify-start">
               <button
                 onClick={() => scrollTo('#contact')}
-                className="bg-[#364728] hover:bg-[#2a3820] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
+                className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
               >
                 Garantir Meu Terreno
               </button>

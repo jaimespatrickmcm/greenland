@@ -3,16 +3,18 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
-import ForWhom from './components/ForWhom'
 import Stats from './components/Stats'
+import ForWhom from './components/ForWhom'
 import HowItWorks from './components/HowItWorks'
 import WhyInvest from './components/WhyInvest'
 import Returns from './components/Returns'
 import Pricing from './components/Pricing'
+import ArtCucina from './components/ArtCucina'
 import Clients from './components/Clients'
 import InstagramSection from './components/InstagramSection'
 import ContactForm from './components/ContactForm'
 import FAQ from './components/FAQ'
+import MapSection from './components/MapSection'
 import Footer from './components/Footer'
 import VideoModal from './components/VideoModal'
 
@@ -25,16 +27,18 @@ export default function App(): React.JSX.Element {
       <main>
         <Hero />
         <About />
-        <ForWhom />
         <Stats />
+        <ForWhom />
         <HowItWorks />
         <WhyInvest />
         <Returns />
         <Pricing />
+        <ArtCucina />
         <Clients />
         <InstagramSection onOpenVideo={() => setVideoOpen(true)} />
         <ContactForm />
         <FAQ />
+        <MapSection />
       </main>
       <Footer />
       <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />

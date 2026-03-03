@@ -58,14 +58,14 @@ export default function About(): React.JSX.Element {
           <span className="text-[#364728]">patrimônio na Serra</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-8 h-full"
           >
             <motion.p
               variants={fadeInUp}
@@ -77,8 +77,8 @@ export default function About(): React.JSX.Element {
               investimento com valorização contínua e liquidez real.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="relative">
-              <div className="relative rounded-3xl overflow-hidden h-72 lg:h-[26rem]">
+            <motion.div variants={fadeInUp} className="relative flex-1">
+              <div className="relative rounded-3xl overflow-hidden h-full min-h-[20rem]">
                 <img
                   src={foto5}
                   alt="GREENLAND Natureza e Lazer"
@@ -138,7 +138,7 @@ export default function About(): React.JSX.Element {
             <motion.div variants={fadeInUp} className="text-center md:text-left">
               <motion.button
                 onClick={scrollToContact}
-                className="bg-[#364728] hover:bg-[#2a3820] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Quero Saber Mais →
               </motion.button>

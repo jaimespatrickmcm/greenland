@@ -102,7 +102,7 @@ export default function Stats(): React.JSX.Element {
               variants={fadeInUp}
               className="bg-white border border-[#364728]/20 rounded-2xl p-8 text-center hover:border-[#364728]/50 hover:shadow-md transition-all duration-300"
             >
-              <div className="text-4xl md:text-5xl font-heading font-bold text-[#8d4e27] mb-3">
+              <div className="text-3xl md:text-4xl font-heading font-bold text-[#8d4e27] mb-3">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-[#273020] font-semibold text-base mb-1">{stat.label}</div>

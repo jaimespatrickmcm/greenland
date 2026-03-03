@@ -152,7 +152,7 @@ export default function Footer(): React.JSX.Element {
                 />
                 <button
                   type="submit"
-                  className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold py-3 rounded-xl text-sm transition-all hover:scale-[1.02]"
+                  className="bg-[#364728] hover:bg-[#2a3820] text-white font-bold py-3 rounded-xl text-sm transition-all hover:scale-[1.02]"
                 >
                   Inscrever
                 </button>

@@ -82,6 +82,14 @@ export default function HowItWorks(): React.JSX.Element {
             </div>
             {/* Gradiente inferior */}
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent h-32 z-0" />
+            {/* Botão Agendar Visita — aparece no hover */}
+            <a
+              href="#contact"
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+              className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-30 bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg whitespace-nowrap ${hoveredId === h.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+            >
+              Agendar Visita
+            </a>
           </div>
         ))}
       </div>
@@ -114,6 +122,14 @@ export default function HowItWorks(): React.JSX.Element {
             </button>
           ))}
         </div>
+        {/* Mobile: Botão Agendar Visita */}
+        <a
+          href="#contact"
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+          className="mt-4 block w-full text-center bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all shadow-lg"
+        >
+          Agendar Visita
+        </a>
       </div>
     </section>
   )

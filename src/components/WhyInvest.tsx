@@ -37,10 +37,6 @@ export default function WhyInvest(): React.JSX.Element {
               alt="GREENLAND Condomínio"
               className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
             />
-            {/* Overlay badge */}
-            <div className="absolute top-6 left-6 bg-[#8d4e27] text-white font-heading font-bold px-4 py-2 rounded-xl text-lg">
-              1ª FASE
-            </div>
             <div className="absolute bottom-6 right-6 bg-[#273020]/90 backdrop-blur-sm text-white rounded-xl p-4 max-w-[200px]">
               <div className="text-white font-heading text-3xl font-bold">120x</div>
               <div className="text-white/80 text-sm">financiamento direto</div>

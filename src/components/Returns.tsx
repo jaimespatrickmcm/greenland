@@ -1,50 +1,78 @@
-import { motion } from 'framer-motion'
-import { FaMapMarkerAlt } from 'react-icons/fa'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '../variants'
+import foto2 from '../assets/foto (2).jpeg'
+import foto5 from '../assets/foto (5).jpeg'
+import foto8 from '../assets/foto (8).jpeg'
 import foto12 from '../assets/foto (12).jpeg'
 
 interface Condition {
   label: string
-  highlight: boolean
+  image: string
   price: string
   detail: string
   desc: string
+  features: string[]
 }
-
-const IMAGE_URL: string = foto12
 
 const conditions: Condition[] = [
   {
     label: 'À Vista',
-    highlight: false,
+    image: foto12,
     price: 'A partir de R$ 180.000',
     detail: 'Melhor condição disponível',
     desc: 'Pague à vista e garanta o maior desconto no preço do terreno.',
+    features: [
+      'Maior desconto no preço do terreno',
+      'Escritura imediata no seu nome (RGI)',
+      'Sem juros, sem burocracia',
+      'Entrada e posse imediata do terreno',
+    ],
   },
   {
     label: 'Parcelado',
-    highlight: true,
+    image: foto5,
     price: 'A partir de R$ 200.000',
     detail: 'Até 120x direto',
     desc: 'Parcele diretamente conosco em até 120x, sem burocracia bancária.',
+    features: [
+      'Financiamento direto com a construtora',
+      'Até 120 parcelas fixas',
+      'Sem análise de crédito bancário',
+      'Posse do terreno desde o primeiro pagamento',
+    ],
   },
   {
     label: 'Financiamento Caixa',
-    highlight: false,
+    image: foto2,
     price: 'Possibilidade de até 240x',
     detail: 'Sujeito à análise de crédito',
     desc: 'Financie até 70% do valor pela Caixa. Sujeito à aprovação.',
+    features: [
+      'Financie até 70% do valor pela CEF',
+      'Até 240 parcelas',
+      'Nossa equipe auxilia em todo o processo',
+      'Aprovação sujeita à análise individual',
+    ],
   },
   {
     label: 'Permuta',
-    highlight: false,
+    image: foto8,
     price: 'Avaliamos seu veículo',
     detail: 'Carros, motos e caminhões',
     desc: 'Carro, moto ou caminhão como parte do pagamento. Consulte.',
+    features: [
+      'Aceitamos carro, moto ou caminhão',
+      'Avaliação justa e transparente',
+      'Complemento à vista ou parcelado',
+      'Consulte nosso time para avaliar',
+    ],
   },
 ]
 
 export default function Returns(): React.JSX.Element {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
   const scrollToContact = (): void => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -52,14 +80,13 @@ export default function Returns(): React.JSX.Element {
   return (
     <section id="rendimentos" className="py-24 bg-[#f3efe8]">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Header */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="mb-12"
+          className="text-center mb-12"
         >
           <motion.p
             variants={fadeInUp}
@@ -69,91 +96,112 @@ export default function Returns(): React.JSX.Element {
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="font-heading text-3xl md:text-4xl text-[#273020] mb-4 max-w-xl leading-tight"
+            className="font-heading text-3xl md:text-4xl text-[#273020] mb-4 leading-tight"
           >
-            Condições especiais da 1ª fase
+            Como você pode investir?
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-gray-500 max-w-xl">
-            Escolha a forma de pagamento que melhor se encaixa na sua realidade
+          <motion.p variants={fadeInUp} className="text-gray-500 max-w-xl mx-auto">
+            Clique em cada opção para conhecer as condições detalhadas
           </motion.p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        {/* Horizontal image accordion */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="flex flex-col lg:flex-row gap-3 mb-12"
+          style={{ minHeight: '420px' }}
+        >
           {conditions.map((c, i) => {
+            const isActive = activeIndex === i
             return (
               <motion.div
                 key={c.label}
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ delay: i * 0.15 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 relative flex flex-col"
+                layout
+                onClick={() => setActiveIndex(isActive ? null : i)}
+                className={`relative cursor-pointer overflow-hidden transition-all duration-500 ease-in-out rounded-2xl shadow-lg ${
+                  isActive ? 'lg:flex-[3]' : 'lg:flex-1'
+                } ${isActive ? '' : 'hover:opacity-90'}`}
+                style={{ minHeight: isActive ? '420px' : '120px' }}
               >
-                {/* Badge MAIS POPULAR */}
-                {c.highlight && (
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-[#8d4e27] text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
-                    MAIS PROCURADO
-                  </div>
-                )}
+                {/* Background image */}
+                <img
+                  src={c.image}
+                  alt={c.label}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Dark overlay */}
+                <div className={`absolute inset-0 transition-all duration-500 ${
+                  isActive ? 'bg-black/60' : 'bg-black/40 hover:bg-black/50'
+                }`} />
 
-                {/* Imagem */}
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={IMAGE_URL}
-                    alt={`GREENLAND — ${c.label}`}
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                {/* Conteúdo */}
-                <div className="px-6 pt-5 pb-6 flex flex-col flex-1">
-                  {/* Localização */}
-                  <div className="flex items-center gap-1.5 text-[#4a6838] text-xs font-medium mb-2">
-                    <FaMapMarkerAlt className="flex-shrink-0" />
-                    <span>Teresópolis, Serra RJ</span>
-                  </div>
-
-                  {/* Título */}
-                  <h4 className="font-heading text-xl font-bold text-[#273020] mb-4 whitespace-nowrap">
+                {/* Label (always visible) */}
+                <div className={`absolute z-10 transition-all duration-500 ${
+                  isActive
+                    ? 'top-6 left-6'
+                    : 'inset-0 flex items-center justify-center'
+                }`}>
+                  <h3 className={`font-heading font-bold text-white transition-all duration-300 ${
+                    isActive ? 'text-2xl' : 'text-lg lg:text-base'
+                  }`}>
                     {c.label}
-                  </h4>
-
-                  {/* Divisor */}
-                  <div className="border-t border-gray-100 pt-4 flex-1 flex flex-col">
-
-                    {/* Preço */}
-                    <div className="mb-4">
-                      <p className="font-heading text-2xl font-bold text-[#273020]">{c.price}</p>
-                      <p className="text-gray-400 text-xs mt-0.5">{c.detail}</p>
-                    </div>
-
-                    {/* Descrição */}
-                    <p className="text-gray-500 text-sm mb-5 flex-1">{c.desc}</p>
-
-                    {/* Botão */}
-                    <button
-                      onClick={scrollToContact}
-                      className="mt-auto w-full bg-[#364728] hover:bg-[#2a3820] text-white font-semibold py-3 rounded-full transition-all duration-200 text-sm hover:shadow-lg"
-                    >
-                      Quero Saber Mais
-                    </button>
-                  </div>
+                  </h3>
                 </div>
+
+                {/* Expanded content */}
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.3, delay: 0.15 }}
+                      className="absolute bottom-0 left-0 right-0 p-6 z-10"
+                    >
+                      <p className="text-[#4a6838] font-heading font-bold text-xl mb-1">
+                        {c.price}
+                      </p>
+                      <p className="text-white/70 text-sm mb-3">{c.detail}</p>
+                      <p className="text-white/80 text-sm mb-4 leading-relaxed">{c.desc}</p>
+                      <ul className="flex flex-col gap-2 mb-5">
+                        {c.features.map((f, j) => (
+                          <li key={j} className="flex items-start gap-2">
+                            <span className="w-1.5 h-1.5 bg-[#4a6838] rounded-full mt-1.5 flex-shrink-0" />
+                            <span className="text-white/80 text-sm">{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); scrollToContact() }}
+                        className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all text-sm shadow-lg hover:scale-105"
+                      >
+                        Quero Agendar uma Visita
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             )
           })}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
+        {/* Bottom CTA */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center"
+        >
           <button
             onClick={scrollToContact}
-            className="bg-[#364728] hover:bg-[#2a3820] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+            className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Consultar Disponibilidade →
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
