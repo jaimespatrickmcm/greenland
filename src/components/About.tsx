@@ -29,10 +29,11 @@ const features: Feature[] = [
   },
 ]
 
-export default function About(): React.JSX.Element {
-  const openWhatsApp = (): void => {
-    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
-  }
+interface AboutProps {
+  onOpenSchedule: () => void
+}
+
+export default function About({ onOpenSchedule }: AboutProps): React.JSX.Element {
 
   return (
     <section id="greenland" className="py-24 bg-[#f3efe8]">
@@ -137,7 +138,7 @@ export default function About(): React.JSX.Element {
 
             <motion.div variants={fadeInUp} className="text-center md:text-left">
               <motion.button
-                onClick={openWhatsApp}
+                onClick={onOpenSchedule}
                 className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Quero Saber Mais →

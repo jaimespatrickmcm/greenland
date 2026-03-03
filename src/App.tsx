@@ -16,30 +16,33 @@ import FAQ from './components/FAQ'
 import MapSection from './components/MapSection'
 import Footer from './components/Footer'
 import VideoModal from './components/VideoModal'
+import ScheduleModal from './components/ScheduleModal'
 
 export default function App(): React.JSX.Element {
   const [videoOpen, setVideoOpen] = useState<boolean>(false)
+  const [scheduleOpen, setScheduleOpen] = useState<boolean>(false)
 
   return (
     <>
-      <Header />
+      <Header onOpenSchedule={() => setScheduleOpen(true)} />
       <main>
-        <Hero />
-        <About />
+        <Hero onOpenSchedule={() => setScheduleOpen(true)} />
+        <About onOpenSchedule={() => setScheduleOpen(true)} />
         <Stats />
-        <ForWhom />
-        <HowItWorks />
-        <WhyInvest />
-        <Returns />
-        <Pricing />
+        <ForWhom onOpenSchedule={() => setScheduleOpen(true)} />
+        <HowItWorks onOpenSchedule={() => setScheduleOpen(true)} />
+        <WhyInvest onOpenSchedule={() => setScheduleOpen(true)} />
+        <Returns onOpenSchedule={() => setScheduleOpen(true)} />
+        <Pricing onOpenSchedule={() => setScheduleOpen(true)} />
         <ArtCucina />
         <MapSection />
-        <Clients />
+        <Clients onOpenSchedule={() => setScheduleOpen(true)} />
         <InstagramSection onOpenVideo={() => setVideoOpen(true)} />
         <FAQ />
       </main>
       <Footer />
       <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
+      <ScheduleModal isOpen={scheduleOpen} onClose={() => setScheduleOpen(false)} />
 
       {/* WhatsApp floating button */}
       <a

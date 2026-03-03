@@ -17,7 +17,11 @@ const navLinks: NavLink[] = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-export default function Header(): React.JSX.Element {
+interface HeaderProps {
+  onOpenSchedule: () => void
+}
+
+export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Element {
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
@@ -33,10 +37,6 @@ export default function Header(): React.JSX.Element {
       const el = document.querySelector(href)
       if (el) el.scrollIntoView({ behavior: 'smooth' })
     }, 100)
-  }
-
-  const openWhatsApp = (): void => {
-    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -76,10 +76,8 @@ export default function Header(): React.JSX.Element {
           {/* Right side */}
           <div className="flex items-center gap-3">
             <a
-              href="https://wa.me/5521999920999"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); openWhatsApp() }}
+              href="#agendar"
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule() }}
               className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap shadow-lg"
             >
               Quero Meu Terreno!
@@ -146,10 +144,8 @@ export default function Header(): React.JSX.Element {
                   className="text-white/70 hover:text-[#8d4e27] text-2xl transition-colors"><FaWhatsapp /></a>
               </div>
               <a
-                href="https://wa.me/5521999920999"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); openWhatsApp() }}
+                href="#agendar"
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); setMenuOpen(false); onOpenSchedule() }}
                 className="mt-4 bg-[#8d4e27] text-white font-bold text-center py-3 rounded-full"
               >
                 Quero Meu Terreno!

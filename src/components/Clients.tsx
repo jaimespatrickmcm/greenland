@@ -63,10 +63,11 @@ const features: Feature[] = [
   },
 ]
 
-export default function Clients(): React.JSX.Element {
-  const openWhatsApp = (): void => {
-    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
-  }
+interface ClientsProps {
+  onOpenSchedule: () => void
+}
+
+export default function Clients({ onOpenSchedule }: ClientsProps): React.JSX.Element {
 
   return (
     <section className="py-24 bg-[#f3efe8]">
@@ -167,7 +168,7 @@ export default function Clients(): React.JSX.Element {
 
             <motion.button
               variants={fadeInUp}
-              onClick={openWhatsApp}
+              onClick={onOpenSchedule}
               className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
             >
               Garantir Meu Terreno →

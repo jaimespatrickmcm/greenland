@@ -5,10 +5,11 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import mapaImg from '../assets/1772464046196-aab23c29-e444-4bfc-9fcc-f3ce864552f0_1.png'
 
-export default function Pricing(): React.JSX.Element {
-  const openWhatsApp = (): void => {
-    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
-  }
+interface PricingProps {
+  onOpenSchedule: () => void
+}
+
+export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Element {
 
   return (
     <section id="investimento" className="py-24 bg-[#273020]">
@@ -61,7 +62,7 @@ export default function Pricing(): React.JSX.Element {
                 <p className="text-white/70 text-sm">Vista aérea dos terrenos — 1ª Fase</p>
               </div>
               <button
-                onClick={openWhatsApp}
+                onClick={onOpenSchedule}
                 className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap"
               >
                 Consultar Disponibilidade

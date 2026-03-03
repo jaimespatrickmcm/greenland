@@ -7,13 +7,13 @@ interface SocialLink {
   href: string
 }
 
-export default function Hero(): React.JSX.Element {
+interface HeroProps {
+  onOpenSchedule: () => void
+}
+
+export default function Hero({ onOpenSchedule }: HeroProps): React.JSX.Element {
   const scrollTo = (id: string): void => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const openWhatsApp = (): void => {
-    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -51,7 +51,7 @@ export default function Hero(): React.JSX.Element {
             </p>
             <div className="flex gap-3 justify-center md:justify-start">
               <button
-                onClick={openWhatsApp}
+                onClick={onOpenSchedule}
                 className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
               >
                 Garantir Meu Terreno

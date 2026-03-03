@@ -70,12 +70,12 @@ const conditions: Condition[] = [
   },
 ]
 
-export default function Returns(): React.JSX.Element {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+interface ReturnsProps {
+  onOpenSchedule: () => void
+}
 
-  const openWhatsApp = (): void => {
-    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
-  }
+export default function Returns({ onOpenSchedule }: ReturnsProps): React.JSX.Element {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
     <section id="rendimentos" className="py-24 bg-[#f3efe8]">
@@ -181,7 +181,7 @@ export default function Returns(): React.JSX.Element {
                         ))}
                       </ul>
                       <button
-                        onClick={(e) => { e.stopPropagation(); openWhatsApp() }}
+                        onClick={(e) => { e.stopPropagation(); onOpenSchedule() }}
                         className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all text-sm shadow-lg hover:scale-105"
                       >
                         Quero Agendar uma Visita
@@ -203,7 +203,7 @@ export default function Returns(): React.JSX.Element {
           className="text-center"
         >
           <button
-            onClick={openWhatsApp}
+            onClick={onOpenSchedule}
             className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-10 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Consultar Disponibilidade →

@@ -15,10 +15,11 @@ const advantages: string[] = [
   'Valorização contínua — região em crescimento na Serra',
 ]
 
-export default function WhyInvest(): React.JSX.Element {
-  const openWhatsApp = (): void => {
-    window.open('https://wa.me/5521999920999', '_blank', 'noopener,noreferrer')
-  }
+interface WhyInvestProps {
+  onOpenSchedule: () => void
+}
+
+export default function WhyInvest({ onOpenSchedule }: WhyInvestProps): React.JSX.Element {
 
   return (
     <section id="pq-investir" className="py-24 bg-[#273020]">
@@ -91,7 +92,7 @@ export default function WhyInvest(): React.JSX.Element {
 
             <motion.button
               variants={fadeInUp}
-              onClick={openWhatsApp}
+              onClick={onOpenSchedule}
               className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
             >
               Garantir Meu Terreno
