@@ -84,7 +84,7 @@ export default function Footer(): React.JSX.Element {
                 <FaFacebook />
               </a>
               <a
-                href="https://wa.me/5521999920999"
+                href="https://wa.me/5521992318802"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-[#25D366] hover:text-white transition-all"

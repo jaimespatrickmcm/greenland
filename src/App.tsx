@@ -46,7 +46,7 @@ export default function App(): React.JSX.Element {
 
       {/* WhatsApp floating button */}
       <a
-        href="https://wa.me/5521999920999"
+        href="https://wa.me/5521992318802"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 group"

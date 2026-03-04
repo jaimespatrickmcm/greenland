@@ -119,7 +119,7 @@ export default function FAQ(): React.JSX.Element {
         >
           <p className="text-gray-600 mb-4">Ainda tem dúvidas? Fale com um de nossos consultores!</p>
           <a
-            href="https://wa.me/5521999920999"
+            href="https://wa.me/5521992318802"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#25D366] hover:bg-[#1fb855] text-white font-bold px-8 py-3 rounded-full inline-flex items-center gap-2 transition-all hover:scale-105"

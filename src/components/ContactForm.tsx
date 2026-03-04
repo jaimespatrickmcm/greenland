@@ -60,7 +60,7 @@ export default function ContactForm(): React.JSX.Element {
     }
     setSubmitted(true)
     setTimeout(() => {
-      window.open('https://wa.me/5521999920999?text=' + encodeURIComponent(
+      window.open('https://wa.me/5521992318802?text=' + encodeURIComponent(
         `Olá! Tenho interesse em comprar um terreno no GREENLAND.\nNome: ${formData.name}\nTelefone: ${formData.phone}\nInteresse: ${formData.model || 'A definir'}`
       ), '_blank')
     }, 1500)
@@ -134,7 +134,7 @@ export default function ContactForm(): React.JSX.Element {
                     Você será redirecionado para nosso WhatsApp em instantes.
                   </p>
                   <a
-                    href="https://wa.me/5521999920999"
+                    href="https://wa.me/5521992318802"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#25D366] text-white font-bold px-6 py-3 rounded-full inline-block hover:bg-[#1fb855] transition-colors"

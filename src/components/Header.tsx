@@ -140,7 +140,7 @@ export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Eleme
                   className="text-white/70 hover:text-[#8d4e27] text-2xl transition-colors"><FaFacebook /></a>
                 <a href="https://www.instagram.com/greenlandteresopolis" target="_blank" rel="noopener noreferrer"
                   className="text-white/70 hover:text-[#8d4e27] text-2xl transition-colors"><FaInstagram /></a>
-                <a href="https://wa.me/5521999920999" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/5521992318802" target="_blank" rel="noopener noreferrer"
                   className="text-white/70 hover:text-[#8d4e27] text-2xl transition-colors"><FaWhatsapp /></a>
               </div>
               <a
