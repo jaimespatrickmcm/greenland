@@ -158,3 +158,17 @@ input:focus, textarea:focus, select:focus {
 .whatsapp-pulse {
   animation: whatsapp-pulse 2s infinite;
 }
+
+/* Lot markers — manter redondo */
+.lot-marker, .lot-marker::before, .lot-marker::after {
+  border-radius: 50% !important;
+}
+
+/* Lot marker pulse for available lots */
+@keyframes lot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 104, 56, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(74, 104, 56, 0); }
+}
+.lot-pulse {
+  animation: lot-pulse 2s infinite;
+}

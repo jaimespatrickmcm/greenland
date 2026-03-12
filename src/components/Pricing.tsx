@@ -1,8 +1,8 @@
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '../variants'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
+import { FaSearchPlus, FaSearchMinus, FaExpand, FaTimes, FaExternalLinkAlt } from 'react-icons/fa'
 import mapaImg from '../assets/1772464046196-aab23c29-e444-4bfc-9fcc-f3ce864552f0_1.png'
 
 interface PricingProps {
@@ -10,6 +10,24 @@ interface PricingProps {
 }
 
 export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Element {
+  const [showOverlay, setShowOverlay] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const hideTimer = useRef<ReturnType<typeof setTimeout>>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const handleWheel = useCallback((e: WheelEvent) => {
+    if (e.ctrlKey) return
+    setShowOverlay(true)
+    if (hideTimer.current) clearTimeout(hideTimer.current)
+    hideTimer.current = setTimeout(() => setShowOverlay(false), 1500)
+  }, [])
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    el.addEventListener('wheel', handleWheel, { passive: true })
+    return () => { el.removeEventListener('wheel', handleWheel); if (hideTimer.current) clearTimeout(hideTimer.current) }
+  }, [handleWheel])
 
   return (
     <section id="investimento" className="py-24 bg-[#273020]">
@@ -40,20 +58,86 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
           </motion.p>
         </motion.div>
 
-        {/* Mapa do Empreendimento */}
+        {/* Mapa do Empreendimento com Zoom */}
         <motion.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
         >
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-            <img
-              src={mapaImg}
-              alt="Mapa do Empreendimento GREENLAND — Vista aérea dos terrenos"
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#273020] to-transparent h-32" />
+          <div
+            ref={containerRef}
+            className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            style={{ maxHeight: '80dvh' }}
+          >
+            <TransformWrapper
+              initialScale={1}
+              minScale={1}
+              maxScale={4}
+              wheel={{ step: 0.1, activationKeys: ['Control'] }}
+              doubleClick={{ mode: 'zoomIn' }}
+            >
+              {({ zoomIn, zoomOut, resetTransform }) => (
+                <>
+                  {/* Zoom controls */}
+                  <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
+                    <button
+                      onClick={() => zoomIn()}
+                      className="bg-[#273020]/80 hover:bg-[#273020] text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-colors"
+                      aria-label="Zoom in"
+                    >
+                      <FaSearchPlus className="text-sm" />
+                    </button>
+                    <button
+                      onClick={() => zoomOut()}
+                      className="bg-[#273020]/80 hover:bg-[#273020] text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-colors"
+                      aria-label="Zoom out"
+                    >
+                      <FaSearchMinus className="text-sm" />
+                    </button>
+                    <button
+                      onClick={() => resetTransform()}
+                      className="bg-[#273020]/80 hover:bg-[#273020] text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-colors"
+                      aria-label="Resetar zoom"
+                    >
+                      <FaExpand className="text-sm" />
+                    </button>
+                    <button
+                      onClick={() => setModalOpen(true)}
+                      className="md:hidden bg-[#273020]/80 hover:bg-[#273020] text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-colors"
+                      aria-label="Expandir mapa"
+                    >
+                      <FaExternalLinkAlt className="text-sm" />
+                    </button>
+                  </div>
+
+                  <TransformComponent
+                    wrapperStyle={{ width: '100%', maxHeight: '80dvh', overflow: 'hidden' }}
+                    contentStyle={{ width: '100%' }}
+                  >
+                    <img
+                      src={mapaImg}
+                      alt="Mapa do Empreendimento GREENLAND — Vista aérea dos terrenos"
+                      className="w-full h-auto object-cover"
+                      style={{ maxHeight: '80dvh', objectFit: 'contain' }}
+                      draggable={false}
+                    />
+                  </TransformComponent>
+                </>
+              )}
+            </TransformWrapper>
+
+            {/* Overlay: instrução de CTRL+scroll */}
+            {showOverlay && (
+              <div className="absolute inset-0 z-20 bg-black/40 backdrop-blur-[2px] flex items-center justify-center pointer-events-none transition-opacity duration-200">
+                <span className="text-white text-lg font-semibold bg-black/50 px-6 py-3 rounded-full">
+                  Segure <kbd className="bg-white/20 px-2 py-0.5 rounded mx-1">Ctrl</kbd> + scroll para zoom
+                </span>
+              </div>
+            )}
+
+            {/* Gradient overlay */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#273020] to-transparent h-32 pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
               <div>
                 <h3 className="font-heading text-xl md:text-2xl text-white font-bold mb-1">
@@ -71,6 +155,70 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
           </div>
         </motion.div>
       </div>
+
+      {/* Modal fullscreen mobile */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 bg-black flex flex-col">
+          <div className="flex items-center justify-between px-4 py-3 bg-[#273020]">
+            <h3 className="text-white font-heading text-lg">Mapa do Empreendimento</h3>
+            <button
+              onClick={() => setModalOpen(false)}
+              className="text-white/80 hover:text-white w-10 h-10 flex items-center justify-center"
+              aria-label="Fechar"
+            >
+              <FaTimes className="text-xl" />
+            </button>
+          </div>
+          <div className="flex-1 overflow-hidden">
+            <TransformWrapper
+              initialScale={1}
+              minScale={0.5}
+              maxScale={6}
+              doubleClick={{ mode: 'zoomIn' }}
+              pinch={{ step: 5 }}
+            >
+              {({ zoomIn, zoomOut, resetTransform }) => (
+                <>
+                  <div className="absolute bottom-20 right-4 z-10 flex flex-col gap-2">
+                    <button
+                      onClick={() => zoomIn()}
+                      className="bg-white/20 text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm rounded-full shadow-lg"
+                      aria-label="Zoom in"
+                    >
+                      <FaSearchPlus className="text-sm" />
+                    </button>
+                    <button
+                      onClick={() => zoomOut()}
+                      className="bg-white/20 text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm rounded-full shadow-lg"
+                      aria-label="Zoom out"
+                    >
+                      <FaSearchMinus className="text-sm" />
+                    </button>
+                    <button
+                      onClick={() => resetTransform()}
+                      className="bg-white/20 text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm rounded-full shadow-lg"
+                      aria-label="Resetar zoom"
+                    >
+                      <FaExpand className="text-sm" />
+                    </button>
+                  </div>
+                  <TransformComponent
+                    wrapperStyle={{ width: '100%', height: '100%' }}
+                    contentStyle={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  >
+                    <img
+                      src={mapaImg}
+                      alt="Mapa do Empreendimento GREENLAND — Vista aérea dos terrenos"
+                      className="w-full h-auto object-contain"
+                      draggable={false}
+                    />
+                  </TransformComponent>
+                </>
+              )}
+            </TransformWrapper>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
