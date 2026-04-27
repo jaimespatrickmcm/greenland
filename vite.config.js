@@ -13,6 +13,7 @@ export default defineConfig({
       lastmod: new Date(),
       readable: true,
       exclude: ['/404'],
+      generateRobotsTxt: false,
     }),
   ],
   build: {
