@@ -12,11 +12,18 @@ import Pricing from './components/Pricing'
 import ArtCucina from './components/ArtCucina'
 import Clients from './components/Clients'
 import InstagramSection from './components/InstagramSection'
-import FAQ from './components/FAQ'
+import FAQ, { faqs } from './components/FAQ'
 import MapSection from './components/MapSection'
 import Footer from './components/Footer'
 import VideoModal from './components/VideoModal'
 import ScheduleModal from './components/ScheduleModal'
+import { SEOHead } from './seo/SEOHead'
+import { SEO_CONFIG } from './seo/seoConfig'
+import { getOrganizationSchema } from './seo/schemas/OrganizationSchema'
+import { getWebSiteSchema } from './seo/schemas/WebSiteSchema'
+import { getFAQSchema } from './seo/schemas/FAQSchema'
+import { getRealEstateSchema } from './seo/schemas/RealEstateSchema'
+import { getLocalBusinessSchema } from './seo/schemas/LocalBusinessSchema'
 
 export default function App(): React.JSX.Element {
   const [videoOpen, setVideoOpen] = useState<boolean>(false)
@@ -24,6 +31,30 @@ export default function App(): React.JSX.Element {
 
   return (
     <>
+      <SEOHead
+        title={SEO_CONFIG.defaultTitle}
+        description={SEO_CONFIG.defaultDescription}
+        keywords={[
+          'terrenos em Teresópolis',
+          'condomínio em Teresópolis',
+          'terrenos na Serra do Rio de Janeiro',
+          'GREENLAND',
+          'investimento em terrenos',
+          'terreno com RGI',
+          'condomínio fechado Teresópolis',
+          'lotes na Serra dos Órgãos',
+        ]}
+        ogType="website"
+        ogImage={SEO_CONFIG.defaultOgImage}
+        ogImageAlt={SEO_CONFIG.defaultOgImageAlt}
+        structuredData={[
+          getWebSiteSchema(),
+          getOrganizationSchema(),
+          getLocalBusinessSchema(),
+          getRealEstateSchema(),
+          getFAQSchema(faqs.map((f) => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header onOpenSchedule={() => setScheduleOpen(true)} />
       <main>
         <Hero onOpenSchedule={() => setScheduleOpen(true)} />

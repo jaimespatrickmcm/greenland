@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
 
-interface FaqItem {
+export interface FaqItem {
   q: string
   a: string
 }
 
-const faqs: FaqItem[] = [
+export const faqs: FaqItem[] = [
   {
     q: 'O condomínio já está pronto?',
     a: 'Sim! O GREENLAND é um condomínio pronto. Portaria, áreas de lazer completas e toda a infraestrutura funcionando. Você compra e já pode acessar o condomínio imediatamente.',

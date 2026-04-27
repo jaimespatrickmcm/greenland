@@ -1,0 +1,26 @@
+{
+  "name": "GREENLAND — Terrenos na Serra do Rio de Janeiro",
+  "short_name": "GREENLAND",
+  "description": "Condomínio pronto em Teresópolis com o maior lazer da cidade. 35 terrenos com RGI a partir de R$180mil.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3efe8",
+  "theme_color": "#273020",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/src/assets/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Bots agressivos — limitar crawl rate
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 5
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap
+Sitemap: https://www.greenlandteresopolis.com.br/sitemap.xml
