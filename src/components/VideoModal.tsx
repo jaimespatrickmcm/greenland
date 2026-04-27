@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaTimes } from 'react-icons/fa'
 
-const videoSrc = '/hero.mp4'
+const videoSrc = 'https://greenland.b-cdn.net/hero.mp4'
 
 interface VideoModalProps {
   isOpen: boolean
