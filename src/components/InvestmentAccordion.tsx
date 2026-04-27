@@ -13,7 +13,7 @@ interface InvestmentOption {
 const options: InvestmentOption[] = [
   {
     title: 'À Vista',
-    price: 'A partir de R$ 180.000',
+    price: 'A partir de R$ 199.000',
     detail: 'Melhor condição disponível',
     conditions: [
       'Maior desconto no preço do terreno',
@@ -24,7 +24,7 @@ const options: InvestmentOption[] = [
   },
   {
     title: 'Parcelado Direto',
-    price: 'A partir de R$ 200.000',
+    price: 'A partir de R$ 220.000',
     detail: 'Até 120x sem burocracia bancária',
     conditions: [
       'Financiamento direto com a construtora',

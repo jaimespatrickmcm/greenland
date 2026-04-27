@@ -19,7 +19,7 @@ const conditions: Condition[] = [
   {
     label: 'À Vista',
     image: foto12,
-    price: 'A partir de R$ 180.000',
+    price: 'A partir de R$ 199.000',
     detail: 'Melhor condição disponível',
     desc: 'Pague à vista e garanta o maior desconto no preço do terreno.',
     features: [
@@ -32,7 +32,7 @@ const conditions: Condition[] = [
   {
     label: 'Parcelado',
     image: foto5,
-    price: 'A partir de R$ 200.000',
+    price: 'A partir de R$ 220.000',
     detail: 'Até 120x direto',
     desc: 'Parcele diretamente conosco em até 120x, sem burocracia bancária.',
     features: [

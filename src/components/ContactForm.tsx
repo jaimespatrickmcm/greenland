@@ -60,7 +60,7 @@ export default function ContactForm(): React.JSX.Element {
     }
     setSubmitted(true)
     setTimeout(() => {
-      window.open('https://wa.me/5521992318802?text=' + encodeURIComponent(
+      window.open('https://wa.me/5521980640955?text=' + encodeURIComponent(
         `Olá! Tenho interesse em comprar um terreno no GREENLAND.\nNome: ${formData.name}\nTelefone: ${formData.phone}\nInteresse: ${formData.model || 'A definir'}`
       ), '_blank')
     }, 1500)
@@ -134,7 +134,7 @@ export default function ContactForm(): React.JSX.Element {
                     Você será redirecionado para nosso WhatsApp em instantes.
                   </p>
                   <a
-                    href="https://wa.me/5521992318802"
+                    href="https://wa.me/5521980640955"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#25D366] text-white font-bold px-6 py-3 rounded-full inline-block hover:bg-[#1fb855] transition-colors"
@@ -195,8 +195,8 @@ export default function ContactForm(): React.JSX.Element {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Interesse</option>
-                    <option value="Terreno — À Vista">Terreno — À Vista (a partir de R$ 180.000)</option>
-                    <option value="Terreno — Parcelado">Terreno — Parcelado (a partir de R$ 200.000)</option>
+                    <option value="Terreno — À Vista">Terreno — À Vista (a partir de R$ 199.000)</option>
+                    <option value="Terreno — Parcelado">Terreno — Parcelado (a partir de R$ 220.000)</option>
                     <option value="Ainda não sei">Ainda não sei</option>
                   </select>
 
@@ -208,8 +208,8 @@ export default function ContactForm(): React.JSX.Element {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Forma de Pagamento</option>
-                    <option value="Entrada R$150k">A definir (a partir de R$ 180.000)</option>
-                    <option value="Entrada R$200k">Parcelado (a partir de R$ 200.000)</option>
+                    <option value="Entrada R$150k">A definir (a partir de R$ 199.000)</option>
+                    <option value="Entrada R$200k">Parcelado (a partir de R$ 220.000)</option>
                     <option value="À vista">À vista</option>
                     <option value="A definir">A definir</option>
                   </select>
