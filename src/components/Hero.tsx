@@ -1,6 +1,7 @@
 import type { IconType } from 'react-icons'
 import { FaInstagram, FaFacebook, FaYoutube, FaXTwitter } from 'react-icons/fa6'
-import videoSrc from '../assets/hero.mp4'
+
+const videoSrc = '/hero.mp4'
 
 interface SocialLink {
   Icon: IconType
