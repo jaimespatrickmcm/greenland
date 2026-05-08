@@ -2,8 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '../variants'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
-import { FaSearchPlus, FaSearchMinus, FaExpand, FaTimes, FaExternalLinkAlt } from 'react-icons/fa'
-import mapaImg from '../assets/1772464046196-aab23c29-e444-4bfc-9fcc-f3ce864552f0_1.png'
+import { FaSearchPlus, FaSearchMinus, FaExpand, FaTimes } from 'react-icons/fa'
+import MasterplanPDFViewer from './MasterplanPDFViewer'
 
 interface PricingProps {
   onOpenSchedule: () => void
@@ -96,18 +96,11 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                       <FaSearchMinus className="text-sm" />
                     </button>
                     <button
-                      onClick={() => resetTransform()}
+                      onClick={() => { resetTransform(); setModalOpen(true) }}
                       className="bg-[#273020]/80 hover:bg-[#273020] text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-colors"
-                      aria-label="Resetar zoom"
+                      aria-label="Expandir mapa em tela cheia"
                     >
                       <FaExpand className="text-sm" />
-                    </button>
-                    <button
-                      onClick={() => setModalOpen(true)}
-                      className="md:hidden bg-[#273020]/80 hover:bg-[#273020] text-white w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-colors"
-                      aria-label="Expandir mapa"
-                    >
-                      <FaExternalLinkAlt className="text-sm" />
                     </button>
                   </div>
 
@@ -115,13 +108,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                     wrapperStyle={{ width: '100%', maxHeight: '80dvh', overflow: 'hidden' }}
                     contentStyle={{ width: '100%' }}
                   >
-                    <img
-                      src={mapaImg}
-                      alt="Mapa do Empreendimento GREENLAND — Vista aérea dos terrenos"
-                      className="w-full h-auto object-cover"
-                      style={{ maxHeight: '80dvh', objectFit: 'contain' }}
-                      draggable={false}
-                    />
+                    <MasterplanPDFViewer maxHeight="80dvh" />
                   </TransformComponent>
                 </>
               )}
@@ -136,9 +123,9 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
               </div>
             )}
 
-            {/* Gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#273020] to-transparent h-32 pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+            {/* Gradient overlay (desktop only) */}
+            <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#273020] to-transparent h-32 pointer-events-none" />
+            <div className="hidden md:flex absolute bottom-6 left-6 right-6 flex-row items-end justify-between gap-4">
               <div>
                 <h3 className="font-heading text-xl md:text-2xl text-white font-bold mb-1">
                   Mapa do Empreendimento
@@ -152,6 +139,22 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                 Consultar Disponibilidade
               </button>
             </div>
+          </div>
+
+          {/* Mobile: título e CTA abaixo do visualizador */}
+          <div className="md:hidden mt-6 flex flex-col items-start gap-4">
+            <div>
+              <h3 className="font-heading text-xl text-white font-bold mb-1">
+                Mapa do Empreendimento
+              </h3>
+              <p className="text-white/70 text-sm">Vista aérea dos terrenos — 1ª Fase</p>
+            </div>
+            <button
+              onClick={onOpenSchedule}
+              className="w-full bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.02] shadow-lg"
+            >
+              Consultar Disponibilidade
+            </button>
           </div>
         </motion.div>
       </div>
@@ -206,12 +209,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                     wrapperStyle={{ width: '100%', height: '100%' }}
                     contentStyle={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                   >
-                    <img
-                      src={mapaImg}
-                      alt="Mapa do Empreendimento GREENLAND — Vista aérea dos terrenos"
-                      className="w-full h-auto object-contain"
-                      draggable={false}
-                    />
+                    <MasterplanPDFViewer maxHeight="100dvh" />
                   </TransformComponent>
                 </>
               )}

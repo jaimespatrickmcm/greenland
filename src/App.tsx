@@ -10,6 +10,7 @@ import WhyInvest from './components/WhyInvest'
 import Returns from './components/Returns'
 import Pricing from './components/Pricing'
 import ArtCucina from './components/ArtCucina'
+import ArtGreenHotel from './components/ArtGreenHotel'
 import Clients from './components/Clients'
 import InstagramSection from './components/InstagramSection'
 import FAQ, { faqs } from './components/FAQ'
@@ -62,6 +63,7 @@ export default function App(): React.JSX.Element {
         <Stats />
         <ForWhom onOpenSchedule={() => setScheduleOpen(true)} />
         <HowItWorks onOpenSchedule={() => setScheduleOpen(true)} />
+        <ArtGreenHotel />
         <WhyInvest onOpenSchedule={() => setScheduleOpen(true)} />
         <Returns onOpenSchedule={() => setScheduleOpen(true)} />
         <Pricing onOpenSchedule={() => setScheduleOpen(true)} />
