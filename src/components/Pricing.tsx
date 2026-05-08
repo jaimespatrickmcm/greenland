@@ -68,7 +68,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
           <div
             ref={containerRef}
             className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10"
-            style={{ maxHeight: '80dvh' }}
+            style={{ maxHeight: '100dvh' }}
           >
             <TransformWrapper
               initialScale={1}
@@ -105,10 +105,10 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                   </div>
 
                   <TransformComponent
-                    wrapperStyle={{ width: '100%', maxHeight: '80dvh', overflow: 'hidden' }}
+                    wrapperStyle={{ width: '100%', maxHeight: '100dvh', overflow: 'hidden' }}
                     contentStyle={{ width: '100%' }}
                   >
-                    <MasterplanPDFViewer maxHeight="80dvh" />
+                    <MasterplanPDFViewer height="100dvh" />
                   </TransformComponent>
                 </>
               )}
@@ -209,7 +209,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                     wrapperStyle={{ width: '100%', height: '100%' }}
                     contentStyle={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                   >
-                    <MasterplanPDFViewer maxHeight="100dvh" />
+                    <MasterplanPDFViewer height="100dvh" />
                   </TransformComponent>
                 </>
               )}

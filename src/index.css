@@ -172,3 +172,14 @@ input:focus, textarea:focus, select:focus {
 .lot-pulse {
   animation: lot-pulse 2s infinite;
 }
+
+/* Neutralize react-pdf default white background while loading */
+.react-pdf__Document,
+.react-pdf__Page,
+.react-pdf__Page__canvas {
+  background-color: transparent !important;
+}
+.react-pdf__Page {
+  display: flex !important;
+  justify-content: center;
+}
