@@ -1,0 +1,13 @@
+# Cloudflare Pages headers
+# Force correct MIME type for ES module workers (.mjs) so browsers do not
+# refuse them under strict MIME checking. Without this, Pages may serve the
+# SPA fallback (text/html) for unknown asset extensions.
+
+/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+
+/*.js
+  Content-Type: application/javascript; charset=utf-8

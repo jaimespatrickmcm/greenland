@@ -11,14 +11,31 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import 'react-pdf/dist/Page/AnnotationLayer.css'
 import 'react-pdf/dist/Page/TextLayer.css'
 
+// Set workerSrc immediately for the synchronous `pdfjs` import path.
 pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
-// Lazy-load Document/Page to keep them out of the initial chunk
+/**
+ * Re-applies our workerSrc, because `react-pdf`'s lazy chunk evaluates a
+ * default `pdf.worker.mjs` assignment AFTER our main module runs, which
+ * would otherwise overwrite the URL we configured. We pin it again whenever
+ * the lazy chunk loads.
+ */
+const ensureWorkerSrc = (mod: typeof import('react-pdf')): void => {
+  mod.pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerUrl
+}
+
+// Lazy-load Document/Page to keep them out of the initial chunk.
 const Document = lazy(() =>
-  import('react-pdf').then((m) => ({ default: m.Document })),
+  import('react-pdf').then((m) => {
+    ensureWorkerSrc(m)
+    return { default: m.Document }
+  }),
 )
 const Page = lazy(() =>
-  import('react-pdf').then((m) => ({ default: m.Page })),
+  import('react-pdf').then((m) => {
+    ensureWorkerSrc(m)
+    return { default: m.Page }
+  }),
 )
 
 interface MasterplanPDFViewerProps {
