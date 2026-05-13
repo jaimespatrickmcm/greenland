@@ -66,17 +66,18 @@ export default function ArtGreenHotel(): React.JSX.Element {
             variants={fadeInUp}
             className="font-heading text-3xl md:text-4xl text-[#273020] mb-5 leading-tight"
           >
-            Hospede-se e conheça o condomínio no{' '}
+            Quer sentir essa experiência? Hospede-se no{' '}
             <span className="text-[#364728]">Art Green Boutique Hotel</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
           >
-            Dentro do próprio Greenland, o Art Green Boutique Hotel oferece a melhor forma
-            de viver o condomínio antes de decidir. Você descansa em meio à Mata Atlântica,
-            aproveita a gastronomia premiada do Art Cucina e conhece seu futuro terreno
-            sem pressa, com o conforto de uma estadia exclusiva.
+            Depois de conhecer tudo o que o Greenland oferece, que tal vivenciar de perto?
+            Hospede-se no Art Green Boutique Hotel, dentro do próprio condomínio, e sinta
+            na pele o estilo de vida em meio à Mata Atlântica. Descanse com conforto,
+            aproveite a gastronomia premiada do Art Cucina e conheça seu futuro terreno
+            sem pressa.
           </motion.p>
         </motion.div>
 

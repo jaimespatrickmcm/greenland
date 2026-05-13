@@ -63,11 +63,11 @@ export default function App(): React.JSX.Element {
         <Stats />
         <ForWhom onOpenSchedule={() => setScheduleOpen(true)} />
         <HowItWorks onOpenSchedule={() => setScheduleOpen(true)} />
-        <ArtGreenHotel />
         <WhyInvest onOpenSchedule={() => setScheduleOpen(true)} />
         <Returns onOpenSchedule={() => setScheduleOpen(true)} />
         <Pricing onOpenSchedule={() => setScheduleOpen(true)} />
         <ArtCucina />
+        <ArtGreenHotel />
         <MapSection />
         <Clients onOpenSchedule={() => setScheduleOpen(true)} />
         <InstagramSection onOpenVideo={() => setVideoOpen(true)} />
