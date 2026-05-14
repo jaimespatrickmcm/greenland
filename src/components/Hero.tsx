@@ -48,15 +48,9 @@ export default function Hero({ onOpenSchedule }: HeroProps): React.JSX.Element {
             </h1>
             <p className="text-white/80 text-sm mb-6 max-w-lg">
               1ª fase com apenas 27 terrenos disponíveis em condomínio pronto. RGI, água e luz
-              instalados — oportunidade de investimento com financiamento direto em até 120x.
+              instalados com condição comercial transparente para você decidir com segurança.
             </p>
-            <div className="flex gap-3 justify-center md:justify-start">
-              <button
-                onClick={onOpenSchedule}
-                className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200 shadow hover:scale-105"
-              >
-                Garantir Meu Terreno
-              </button>
+            <div className="flex justify-center md:justify-start">
               <button
                 onClick={() => scrollTo('#greenland')}
                 className="border border-white text-white hover:bg-white hover:text-[#273020] font-semibold px-5 py-2 rounded-full text-xs transition-all duration-200"

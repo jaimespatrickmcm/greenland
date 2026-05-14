@@ -5,6 +5,7 @@ import foto2 from '../assets/foto (2).jpeg'
 import foto5 from '../assets/foto (5).jpeg'
 import foto8 from '../assets/foto (8).jpeg'
 import foto12 from '../assets/foto (12).jpeg'
+import { PRICING_INFO, PRICING_SUMMARY } from '../data/pricingInfo'
 
 interface Condition {
   label: string
@@ -19,8 +20,8 @@ const conditions: Condition[] = [
   {
     label: 'À Vista',
     image: foto12,
-    price: 'A partir de R$ 199.000',
-    detail: 'Melhor condição disponível',
+    price: PRICING_INFO.cash,
+    detail: 'Pagamento único com melhor condição',
     desc: 'Pague à vista e garanta o maior desconto no preço do terreno.',
     features: [
       'Maior desconto no preço do terreno',
@@ -32,8 +33,8 @@ const conditions: Condition[] = [
   {
     label: 'Parcelado',
     image: foto5,
-    price: 'A partir de R$ 220.000',
-    detail: 'Até 120x direto',
+    price: 'R$ 220.000 parcelado',
+    detail: 'Em até 120x direto',
     desc: 'Parcele diretamente conosco em até 120x, sem burocracia bancária.',
     features: [
       'Financiamento direto com a construtora',
@@ -103,6 +104,20 @@ export default function Returns({ onOpenSchedule }: ReturnsProps): React.JSX.Ele
           <motion.p variants={fadeInUp} className="text-gray-500 max-w-xl mx-auto">
             Clique em cada opção para conhecer as condições detalhadas
           </motion.p>
+          <motion.div
+            variants={fadeInUp}
+            className="mt-6 max-w-3xl mx-auto rounded-2xl border border-[#d8d2c8] bg-white p-5 shadow-sm"
+          >
+            <p className="text-[#4a6838] text-xs font-semibold tracking-widest uppercase mb-2">
+              Condição principal
+            </p>
+            <p className="font-heading text-[#273020] text-xl md:text-2xl leading-snug">
+              {PRICING_SUMMARY}
+            </p>
+            <p className="text-gray-500 text-sm mt-2">
+              Valores claros e em destaque para facilitar sua decisão.
+            </p>
+          </motion.div>
         </motion.div>
 
         {/* Horizontal image accordion */}

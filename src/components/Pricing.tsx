@@ -4,6 +4,7 @@ import { fadeInUp, staggerContainer } from '../variants'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import { FaSearchPlus, FaSearchMinus, FaExpand, FaTimes } from 'react-icons/fa'
 import MasterplanPDFViewer from './MasterplanPDFViewer'
+import { PRICING_SUMMARY } from '../data/pricingInfo'
 
 interface PricingProps {
   onOpenSchedule: () => void
@@ -54,7 +55,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
             <span className="text-[#4a6838]">apenas 27 terrenos restantes</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-white/60 max-w-xl mx-auto">
-            181 terrenos na 1ª fase, 154 já vendidos. Condomínio pronto, com toda infraestrutura instalada. Garanta o seu antes que acabe.
+            181 terrenos na 1ª fase, 154 já vendidos. Condomínio pronto, com toda infraestrutura instalada. Garanta o seu antes que acabe. {PRICING_SUMMARY}
           </motion.p>
         </motion.div>
 

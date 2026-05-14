@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import type { IconType } from 'react-icons'
 import { FaMapMarkerAlt, FaPhone, FaClock, FaCheckCircle } from 'react-icons/fa'
 import { fadeInLeft, fadeInRight, staggerContainer, fadeInUp } from '../variants'
+import { PRICING_INFO, PRICING_SUMMARY } from '../data/pricingInfo'
 
 interface FormData {
   name: string
@@ -95,7 +96,7 @@ export default function ContactForm(): React.JSX.Element {
               variants={fadeInUp}
               className="text-white/75 text-lg leading-relaxed mb-8"
             >
-              Apenas 27 terrenos disponíveis na 1ª fase — 86% já vendidos. Preencha o formulário e nossa equipe entrará em contato via WhatsApp para apresentar as melhores condições.
+              Apenas 27 terrenos disponíveis na 1ª fase — 86% já vendidos. Condição atual: {PRICING_SUMMARY} Preencha o formulário e nossa equipe entrará em contato via WhatsApp.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col gap-4">
@@ -195,8 +196,8 @@ export default function ContactForm(): React.JSX.Element {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Interesse</option>
-                    <option value="Terreno — À Vista">Terreno — À Vista (a partir de R$ 199.000)</option>
-                    <option value="Terreno — Parcelado">Terreno — Parcelado (a partir de R$ 220.000)</option>
+                    <option value={`Terreno — ${PRICING_INFO.cash}`}>Terreno — {PRICING_INFO.cash}</option>
+                    <option value={`Terreno — ${PRICING_INFO.installment}`}>Terreno — {PRICING_INFO.installment}</option>
                     <option value="Ainda não sei">Ainda não sei</option>
                   </select>
 
@@ -208,9 +209,8 @@ export default function ContactForm(): React.JSX.Element {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Forma de Pagamento</option>
-                    <option value="Entrada R$150k">A definir (a partir de R$ 199.000)</option>
-                    <option value="Entrada R$200k">Parcelado (a partir de R$ 220.000)</option>
-                    <option value="À vista">À vista</option>
+                    <option value={PRICING_INFO.cash}>{PRICING_INFO.cash}</option>
+                    <option value={PRICING_INFO.installment}>{PRICING_INFO.installment}</option>
                     <option value="A definir">A definir</option>
                   </select>
 

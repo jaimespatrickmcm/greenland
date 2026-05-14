@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
+import { PRICING_INFO } from '../data/pricingInfo'
 
 export interface FaqItem {
   q: string
@@ -14,8 +15,12 @@ export const faqs: FaqItem[] = [
     a: 'Sim! O GREENLAND é um condomínio pronto. Portaria, áreas de lazer completas e toda a infraestrutura funcionando. Você compra e já pode acessar o condomínio imediatamente.',
   },
   {
+    q: 'Quais são os valores dos terrenos?',
+    a: `Hoje trabalhamos com duas condições principais: ${PRICING_INFO.cash} ou ${PRICING_INFO.installment}. Consulte disponibilidade para cada lote.`,
+  },
+  {
     q: 'Posso financiar pela Caixa Econômica Federal?',
-    a: 'Existe a possibilidade de financiamento pela Caixa Econômica Federal em até 240 parcelas. A aprovação depende da análise individual de cada cliente. Além disso, oferecemos parcelamento direto em até 120x, sem burocracia bancária. Nossa equipe auxilia em todo o processo.',
+    a: `Existe a possibilidade de financiamento pela Caixa Econômica Federal em até 240 parcelas. A aprovação depende da análise individual de cada cliente. Além disso, oferecemos ${PRICING_INFO.installment}, sem burocracia bancária. Nossa equipe auxilia em todo o processo.`,
   },
   {
     q: 'O terreno tem escritura (RGI)?',
