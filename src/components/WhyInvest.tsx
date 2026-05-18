@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaCheckCircle } from 'react-icons/fa'
+import { FaCheckCircle, FaWhatsapp } from 'react-icons/fa'
 import { fadeInLeft, fadeInUp, staggerContainer } from '../variants'
 import whyInvestImg from '../assets/IMG_8250-HDR.webp'
 
@@ -90,13 +90,15 @@ export default function WhyInvest({ onOpenSchedule }: WhyInvestProps): React.JSX
               </div>
             </motion.div>
 
-            <motion.button
+            <motion.a
               variants={fadeInUp}
-              onClick={onOpenSchedule}
-              className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
+              href="https://wa.me/5521980640955"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
             >
-              Garantir Meu Terreno
-            </motion.button>
+              <FaWhatsapp className="text-lg" /> Fale conosco
+            </motion.a>
           </motion.div>
         </div>
       </div>

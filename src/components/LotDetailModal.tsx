@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
-import { FaTimes, FaRulerCombined, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa'
+import { FaTimes, FaRulerCombined, FaMapMarkerAlt, FaCheckCircle, FaWhatsapp } from 'react-icons/fa'
 import type { Lot } from '../data/lots'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -164,15 +164,14 @@ export default function LotDetailModal({ lot, onClose, onOpenSchedule }: LotDeta
 
                 <div className="mt-auto">
                   {lot.status === 'available' && (
-                    <button
-                      onClick={() => {
-                        onClose()
-                        setTimeout(onOpenSchedule, 300)
-                      }}
-                      className="w-full bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg"
+                    <a
+                      href="https://wa.me/5521980640955"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg"
                     >
-                      Consultar Disponibilidade
-                    </button>
+                      <FaWhatsapp className="text-lg" /> Consultar Disponibilidade
+                    </a>
                   )}
                   {lot.status === 'reserved' && (
                     <button

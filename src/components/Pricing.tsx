@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '../variants'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
-import { FaSearchPlus, FaSearchMinus, FaExpand, FaTimes } from 'react-icons/fa'
+import { FaSearchPlus, FaSearchMinus, FaExpand, FaTimes, FaWhatsapp } from 'react-icons/fa'
 import MasterplanPDFViewer from './MasterplanPDFViewer'
 import { PRICING_SUMMARY } from '../data/pricingInfo'
 
@@ -133,12 +133,14 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                 </h3>
                 <p className="text-white/70 text-sm">Vista aérea dos terrenos — 1ª Fase</p>
               </div>
-              <button
-                onClick={onOpenSchedule}
-                className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap"
+              <a
+                href="https://wa.me/5521980640955"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap"
               >
-                Consultar Disponibilidade
-              </button>
+                <FaWhatsapp className="text-lg" /> Consultar Disponibilidade
+              </a>
             </div>
           </div>
 
@@ -150,12 +152,14 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
               </h3>
               <p className="text-white/70 text-sm">Vista aérea dos terrenos — 1ª Fase</p>
             </div>
-            <button
-              onClick={onOpenSchedule}
-              className="w-full bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.02] shadow-lg"
+            <a
+              href="https://wa.me/5521980640955"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 w-full bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-[1.02] shadow-lg"
             >
-              Consultar Disponibilidade
-            </button>
+              <FaWhatsapp className="text-lg" /> Consultar Disponibilidade
+            </a>
           </div>
         </motion.div>
       </div>

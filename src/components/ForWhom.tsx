@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import type { IconType } from 'react-icons'
-import { FaChartLine, FaHome, FaBriefcase, FaMountain } from 'react-icons/fa'
+import { FaChartLine, FaHome, FaBriefcase, FaMountain, FaWhatsapp } from 'react-icons/fa'
 import { fadeInUp, staggerContainer } from '../variants'
 
 interface Profile {
@@ -103,12 +103,14 @@ export default function ForWhom({ onOpenSchedule }: ForWhomProps): React.JSX.Ele
           viewport={{ once: true }}
           className="text-center"
         >
-          <button
-            onClick={onOpenSchedule}
-            className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
+          <a
+            href="https://wa.me/5521980640955"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-xl hover:scale-105"
           >
-            Garantir Meu Terreno →
-          </button>
+            <FaWhatsapp className="text-lg" /> Fale conosco
+          </a>
         </motion.div>
       </div>
     </section>

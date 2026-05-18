@@ -141,7 +141,7 @@ export default function About({ onOpenSchedule }: AboutProps): React.JSX.Element
                 onClick={onOpenSchedule}
                 className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Quero Saber Mais →
+                Agendar visita
               </motion.button>
             </motion.div>
           </motion.div>

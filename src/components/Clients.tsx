@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-import { FaCheckCircle, FaInstagram } from 'react-icons/fa'
+import { FaCheckCircle, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '../variants'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -166,13 +166,15 @@ export default function Clients({ onOpenSchedule }: ClientsProps): React.JSX.Ele
               </a>
             </motion.div>
 
-            <motion.button
+            <motion.a
               variants={fadeInUp}
-              onClick={onOpenSchedule}
-              className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
+              href="https://wa.me/5521980640955"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg"
             >
-              Garantir Meu Terreno →
-            </motion.button>
+              <FaWhatsapp className="text-lg" /> Fale conosco
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
