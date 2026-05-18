@@ -1,5 +1,5 @@
 import type { IconType } from 'react-icons'
-import { FaInstagram, FaFacebook, FaYoutube, FaXTwitter } from 'react-icons/fa6'
+import { FaInstagram, FaFacebook } from 'react-icons/fa6'
 
 const videoSrc = 'https://greenland.b-cdn.net/hero.mp4'
 
@@ -63,10 +63,8 @@ export default function Hero({ onOpenSchedule }: HeroProps): React.JSX.Element {
           {/* Redes sociais — ocultas no mobile */}
           <div className="hidden md:flex flex-col items-end gap-2 md:mb-8">
             {([
-              { Icon: FaFacebook, href: 'https://facebook.com' },
-              { Icon: FaXTwitter, href: 'https://twitter.com' },
-              { Icon: FaYoutube, href: 'https://youtube.com' },
-              { Icon: FaInstagram, href: 'https://instagram.com' },
+              { Icon: FaFacebook, href: 'https://www.facebook.com/greenlandteresopolis' },
+              { Icon: FaInstagram, href: 'https://www.instagram.com/greenlandteresopolis' },
             ] as SocialLink[]).map(({ Icon, href }) => (
               <a
                 key={href}

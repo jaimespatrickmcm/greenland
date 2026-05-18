@@ -76,7 +76,7 @@ export default function Footer(): React.JSX.Element {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/greenlandteresopolis"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-[#8d4e27] hover:text-[#273020] transition-all"
