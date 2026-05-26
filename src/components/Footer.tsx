@@ -41,8 +41,9 @@ export default function Footer(): React.JSX.Element {
   }
 
   return (
-    <footer className="bg-[#273020] border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <>
+      <footer className="bg-[#273020] border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1 */}
           <div className="text-center sm:text-left flex flex-col items-center sm:items-start">
@@ -162,14 +163,25 @@ export default function Footer(): React.JSX.Element {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/10 py-5">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/30 text-sm">
-            © 2026 GREENLAND® | Todos os direitos reservados
-          </p>
+        {/* Bottom bar */}
+        <div className="border-t border-white/10 py-5">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-white/30 text-sm">
+              © 2026 GREENLAND® | Todos os direitos reservados
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Track band - faixa branca com "Desenvolvido por Track" */}
+      <div className="w-full h-[65px] bg-white border-t border-gray-200 flex items-center justify-center">
+        <div className="flex items-center gap-2">
+          <span className="text-black text-sm md:text-base">Desenvolvido por</span>
+          <a href="https://www.trackbr.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+            <img src="https://pvhtnxpjrnnaylowaxli.supabase.co/storage/v1/object/public/Track%20Band/LOGOTRACK%20(5).webp" alt="Track Logo" className="h-6 md:h-8" />
+          </a>
         </div>
       </div>
-    </footer>
+    </>
   )
 }
