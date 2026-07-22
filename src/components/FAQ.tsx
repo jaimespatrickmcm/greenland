@@ -24,7 +24,7 @@ export const faqs: FaqItem[] = [
   },
   {
     q: 'O terreno tem escritura (RGI)?',
-    a: 'Sim. Todos os terrenos possuem RGI (Registro Geral de Imóveis) — escritura definitiva registrada em cartório no seu nome, com total segurança jurídica.',
+    a: 'Sim. Todos os terrenos possuem RGI (Registro Geral de Imóveis): escritura definitiva registrada em cartório no seu nome, com total segurança jurídica.',
   },
   {
     q: 'Há prazo para construir?',

@@ -18,7 +18,7 @@ export interface Lot {
   position: { x: number; y: number }
 }
 
-// Dados de exemplo — posicoes aproximadas sobre a imagem do masterplan
+// Dados de exemplo, posicoes aproximadas sobre a imagem do masterplan
 // Para mapear posicoes reais: adicione um onClick temporario na imagem que loga (e.clientX/width*100, e.clientY/height*100)
 export const lots: Lot[] = [
   {

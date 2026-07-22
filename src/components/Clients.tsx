@@ -32,18 +32,18 @@ const carouselImages: SlideImage[] = [
   { src: img0548, alt: 'Art Cucina e lazer' },
   { src: img0098, alt: 'Área externa Art Cucina' },
   { src: foto10, alt: 'Casa rústica na floresta' },
-  { src: foto2, alt: 'GREENLAND — Vista aérea' },
-  { src: foto3, alt: 'GREENLAND — Condomínio' },
-  { src: foto5, alt: 'GREENLAND — Natureza' },
-  { src: foto6, alt: 'GREENLAND — Infraestrutura' },
-  { src: foto8, alt: 'GREENLAND — Terrenos' },
-  { src: foto9, alt: 'GREENLAND — Paisagem' },
+  { src: foto2, alt: 'Vista aérea do GREENLAND' },
+  { src: foto3, alt: 'Condomínio GREENLAND' },
+  { src: foto5, alt: 'Natureza no GREENLAND' },
+  { src: foto6, alt: 'Infraestrutura do GREENLAND' },
+  { src: foto8, alt: 'Terrenos no GREENLAND' },
+  { src: foto9, alt: 'Paisagem do GREENLAND' },
 ]
 
 const features: Feature[] = [
   {
     title: 'Terreno com RGI',
-    desc: 'Escritura definitiva registrada em cartório — segurança jurídica garantida.',
+    desc: 'Escritura definitiva registrada em cartório, com segurança jurídica garantida.',
   },
   {
     title: 'Água e luz instalados',
@@ -59,7 +59,7 @@ const features: Feature[] = [
   },
   {
     title: '20.000m² de área de lazer',
-    desc: 'Maior estrutura de lazer de Teresópolis — piscinas, quadras, lagos e mais.',
+    desc: 'Maior estrutura de lazer de Teresópolis: piscinas, quadras, lagos e mais.',
   },
 ]
 
@@ -79,7 +79,7 @@ export default function Clients({ onOpenSchedule }: ClientsProps): React.JSX.Ele
           viewport={{ once: true, margin: '-50px' }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
-          {/* Left — Carousel */}
+          {/* Left · Carousel */}
           <motion.div variants={fadeInLeft}>
             <Swiper
               modules={[Autoplay, Navigation, Pagination]}
@@ -107,7 +107,7 @@ export default function Clients({ onOpenSchedule }: ClientsProps): React.JSX.Ele
             </Swiper>
           </motion.div>
 
-          {/* Right — Content (Accommodation style) */}
+          {/* Right · Content (Accommodation style) */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -130,7 +130,7 @@ export default function Clients({ onOpenSchedule }: ClientsProps): React.JSX.Ele
               variants={fadeInRight}
               className="text-gray-600 text-base leading-relaxed mb-8"
             >
-              O GREENLAND abriga a Art Green — pousada premiada e referência na Serra do Rio de Janeiro. O refúgio ideal para finais de semana ou investimento de longo prazo, a 12km do centro.
+              O GREENLAND abriga a Art Green, pousada premiada e referência na Serra do Rio de Janeiro. O refúgio ideal para finais de semana ou investimento de longo prazo, a 12km do centro.
             </motion.p>
 
             {/* Features with checkmarks */}

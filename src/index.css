@@ -145,7 +145,7 @@ input:focus, textarea:focus, select:focus {
   opacity: 1;
 }
 
-/* WhatsApp button — manter redondo */
+/* WhatsApp button, manter redondo */
 .whatsapp-btn, .whatsapp-btn::before, .whatsapp-btn::after {
   border-radius: 50% !important;
 }
@@ -159,7 +159,7 @@ input:focus, textarea:focus, select:focus {
   animation: whatsapp-pulse 2s infinite;
 }
 
-/* Lot markers — manter redondo */
+/* Lot markers, manter redondo */
 .lot-marker, .lot-marker::before, .lot-marker::after {
   border-radius: 50% !important;
 }

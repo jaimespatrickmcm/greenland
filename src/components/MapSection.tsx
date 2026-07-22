@@ -24,7 +24,7 @@ export default function MapSection(): React.JSX.Element {
             Onde fica o <span className="text-[#364728]">Greenland</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            12,8km do centro de Teresópolis — estrada 100% pavimentada até a entrada do condomínio
+            12,8km do centro de Teresópolis, estrada 100% pavimentada até a entrada do condomínio
           </p>
         </motion.div>
 
@@ -44,7 +44,7 @@ export default function MapSection(): React.JSX.Element {
           >
             <img
               src={mapaImg}
-              alt="Mapa de localização do Greenland em Teresópolis — 12,8km do centro, 22 minutos de carro"
+              alt="Mapa de localização do Greenland em Teresópolis, a 12,8km do centro, 22 minutos de carro"
               className="w-full h-auto object-contain rounded-2xl shadow-xl transition-transform duration-300 group-hover:scale-[1.01]"
               loading="lazy"
             />

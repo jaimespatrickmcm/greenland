@@ -24,14 +24,14 @@ const highlights: Highlight[] = [
     label: 'Lazer',
     nome: 'Lazer de Resort',
     image: lazerImg,
-    hoverText: '20.000m² de área de lazer — o maior complexo de lazer de Teresópolis. Piscinas, quadras esportivas, lagos, fire place, salão de jogos, ciclovia e espaços ao ar livre. Infraestrutura de resort para aproveitar seus finais de semana na serra.',
+    hoverText: '20.000m² de área de lazer, o maior complexo de lazer de Teresópolis. Piscinas, quadras esportivas, lagos, fire place, salão de jogos, ciclovia e espaços ao ar livre. Infraestrutura de resort para aproveitar seus finais de semana na serra.',
   },
   {
     id: 'infraestrutura',
     label: 'Infraestrutura',
     nome: 'Pronto para Construir',
     image: infraestruturaImg,
-    hoverText: 'Água e luz já instaladas na entrada de cada terreno. O condomínio está pronto com infraestrutura instalada. Compre hoje e construa quando quiser — sem pressa, no seu ritmo. Toda a burocracia já resolvida para você.',
+    hoverText: 'Água e luz já instaladas na entrada de cada terreno. O condomínio está pronto com infraestrutura instalada. Compre hoje e construa quando quiser, sem pressa e no seu ritmo. Toda a burocracia já resolvida para você.',
   },
 ]
 
@@ -86,7 +86,7 @@ export default function HowItWorks({ onOpenSchedule }: HowItWorksProps): React.J
             </div>
             {/* Gradiente inferior */}
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent h-32 z-0" />
-            {/* Botão Agendar Visita — aparece no hover */}
+            {/* Botão Agendar Visita, aparece no hover */}
             <a
               href="#agendar"
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule() }}
@@ -103,7 +103,7 @@ export default function HowItWorks({ onOpenSchedule }: HowItWorksProps): React.J
         {/* Texto do highlight ativo */}
         <div className="text-white text-center mb-6 px-2">
           <h3 className="font-heading text-xl font-bold mb-2">
-            {highlights.find(h => h.id === activeId)?.label} — {highlights.find(h => h.id === activeId)?.nome}
+            {highlights.find(h => h.id === activeId)?.label} · {highlights.find(h => h.id === activeId)?.nome}
           </h3>
           <p className="text-white/80 text-xs leading-relaxed line-clamp-4">
             {highlights.find(h => h.id === activeId)?.hoverText}

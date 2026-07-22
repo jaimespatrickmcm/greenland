@@ -51,7 +51,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
             variants={fadeInUp}
             className="font-heading text-3xl md:text-4xl text-white mb-4"
           >
-            1ª Fase — 86% vendido —{' '}
+            1ª Fase, 86% vendida,{' '}
             <span className="text-[#4a6838]">apenas 27 terrenos restantes</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-white/60 max-w-xl mx-auto">
@@ -131,7 +131,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
                 <h3 className="font-heading text-xl md:text-2xl text-white font-bold mb-1">
                   Mapa do Empreendimento
                 </h3>
-                <p className="text-white/70 text-sm">Vista aérea dos terrenos — 1ª Fase</p>
+                <p className="text-white/70 text-sm">Vista aérea dos terrenos, 1ª Fase</p>
               </div>
               <a
                 href="https://wa.me/5521980640955"
@@ -150,7 +150,7 @@ export default function Pricing({ onOpenSchedule }: PricingProps): React.JSX.Ele
               <h3 className="font-heading text-xl text-white font-bold mb-1">
                 Mapa do Empreendimento
               </h3>
-              <p className="text-white/70 text-sm">Vista aérea dos terrenos — 1ª Fase</p>
+              <p className="text-white/70 text-sm">Vista aérea dos terrenos, 1ª Fase</p>
             </div>
             <a
               href="https://wa.me/5521980640955"

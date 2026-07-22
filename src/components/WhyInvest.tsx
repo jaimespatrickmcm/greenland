@@ -4,15 +4,15 @@ import { fadeInLeft, fadeInUp, staggerContainer } from '../variants'
 import whyInvestImg from '../assets/IMG_8250-HDR.webp'
 
 const advantages: string[] = [
-  'Condomínio 100% pronto — construa quando quiser',
+  'Condomínio 100% pronto pra construir quando quiser',
   'Água e luz já instaladas na entrada do terreno',
-  'Terreno com RGI — escritura no seu nome',
-  '27 terrenos disponíveis — 86% da 1ª fase já vendida',
-  'Financiamento direto em até 120x — sem burocracia bancária',
+  'Terreno com RGI, escritura no seu nome',
+  '27 terrenos disponíveis, 86% da 1ª fase já vendida',
+  'Financiamento direto em até 120x, sem burocracia bancária',
   'A 12km do centro, estrada pavimentada até a entrada',
-  'Maior lazer de Teresópolis — 20.000m²',
+  'Maior lazer de Teresópolis, com 20.000m²',
   'Avaliamos permuta de carro, moto e caminhão',
-  'Valorização contínua — região em crescimento na Serra',
+  'Valorização contínua numa região em crescimento na Serra',
 ]
 
 interface WhyInvestProps {
@@ -61,14 +61,14 @@ export default function WhyInvest({ onOpenSchedule }: WhyInvestProps): React.JSX
               variants={fadeInUp}
               className="font-heading text-3xl md:text-4xl text-white mb-5 leading-tight"
             >
-              As melhores oportunidades não duram — e o{' '}
+              As melhores oportunidades não duram. E o{' '}
               <span className="text-[#4a6838]">Greenland é uma delas</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-white/70 text-lg leading-relaxed mb-8"
             >
-              Restam apenas 27 terrenos na 1ª fase — 86% já foram vendidos.
+              Restam apenas 27 terrenos na 1ª fase. 86% já foram vendidos.
               Quem compra primeiro escolhe as melhores localizações e garante o preço de lançamento.
             </motion.p>
 
