@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import SuitesHero from './components/SuitesHero'
@@ -6,10 +7,19 @@ import SuitesTypes from './components/SuitesTypes'
 import SuitesHowItWorks from './components/SuitesHowItWorks'
 import SuitesIncome from './components/SuitesIncome'
 import SuitesStructure from './components/SuitesStructure'
+import SuitesTerrenos from './components/SuitesTerrenos'
 import SuitesFAQ, { suitesFaqs } from './components/SuitesFAQ'
 import SuitesCTA from './components/SuitesCTA'
+import HowItWorks, { defaultHighlights } from './components/HowItWorks'
+import ArtCucina from './components/ArtCucina'
+import ArtGreenHotel from './components/ArtGreenHotel'
+import MapSection from './components/MapSection'
+import InstagramSection from './components/InstagramSection'
+import ContactForm from './components/ContactForm'
+import VideoModal from './components/VideoModal'
 import WhatsAppFloat from './components/WhatsAppFloat'
 import { whatsappLink } from './data/contact'
+import { suites, OWNER_SHARE } from './data/suites'
 import { SEOHead } from './seo/SEOHead'
 import { SEO_CONFIG } from './seo/seoConfig'
 import { getOrganizationSchema } from './seo/schemas/OrganizationSchema'
@@ -20,7 +30,22 @@ import { getSuitesSchema } from './seo/schemas/SuitesSchema'
 const HEADER_WHATSAPP_MESSAGE =
   'Olá! Quero conhecer as suítes à venda no Greenland para alugar na temporada.'
 
+// Mesmos destaques da home; só o terceiro muda de contexto: aqui o imóvel já
+// está construído, então "Pronto para Construir" vira "Pronto para Alugar".
+const suitesHighlights = [
+  defaultHighlights[0],
+  defaultHighlights[1],
+  {
+    ...defaultHighlights[2],
+    nome: 'Pronto para Alugar',
+    hoverText:
+      'A suíte é entregue pronta, mobiliada e decorada, dentro de um condomínio com toda a infraestrutura instalada. Você compra e ela já entra na operação do Art Green Boutique Hotel na temporada seguinte, sem obra, sem espera e sem burocracia.',
+  },
+]
+
 export default function Imoveis(): React.JSX.Element {
+  const [videoOpen, setVideoOpen] = useState<boolean>(false)
+
   return (
     <>
       <SEOHead
@@ -56,14 +81,41 @@ export default function Imoveis(): React.JSX.Element {
       <main>
         <SuitesHero />
         <SuitesWhy />
+        <HowItWorks
+          highlights={suitesHighlights}
+          sectionId="destaques"
+          ctaLabel="Quero conhecer"
+          ctaHref={whatsappLink(HEADER_WHATSAPP_MESSAGE)}
+        />
         <SuitesTypes />
         <SuitesHowItWorks />
         <SuitesIncome />
         <SuitesStructure />
-        <SuitesFAQ />
+        <ArtCucina />
+        <ArtGreenHotel
+          description="A melhor forma de entender o investimento é dormir aqui. Hospede-se no Art Green Boutique Hotel, que é justamente quem vai operar a sua suíte, e veja de perto como o hóspede é recebido: o padrão do quarto, o café da manhã, o lazer e a gastronomia do Art Cucina. Você conhece a operação por dentro antes de comprar."
+        />
+        <SuitesTerrenos />
+        <MapSection />
+        <InstagramSection onOpenVideo={() => setVideoOpen(true)} />
         <SuitesCTA />
+        <SuitesFAQ />
+        <ContactForm
+          sectionId="contato-suites"
+          eyebrow="QUERO MINHA SUÍTE"
+          title="Fale com um consultor e garanta sua suíte agora!"
+          description={`Poucas unidades disponíveis entre Suíte Lago e Suíte Superior, com repasse de ${OWNER_SHARE} das hospedagens ao proprietário. Preencha o formulário e nossa equipe entra em contato pelo WhatsApp.`}
+          interestOptions={[...suites.map((suite) => suite.name), 'Ainda não sei']}
+          paymentOptions={[
+            'À vista',
+            'Parcelado direto com a construtora',
+            'A definir',
+          ]}
+          whatsappIntro="Olá! Tenho interesse em comprar uma suíte no GREENLAND."
+        />
       </main>
       <Footer />
+      <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       <WhatsAppFloat
         href={whatsappLink(HEADER_WHATSAPP_MESSAGE)}
         tooltip="Fale sobre as suítes!"

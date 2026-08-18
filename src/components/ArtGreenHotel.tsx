@@ -45,7 +45,17 @@ const photos: Photo[] = [
 
 const HOTEL_URL = 'https://artgreenboutiquehotel.com.br/'
 
-export default function ArtGreenHotel(): React.JSX.Element {
+const DEFAULT_DESCRIPTION =
+  'Depois de conhecer tudo o que o Greenland oferece, que tal vivenciar de perto? Hospede-se no Art Green Boutique Hotel, dentro do próprio condomínio, e sinta na pele o estilo de vida em meio à Mata Atlântica. Descanse com conforto, aproveite a gastronomia premiada do Art Cucina e conheça seu futuro terreno sem pressa.'
+
+interface ArtGreenHotelProps {
+  /** Parágrafo de apoio. Por padrão, o texto da home (contexto de terreno). */
+  description?: string
+}
+
+export default function ArtGreenHotel({
+  description = DEFAULT_DESCRIPTION,
+}: ArtGreenHotelProps): React.JSX.Element {
   return (
     <section className="py-24 bg-[#f3efe8]">
       <div className="max-w-7xl mx-auto px-6">
@@ -73,11 +83,7 @@ export default function ArtGreenHotel(): React.JSX.Element {
             variants={fadeInUp}
             className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
           >
-            Depois de conhecer tudo o que o Greenland oferece, que tal vivenciar de perto?
-            Hospede-se no Art Green Boutique Hotel, dentro do próprio condomínio, e sinta
-            na pele o estilo de vida em meio à Mata Atlântica. Descanse com conforto,
-            aproveite a gastronomia premiada do Art Cucina e conheça seu futuro terreno
-            sem pressa.
+            {description}
           </motion.p>
         </motion.div>
 

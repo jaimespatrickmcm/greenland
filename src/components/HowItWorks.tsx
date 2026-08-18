@@ -3,7 +3,7 @@ import artCucinaMainImg from '../assets/IMG_8232-HDR.webp'
 import lazerImg from '../assets/IMG_6600.webp'
 import infraestruturaImg from '../assets/IMG_2511.webp'
 
-interface Highlight {
+export interface Highlight {
   id: string
   label: string
   nome: string
@@ -11,7 +11,7 @@ interface Highlight {
   hoverText: string
 }
 
-const highlights: Highlight[] = [
+export const defaultHighlights: Highlight[] = [
   {
     id: 'restaurante',
     label: 'Restaurante',
@@ -36,19 +36,33 @@ const highlights: Highlight[] = [
 ]
 
 interface HowItWorksProps {
-  onOpenSchedule: () => void
+  /** Abre o modal de agendamento. Ignorado quando `ctaHref` é informado. */
+  onOpenSchedule?: () => void
+  /** Destaques exibidos. Por padrão, os três da home. */
+  highlights?: Highlight[]
+  sectionId?: string
+  ctaLabel?: string
+  /** Se informado, o botão vira link externo (ex.: WhatsApp). */
+  ctaHref?: string
 }
 
-export default function HowItWorks({ onOpenSchedule }: HowItWorksProps): React.JSX.Element {
-  const [activeId, setActiveId] = useState<string>(highlights[0].id)
+export default function HowItWorks({
+  onOpenSchedule,
+  highlights,
+  sectionId = 'como-funciona',
+  ctaLabel = 'Agendar Visita',
+  ctaHref,
+}: HowItWorksProps): React.JSX.Element {
+  const items = highlights ?? defaultHighlights
+  const [activeId, setActiveId] = useState<string>(items[0].id)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   const getBgOpacity = (id: string): string => (activeId === id ? 'opacity-100' : 'opacity-0')
 
   return (
-    <section id="como-funciona" className="relative w-full h-[600px] lg:h-[700px] overflow-hidden overflow-x-hidden">
+    <section id={sectionId} className="relative w-full h-[600px] lg:h-[700px] overflow-hidden overflow-x-hidden">
       {/* Backgrounds crossfade */}
-      {highlights.map((h) => (
+      {items.map((h) => (
         <img
           key={h.id}
           src={h.image}
@@ -62,7 +76,7 @@ export default function HowItWorks({ onOpenSchedule }: HowItWorksProps): React.J
 
       {/* Desktop: 3 colunas interativas */}
       <div className="hidden md:flex relative z-20 h-[600px] lg:h-[700px] w-full">
-        {highlights.map((h) => (
+        {items.map((h) => (
           <div
             key={h.id}
             className="group cursor-pointer relative transition-all duration-300 border-r border-white/20 flex flex-col items-center h-full flex-1 min-w-0 overflow-hidden"
@@ -88,11 +102,13 @@ export default function HowItWorks({ onOpenSchedule }: HowItWorksProps): React.J
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent h-32 z-0" />
             {/* Botão Agendar Visita, aparece no hover */}
             <a
-              href="#agendar"
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule() }}
+              href={ctaHref ?? '#agendar'}
+              {...(ctaHref
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : { onClick: (e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule?.() } })}
               className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-30 bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg whitespace-nowrap ${hoveredId === h.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
             >
-              Agendar Visita
+              {ctaLabel}
             </a>
           </div>
         ))}
@@ -103,15 +119,15 @@ export default function HowItWorks({ onOpenSchedule }: HowItWorksProps): React.J
         {/* Texto do highlight ativo */}
         <div className="text-white text-center mb-6 px-2">
           <h3 className="font-heading text-xl font-bold mb-2">
-            {highlights.find(h => h.id === activeId)?.label} · {highlights.find(h => h.id === activeId)?.nome}
+            {items.find(h => h.id === activeId)?.label} · {items.find(h => h.id === activeId)?.nome}
           </h3>
           <p className="text-white/80 text-xs leading-relaxed line-clamp-4">
-            {highlights.find(h => h.id === activeId)?.hoverText}
+            {items.find(h => h.id === activeId)?.hoverText}
           </p>
         </div>
         {/* Grid: 3 botões */}
         <div className="grid grid-cols-3 gap-2">
-          {highlights.map((h) => (
+          {items.map((h) => (
             <button
               key={h.id}
               onClick={() => setActiveId(h.id)}
@@ -128,11 +144,13 @@ export default function HowItWorks({ onOpenSchedule }: HowItWorksProps): React.J
         </div>
         {/* Mobile: Botão Agendar Visita */}
         <a
-          href="#agendar"
-          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule() }}
+          href={ctaHref ?? '#agendar'}
+          {...(ctaHref
+            ? { target: '_blank', rel: 'noopener noreferrer' }
+            : { onClick: (e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule?.() } })}
           className="mt-4 block w-full text-center bg-[#8d4e27] hover:bg-[#7a4220] text-white font-semibold px-6 py-3 rounded-full transition-all shadow-lg"
         >
-          Agendar Visita
+          {ctaLabel}
         </a>
       </div>
     </section>

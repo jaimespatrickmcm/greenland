@@ -4,6 +4,7 @@ import type { IconType } from 'react-icons'
 import { FaMapMarkerAlt, FaPhone, FaClock, FaCheckCircle } from 'react-icons/fa'
 import { fadeInLeft, fadeInRight, staggerContainer, fadeInUp } from '../variants'
 import { PRICING_INFO, PRICING_SUMMARY } from '../data/pricingInfo'
+import { WHATSAPP_ROBO } from '../data/contact'
 
 interface FormData {
   name: string
@@ -23,7 +24,38 @@ interface ContactInfo {
   key: string
 }
 
-export default function ContactForm(): React.JSX.Element {
+const DEFAULT_INTEREST_OPTIONS: string[] = [
+  `Terreno: ${PRICING_INFO.cash}`,
+  `Terreno: ${PRICING_INFO.installment}`,
+  'Ainda não sei',
+]
+
+const DEFAULT_PAYMENT_OPTIONS: string[] = [
+  PRICING_INFO.cash,
+  PRICING_INFO.installment,
+  'A definir',
+]
+
+interface ContactFormProps {
+  sectionId?: string
+  eyebrow?: string
+  title?: string
+  description?: string
+  interestOptions?: string[]
+  paymentOptions?: string[]
+  /** Primeira linha da mensagem enviada ao WhatsApp. */
+  whatsappIntro?: string
+}
+
+export default function ContactForm({
+  sectionId = 'contact',
+  eyebrow = 'QUERO MEU TERRENO',
+  title = 'Fale com um consultor e garanta seu terreno agora!',
+  description = `Apenas 27 terrenos disponíveis na 1ª fase. 86% já vendidos. Condição atual: ${PRICING_SUMMARY} Preencha o formulário e nossa equipe entrará em contato via WhatsApp.`,
+  interestOptions = DEFAULT_INTEREST_OPTIONS,
+  paymentOptions = DEFAULT_PAYMENT_OPTIONS,
+  whatsappIntro = 'Olá! Tenho interesse em comprar um terreno no GREENLAND.',
+}: ContactFormProps): React.JSX.Element {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -61,14 +93,14 @@ export default function ContactForm(): React.JSX.Element {
     }
     setSubmitted(true)
     setTimeout(() => {
-      window.open('https://wa.me/5521980640955?text=' + encodeURIComponent(
-        `Olá! Tenho interesse em comprar um terreno no GREENLAND.\nNome: ${formData.name}\nTelefone: ${formData.phone}\nInteresse: ${formData.model || 'A definir'}`
+      window.open(`https://wa.me/${WHATSAPP_ROBO}?text=` + encodeURIComponent(
+        `${whatsappIntro}\nNome: ${formData.name}\nTelefone: ${formData.phone}\nInteresse: ${formData.model || 'A definir'}`
       ), '_blank')
     }, 1500)
   }
 
   return (
-    <section id="contact" className="relative py-24 overflow-hidden bg-[#273020]">
+    <section id={sectionId} className="relative py-24 overflow-hidden bg-[#273020]">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -83,20 +115,19 @@ export default function ContactForm(): React.JSX.Element {
               variants={fadeInUp}
               className="text-white/70 text-sm font-semibold tracking-widest uppercase mb-3"
             >
-              QUERO MEU TERRENO
+              {eyebrow}
             </motion.p>
             <motion.h2
               variants={fadeInLeft}
               className="font-heading text-3xl md:text-4xl text-white mb-5 leading-tight"
             >
-              Fale com um consultor e garanta seu terreno{' '}
-              <span className="text-white">agora!</span>
+              {title}
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-white/75 text-lg leading-relaxed mb-8"
             >
-              Apenas 27 terrenos disponíveis na 1ª fase. 86% já vendidos. Condição atual: {PRICING_SUMMARY} Preencha o formulário e nossa equipe entrará em contato via WhatsApp.
+              {description}
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col gap-4">
@@ -135,7 +166,7 @@ export default function ContactForm(): React.JSX.Element {
                     Você será redirecionado para nosso WhatsApp em instantes.
                   </p>
                   <a
-                    href="https://wa.me/5521980640955"
+                    href={`https://wa.me/${WHATSAPP_ROBO}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#25D366] text-white font-bold px-6 py-3 rounded-full inline-block hover:bg-[#1fb855] transition-colors"
@@ -196,9 +227,9 @@ export default function ContactForm(): React.JSX.Element {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Interesse</option>
-                    <option value={`Terreno: ${PRICING_INFO.cash}`}>Terreno: {PRICING_INFO.cash}</option>
-                    <option value={`Terreno: ${PRICING_INFO.installment}`}>Terreno: {PRICING_INFO.installment}</option>
-                    <option value="Ainda não sei">Ainda não sei</option>
+                    {interestOptions.map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
                   </select>
 
                   {/* Payment */}
@@ -209,9 +240,9 @@ export default function ContactForm(): React.JSX.Element {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Forma de Pagamento</option>
-                    <option value={PRICING_INFO.cash}>{PRICING_INFO.cash}</option>
-                    <option value={PRICING_INFO.installment}>{PRICING_INFO.installment}</option>
-                    <option value="A definir">A definir</option>
+                    {paymentOptions.map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
                   </select>
 
                   {/* Message */}
