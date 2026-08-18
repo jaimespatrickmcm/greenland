@@ -55,7 +55,7 @@ export default function About({ onOpenSchedule }: AboutProps): React.JSX.Element
           viewport={{ once: true, margin: '-50px' }}
           className="font-heading text-3xl md:text-4xl text-[#273020] mb-10 leading-tight max-w-2xl"
         >
-          Mais que um terreno — é um{' '}
+          Mais que um terreno. É um{' '}
           <span className="text-[#364728]">patrimônio na Serra</span>
         </motion.h2>
 
@@ -74,7 +74,7 @@ export default function About({ onOpenSchedule }: AboutProps): React.JSX.Element
             >
               O GREENLAND é um condomínio fechado em pleno funcionamento em Teresópolis,
               com 20.000m² de lazer e infraestrutura completa. Terrenos com RGI em
-              área privilegiada na Serra do Rio de Janeiro — uma oportunidade de
+              área privilegiada na Serra do Rio de Janeiro. Uma oportunidade de
               investimento com valorização contínua e liquidez real.
             </motion.p>
 
@@ -113,8 +113,8 @@ export default function About({ onOpenSchedule }: AboutProps): React.JSX.Element
               className="border-l-4 border-[#364728] pl-6 py-2 bg-white rounded-r-xl shadow-sm"
             >
               <p className="text-gray-700 italic leading-relaxed">
-                "Localização privilegiada, infraestrutura pronta e valorização contínua
-                — a 12km do centro de Teresópolis, com estrada pavimentada até
+                "Localização privilegiada, infraestrutura pronta e valorização contínua,
+                a 12km do centro de Teresópolis, com estrada pavimentada até
                 a entrada. O investimento ideal na Serra do Rio de Janeiro."
               </p>
             </motion.div>

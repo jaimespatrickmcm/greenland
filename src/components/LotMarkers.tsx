@@ -28,7 +28,7 @@ export default function LotMarkers({ lots, onSelectLot }: LotMarkersProps): Reac
           }}
           onMouseEnter={() => setHoveredLot(lot.id)}
           onMouseLeave={() => setHoveredLot(null)}
-          aria-label={`${lot.label} — ${lot.area} — ${lot.status === 'available' ? 'Disponível' : lot.status === 'reserved' ? 'Reservado' : 'Vendido'}`}
+          aria-label={`${lot.label}, ${lot.area}, ${lot.status === 'available' ? 'Disponível' : lot.status === 'reserved' ? 'Reservado' : 'Vendido'}`}
         >
           {/* Marker dot */}
           <span

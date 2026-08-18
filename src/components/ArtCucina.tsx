@@ -44,7 +44,7 @@ export default function ArtCucina(): React.JSX.Element {
           viewport={{ once: true, margin: '-50px' }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
-          {/* Left — Video */}
+          {/* Left · Video */}
           <motion.div variants={fadeInLeft} className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
               <video
@@ -62,7 +62,7 @@ export default function ArtCucina(): React.JSX.Element {
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-4 border-[#4a6838] rounded-2xl -z-10" />
           </motion.div>
 
-          {/* Right — Content */}
+          {/* Right · Content */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"

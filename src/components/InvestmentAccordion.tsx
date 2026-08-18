@@ -30,7 +30,7 @@ const options: InvestmentOption[] = [
       'Financiamento direto com a construtora',
       'Até 120 parcelas fixas',
       'Sem análise de crédito bancário',
-      'Entrada facilitada — consulte condições',
+      'Entrada facilitada, consulte condições',
       'Posse do terreno desde o primeiro pagamento',
     ],
   },

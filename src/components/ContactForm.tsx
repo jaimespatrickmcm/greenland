@@ -96,14 +96,14 @@ export default function ContactForm(): React.JSX.Element {
               variants={fadeInUp}
               className="text-white/75 text-lg leading-relaxed mb-8"
             >
-              Apenas 27 terrenos disponíveis na 1ª fase — 86% já vendidos. Condição atual: {PRICING_SUMMARY} Preencha o formulário e nossa equipe entrará em contato via WhatsApp.
+              Apenas 27 terrenos disponíveis na 1ª fase. 86% já vendidos. Condição atual: {PRICING_SUMMARY} Preencha o formulário e nossa equipe entrará em contato via WhatsApp.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col gap-4">
               {([
-                { Icon: FaMapMarkerAlt, text: 'Teresópolis, RJ — Serra do Rio de Janeiro', key: 'loc' },
+                { Icon: FaMapMarkerAlt, text: 'Teresópolis, RJ, na Serra do Rio de Janeiro', key: 'loc' },
                 { Icon: FaPhone, text: 'Atendimento via WhatsApp', key: 'phone' },
-                { Icon: FaClock, text: 'Segunda a Sábado, 08h–18h', key: 'clock' },
+                { Icon: FaClock, text: 'Segunda a Sábado, 08h às 18h', key: 'clock' },
               ] as ContactInfo[]).map((item) => (
                 <div key={item.key} className="flex items-center gap-3 text-white/80">
                   <item.Icon className="text-white text-xl flex-shrink-0" />
@@ -196,8 +196,8 @@ export default function ContactForm(): React.JSX.Element {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-500"
                   >
                     <option value="">Interesse</option>
-                    <option value={`Terreno — ${PRICING_INFO.cash}`}>Terreno — {PRICING_INFO.cash}</option>
-                    <option value={`Terreno — ${PRICING_INFO.installment}`}>Terreno — {PRICING_INFO.installment}</option>
+                    <option value={`Terreno: ${PRICING_INFO.cash}`}>Terreno: {PRICING_INFO.cash}</option>
+                    <option value={`Terreno: ${PRICING_INFO.installment}`}>Terreno: {PRICING_INFO.installment}</option>
                     <option value="Ainda não sei">Ainda não sei</option>
                   </select>
 

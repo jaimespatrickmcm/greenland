@@ -18,7 +18,7 @@ interface Photo {
 const photos: Photo[] = [
   {
     src: imgHero,
-    alt: 'Art Green Boutique Hotel — vista exterior',
+    alt: 'Art Green Boutique Hotel, vista exterior',
     className: 'sm:row-span-2 aspect-[4/5] sm:aspect-auto sm:h-full',
   },
   {

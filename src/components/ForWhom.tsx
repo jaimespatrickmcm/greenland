@@ -18,7 +18,7 @@ const profiles: Profile[] = [
   {
     Icon: FaHome,
     title: 'Casa na Serra',
-    desc: 'Quem quer um refúgio na serra para finais de semana e feriados — com infraestrutura pronta e o melhor lazer de Teresópolis no quintal.',
+    desc: 'Quem quer um refúgio na serra para finais de semana e feriados, com infraestrutura pronta e o melhor lazer de Teresópolis no quintal.',
   },
   {
     Icon: FaBriefcase,
@@ -28,7 +28,7 @@ const profiles: Profile[] = [
   {
     Icon: FaMountain,
     title: 'Quem conhece Teresópolis',
-    desc: 'Quem já frequenta a região e sabe o potencial de valorização da serra fluminense — e quer garantir seu terreno na 1ª fase.',
+    desc: 'Quem já frequenta a região e sabe o potencial de valorização da serra fluminense e quer garantir seu terreno na 1ª fase.',
   },
 ]
 
@@ -66,7 +66,7 @@ export default function ForWhom({ onOpenSchedule }: ForWhomProps): React.JSX.Ele
             className="text-white/60 max-w-2xl mx-auto text-lg"
           >
             O Greenland é pra quem enxerga oportunidade. Seja como investimento,
-            seja como refúgio na serra — aqui o terreno já vem pronto pra valorizar.
+            seja como refúgio na serra. Aqui o terreno já vem pronto pra valorizar.
           </motion.p>
         </motion.div>
 

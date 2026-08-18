@@ -41,10 +41,10 @@ export default function Hero({ onOpenSchedule }: HeroProps): React.JSX.Element {
           {/* Texto e botões */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left max-w-lg mb-6 md:mb-8">
             <p className="text-white/80 text-xs font-semibold tracking-widest uppercase mb-2">
-              GREENLAND — Teresópolis, Serra RJ
+              GREENLAND · Teresópolis, Serra RJ
             </p>
             <h1 className="font-heading text-3xl md:text-4xl xl:text-5xl text-white leading-tight mb-4">
-              Terrenos na Serra do RJ<br /> — investimento com valorização real
+              Terrenos na Serra do RJ,<br /> investimento com valorização real
             </h1>
             <p className="text-white/80 text-sm mb-6 max-w-lg">
               1ª fase com apenas 27 terrenos disponíveis em condomínio pronto. RGI, água e luz
@@ -60,7 +60,7 @@ export default function Hero({ onOpenSchedule }: HeroProps): React.JSX.Element {
             </div>
           </div>
 
-          {/* Redes sociais — ocultas no mobile */}
+          {/* Redes sociais, ocultas no mobile */}
           <div className="hidden md:flex flex-col items-end gap-2 md:mb-8">
             {([
               { Icon: FaFacebook, href: 'https://www.facebook.com/greenlandteresopolis' },
