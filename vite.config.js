@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     Sitemap({
       hostname: 'https://www.greenlandteresopolis.com.br',
-      dynamicRoutes: ['/'],
+      dynamicRoutes: ['/imoveis'],
       changefreq: 'weekly',
       priority: 1.0,
       lastmod: new Date(),

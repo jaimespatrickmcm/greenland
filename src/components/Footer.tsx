@@ -1,20 +1,7 @@
 import { useState } from 'react'
 import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa'
 import logoImg from '../assets/Logotipos Greenland 2026-07.png'
-
-interface NavLink {
-  label: string
-  href: string
-}
-
-const navLinks: NavLink[] = [
-  { label: 'O Greenland', href: '#greenland' },
-  { label: 'Diferenciais', href: '#como-funciona' },
-  { label: 'Por que Comprar', href: '#pq-investir' },
-  { label: 'Condições', href: '#rendimentos' },
-  { label: 'Terrenos', href: '#investimento' },
-  { label: 'FAQ', href: '#faq' },
-]
+import { navLinks, isHomePage, resolveHref, scrollToAnchor } from '../data/navLinks'
 
 const importantLinks: string[] = [
   'Política de Privacidade',
@@ -35,9 +22,11 @@ export default function Footer(): React.JSX.Element {
     }
   }
 
-  const handleNavClick = (href: string): void => {
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string): void => {
+    if (href.startsWith('#') && isHomePage()) {
+      e.preventDefault()
+      scrollToAnchor(href)
+    }
   }
 
   return (
@@ -102,8 +91,8 @@ export default function Footer(): React.JSX.Element {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick(link.href) }}
+                    href={resolveHref(link.href)}
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, link.href)}
                     className="text-white/50 hover:text-[#8d4e27] text-sm transition-colors"
                   >
                     {link.label}

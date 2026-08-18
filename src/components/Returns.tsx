@@ -33,7 +33,7 @@ const conditions: Condition[] = [
   {
     label: 'Parcelado',
     image: foto5,
-    price: 'R$ 220.000 parcelado',
+    price: 'R$ 250.000 parcelado',
     detail: 'Em até 120x direto',
     desc: 'Parcele diretamente conosco em até 120x, sem burocracia bancária.',
     features: [

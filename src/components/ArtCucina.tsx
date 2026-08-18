@@ -8,8 +8,7 @@ interface Feature {
   desc: string
 }
 
-const desktopVideoUrl = 'https://greenland.b-cdn.net/horizontal%20-%20camera%20-%20Teres%C3%B3polis_1.mp4'
-const mobileVideoUrl = 'https://greenland.b-cdn.net/WhatsApp%20Video%202026-02-26%20at%2010.55.57.mp4'
+const videoUrl = 'https://greenland.b-cdn.net/artcucina.mp4'
 
 const features: Feature[] = [
   {
@@ -49,22 +48,14 @@ export default function ArtCucina(): React.JSX.Element {
           <motion.div variants={fadeInLeft} className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
               <video
-                className="hidden lg:block w-full h-full object-cover"
+                className="w-full h-full object-cover"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="metadata"
               >
-                <source src={desktopVideoUrl} type="video/mp4" />
-              </video>
-              <video
-                className="block lg:hidden w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={mobileVideoUrl} type="video/mp4" />
+                <source src={videoUrl} type="video/mp4" />
               </video>
             </div>
             {/* Decorative element */}

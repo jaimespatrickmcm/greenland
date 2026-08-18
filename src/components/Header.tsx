@@ -2,26 +2,22 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebook, FaInstagram, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa'
 import logoImg from '../assets/Logotipos Greenland 2026-07.png'
-
-interface NavLink {
-  label: string
-  href: string
-}
-
-const navLinks: NavLink[] = [
-  { label: 'O Greenland', href: '#greenland' },
-  { label: 'Diferenciais', href: '#como-funciona' },
-  { label: 'Por que Comprar', href: '#pq-investir' },
-  { label: 'Condições', href: '#rendimentos' },
-  { label: 'Terrenos', href: '#investimento' },
-  { label: 'FAQ', href: '#faq' },
-]
+import { navLinks, isHomePage, resolveHref, scrollToAnchor } from '../data/navLinks'
 
 interface HeaderProps {
-  onOpenSchedule: () => void
+  /** Abre o modal de agendamento (usado na home). */
+  onOpenSchedule?: () => void
+  /** Texto do CTA principal. */
+  ctaLabel?: string
+  /** Se informado, o CTA vira link externo em vez de abrir o agendamento. */
+  ctaHref?: string
 }
 
-export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Element {
+export default function Header({
+  onOpenSchedule,
+  ctaLabel = 'Quero Meu Terreno!',
+  ctaHref,
+}: HeaderProps): React.JSX.Element {
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
@@ -31,13 +27,17 @@ export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Eleme
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleNavClick = (href: string): void => {
+  // Âncoras rolam suavemente quando estamos na home; fora dela, o link navega.
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string): void => {
     setMenuOpen(false)
-    setTimeout(() => {
-      const el = document.querySelector(href)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
+    if (href.startsWith('#') && isHomePage()) {
+      e.preventDefault()
+      scrollToAnchor(href, 100)
+    }
   }
+
+  const ctaClasses =
+    'bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap shadow-lg'
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Eleme
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 flex-shrink-0">
+          <a href="/" className="flex items-center gap-2 flex-shrink-0">
             <img
               src={logoImg}
               alt="GREENLAND"
@@ -60,12 +60,12 @@ export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Eleme
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick(link.href) }}
+                href={resolveHref(link.href)}
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, link.href)}
                 className="text-white/90 hover:text-[#8d4e27] text-sm font-medium transition-colors duration-200 whitespace-nowrap"
               >
                 {link.label}
@@ -75,13 +75,24 @@ export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Eleme
 
           {/* Right side */}
           <div className="flex items-center gap-3">
-            <a
-              href="#agendar"
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule() }}
-              className="bg-[#8d4e27] hover:bg-[#7a4220] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 whitespace-nowrap shadow-lg"
-            >
-              Quero Meu Terreno!
-            </a>
+            {ctaHref ? (
+              <a
+                href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={ctaClasses}
+              >
+                {ctaLabel}
+              </a>
+            ) : (
+              <a
+                href="#agendar"
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); onOpenSchedule?.() }}
+                className={ctaClasses}
+              >
+                {ctaLabel}
+              </a>
+            )}
 
             {/* Hamburger */}
             <button
@@ -127,8 +138,8 @@ export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Eleme
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
-                    href={link.href}
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); handleNavClick(link.href) }}
+                    href={resolveHref(link.href)}
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, link.href)}
                     className="text-white/90 hover:text-[#8d4e27] text-lg font-medium transition-colors border-b border-white/10 pb-4"
                   >
                     {link.label}
@@ -143,13 +154,25 @@ export default function Header({ onOpenSchedule }: HeaderProps): React.JSX.Eleme
                 <a href="https://wa.me/5521980640955" target="_blank" rel="noopener noreferrer"
                   className="text-white/70 hover:text-[#8d4e27] text-2xl transition-colors"><FaWhatsapp /></a>
               </div>
-              <a
-                href="#agendar"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); setMenuOpen(false); onOpenSchedule() }}
-                className="mt-4 bg-[#8d4e27] text-white font-bold text-center py-3 rounded-full"
-              >
-                Quero Meu Terreno!
-              </a>
+              {ctaHref ? (
+                <a
+                  href={ctaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-4 bg-[#8d4e27] text-white font-bold text-center py-3 rounded-full"
+                >
+                  {ctaLabel}
+                </a>
+              ) : (
+                <a
+                  href="#agendar"
+                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); setMenuOpen(false); onOpenSchedule?.() }}
+                  className="mt-4 bg-[#8d4e27] text-white font-bold text-center py-3 rounded-full"
+                >
+                  {ctaLabel}
+                </a>
+              )}
             </motion.div>
           </>
         )}

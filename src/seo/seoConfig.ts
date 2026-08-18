@@ -5,7 +5,7 @@ export const SEO_CONFIG = {
   siteUrl: 'https://www.greenlandteresopolis.com.br',
   defaultTitle: 'GREENLAND — Terrenos na Serra do Rio de Janeiro',
   defaultDescription:
-    'Condomínio pronto em Teresópolis com o maior lazer da cidade. 35 terrenos com RGI a partir de R$199mil. Água e luz instalados. Financie em até 240x pela Caixa.',
+    'Condomínio pronto em Teresópolis com o maior lazer da cidade. 35 terrenos com RGI a partir de R$225mil. Água e luz instalados. Financie em até 240x pela Caixa.',
   defaultOgImage: '/og-image.jpg', // 1200x630px — adicione em /public quando disponível
   defaultOgImageAlt:
     'GREENLAND — Condomínio de terrenos com RGI em Teresópolis, Serra do RJ',

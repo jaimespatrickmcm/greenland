@@ -1,0 +1,2 @@
+# SPA fallback: rotas como /imoveis são resolvidas pelo próprio index.html
+/*    /index.html   200
