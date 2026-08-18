@@ -10,6 +10,8 @@ interface Feature {
 
 const videoUrl = 'https://greenland.b-cdn.net/artcucina.mp4'
 
+const RESTAURANT_URL = 'https://artcucina.com.br/'
+
 const features: Feature[] = [
   {
     icon: <FaGem className="text-[#4a6838] text-xl" />,
@@ -106,8 +108,16 @@ export default function ArtCucina(): React.JSX.Element {
               ))}
             </motion.div>
 
-            {/* Instagram */}
+            {/* Site do restaurante + Instagram */}
             <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-4">
+              <a
+                href={RESTAURANT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#364728] hover:bg-[#2a3820] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all hover:scale-105 shadow-lg"
+              >
+                <FaUtensils className="text-sm" /> Conhecer o restaurante
+              </a>
               <a
                 href="https://www.instagram.com/restauranteartcucina"
                 target="_blank"
