@@ -1,30 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import Sitemap from 'vite-plugin-sitemap'
 
+// Site fora do ar: sem sitemap e sem chunks de framer-motion/react-icons/swiper,
+// que só serviam às páginas antigas. Reverter junto com o main.tsx.
 export default defineConfig({
-  plugins: [
-    react(),
-    Sitemap({
-      hostname: 'https://www.greenlandteresopolis.com.br',
-      dynamicRoutes: ['/imoveis'],
-      changefreq: 'weekly',
-      priority: 1.0,
-      lastmod: new Date(),
-      readable: true,
-      exclude: ['/404'],
-      generateRobotsTxt: false,
-    }),
-  ],
+  plugins: [react()],
   build: {
     // Code-splitting para melhor LCP/INP
     rollupOptions: {
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'motion-vendor': ['framer-motion'],
-          'icons-vendor': ['react-icons'],
-          'swiper-vendor': ['swiper'],
         },
       },
     },
